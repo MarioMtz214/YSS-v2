@@ -1,0 +1,16 @@
+# ---- OS ----
+.DS_Store
+
+# ---- Environment ----
+backend/.env
+
+# ---- Media folders (NO subir) ----
+frontend/public/img/
+frontend/public/vid/
+
+# ---- Node ----
+node_modules/
+
+# ---- Builds ----
+dist/
+build/

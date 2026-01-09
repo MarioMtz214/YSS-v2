@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- SEO CORE -->
+  <title>Yellow Square Studio | Branding, Web Design & Creative Content in Barcelona</title>
+
+  <meta name="description" 
+        content="Yellow Square Studio is a creative agency in Barcelona specialising in branding, web design, photography and digital identity for small businesses, startups and personal brands. Modern design, strong visuals and strategy-focused solutions." />
+
+  <meta name="keywords" 
+        content="branding Barcelona, creative agency Barcelona, diseño web Barcelona, identidad visual, graphic design studio, photography Barcelona, agencia creativa, brand strategy, personal branding, diseño logos Barcelona" />
+
+  <meta name="author" content="Yellow Square Studio Team">
+
+  <meta name="robots" content="index, follow">
+
+  <!-- LOCAL SEO -->
+  <meta name="geo.region" content="ES-CT">
+  <meta name="geo.placename" content="Barcelona, Catalunya, España">
+  <meta name="geo.position" content="41.3874;2.1686">
+  <meta name="ICBM" content="41.3874, 2.1686">
+
+  <!-- OG / SOCIAL SHARING -->
+  <meta property="og:title" content="Yellow Square Studio – Creative Agency in Barcelona">
+  <meta property="og:description" content="Branding, web design, visual identity and creative content for brands with personality. Based in Barcelona.">
+  <meta property="og:image" content="https://yellowsquare.studio/public/img/og-image-cover.jpg">
+  <meta property="og:url" content="https://yellowsquare.studio">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Yellow Square Studio | Branding & Creative Agency Barcelona">
+  <meta name="twitter:description" content="Branding, identity design, photography and digital content. Creative studio based in Barcelona.">
+  <meta name="twitter:image" content="https://yellowsquare.studio/public/img/og-image-cover.jpg">
+
+  <!-- Favicon & Apple Icons -->
+  <link rel="icon" href="https://yellowsquare.studio/public/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://yellowsquare.studio/public/img/apple-touch.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./public/css/output.css" as="style">
+  <link rel="stylesheet" href="./public/css/styles.css" as="style">
+
+<!-- canonical URL -->
+  <link rel="canonical" href="https://yellowsquare.studio/">
+
+  <!-- SCHEMA / JSON-LD (Creative Agency) -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "CreativeAgency",
+  "name": "Yellow Square Studio",
+  "url": "https://yellowsquare.studio",
+  "image": "https://yellowsquare.studio/public/img/og-image-cover.jpg",
+  "logo": "https://yellowsquare.studio/public/img/logo.png",
+  "description": "Branding, visual identity, photography, graphic design and web design for small businesses and creators.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "TU-DIRECCIÓN-AQUÍ-SI-QUIERES",
+    "addressLocality": "Barcelona",
+    "addressRegion": "Catalunya",
+    "addressCountry": "ES"
+  },
+  "telephone": "+34 TU_NUMERO",
+  "email": "hola@yellowsquare.studio",
+  "areaServed": ["Barcelona", "España", "Europa"],
+  "sameAs": [
+    "https://instagram.com/TU-USUARIO",
+    "https://linkedin.com/company/TU-EMPRESA"
+  ],
+    "areaServed": ["Barcelona", "Badalona", "Hospitalet", "Terrassa", "Sabadell", "España", "Europa"],
+    "keywords": [
+      "branding studio Barcelona",
+      "creative agency Barcelona",
+      "web design Barcelona",
+      "photography services",
+      "brand identity",
+      "graphic design"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+    <header class="w-full fade-in">
+        <!-- nav en pantallas grandes -->
+        <div class="hidden lg:flex h-16  items-center justify-between lg:p-14 px-4 py-14 mt-10">
+            <!-- logo en pantallas grandes -->
+            <div class="hidden xl:flex">
+                <a  href="index.html"><h1 class="text-4xl font-black" >Yellow Square Studio</h1></a>
+            </div>
+            <!-- visible en pantallas pequeñas -->
+            <div class="xl:hidden flex">
+                <a  href="index.html"><h1 class="text-4xl font-black" >Yellow <br>Square <br> Studio</h1></a>
+            </div>
+            <!-- nav para escritorio (pantalla grande) -->
+            <!-- CONTENEDOR FIJO PARA QUE NADA SE MUEVA -->
+            <div class="relative w-64 flex items-center justify-end">
+                
+                <!-- BOTÓN ABRIR NAV DESKTOP -->
+                <button id="desktop-menu-toggle"
+                    class="absolute right-0 bg-black text-white rounded-full w-20 h-10 flex items-center justify-center cursor-pointer transition-all duration-500">
+                    <svg class="w-6 h-6 text-white" viewBox="0 0 24 24">
+                        <path d="M21 10H7" stroke="currentColor" stroke-width="2"/>
+                        <path d="M21 6H3" stroke="currentColor" stroke-width="2"/>
+                        <path d="M21 14H3" stroke="currentColor" stroke-width="2"/>
+                        <path d="M21 18H7" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+
+                <!-- NAV ABIERTO -->
+                <div id="nav-opened" 
+                    class="absolute right-0 flex items-center justify-center space-x-4 opacity-0 pointer-events-none transform scale-95 transition-all duration-500 nav-collapsed overflow-hidden rounded-full hidden lg:flex">
+                    
+                    <!-- este boton de cerrar debe en pantallas grandes -->
+                    <div class="bg-black text-white rounded-full mt-1 p-2 w-16 h-8 flex items-center justify-center">
+                        <button id="close-btn" class="hover:text-black hover:bg-yellow-200 rounded-full p-2 w-6 h-6 flex items-center justify-center">
+                            x
+                        </button>
+                    </div>
+
+                    <nav class="bg-black text-white rounded-full p-2 px-6 flex items-center justify-center hidden lg:flex">
+                        <ul class="flex space-x-8 text-lg font-bold">
+                            <li><a href="index.html" class="hover:text-black hover:bg-yellow-200 rounded-full p-2">Home</a></li>
+                            <li>|</li>
+                            <li><a href="projects.html" class="hover:text-black hover:bg-yellow-200 rounded-full p-2">Proyectos</a></li>
+                            <li>|</li>
+                            <li><a href="services.html" class="hover:text-black hover:bg-yellow-200 rounded-full p-2">Servicios</a></li>
+                            <li>|</li>
+                            <li><a href="contact.html" class="hover:text-black hover:bg-yellow-200 rounded-full p-2">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- nav en pantallas pequeñas -->
+        <div class="lg:hidden flex flex-col items-center justify-between lg:p-14 px-4 pt-14 ">
+            <!-- visible en pantallas pequeñas -->
+            <div class="flex flex-row items-center justify-between w-full ">
+                <div class="">
+                    <a  href="index.html"><h1 class="text-4xl font-black" >Yellow <br>Square <br> Studio</h1></a>
+                </div>
+
+                <div class="relative w-64 flex items-center justify-end">
+                    
+                    <!-- BOTÓN ABRIR NAV MÓVIL -->
+                    <button id="mobile-menu-toggle"
+                        class="absolute right-0 bg-black text-white rounded-full w-20 h-10 flex items-center justify-center cursor-pointer transition-all duration-500">
+                        <svg class="w-6 h-6 text-white hover:text-black transition-colors" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 10H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 6H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 14H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 18H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <!-- boton de cerrar en pantalla pequeña -->
+                    <div id="close-btn-sm-wrapper" class="absolute right-0 hidden bg-black text-white rounded-full  p-4 w-20 h-10 flex items-center justify-center">
+                        <button id="close-btn-sm-nav" class="hover:text-black hover:bg-yellow-200 rounded-full p-4 w-6 h-6  flex items-center justify-center">
+                                x
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            <!-- hidden -->
+            <div id="mobile-nav" class="hidden w-full h-[90vh] flex flex-col items-start justify-start">
+                <!-- NAV ABIERTO. esto es el nav de movil -->
+                <div class="w-full h-full">
+                    <nav class=" pt-20 text-black p-2 px-8 flex items-start justify-start">
+                        <ul class="flex flex-col space-y-2 text-lg font-bold">
+                            <li>
+                                <a href="index.html" class="relative p-1 text-4xl group">
+                                Home
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="projects.html" class="relative p-1 text-4xl group">
+                                Proyectos
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="services.html" class="relative p-1 text-4xl group">
+                                Servicios
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact.html" class="relative p-1 text-4xl group">
+                                Contacto
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="w-full p-4 pb-32">
+                    <a href="https://www.instagram.com/yellow.square.studio?igsh=cGNkeThrM2F4Y3hj&utm_source=qr" class="text-2xl underline font-black italic text-left">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-[90%] bg-black h-full rounded-4xl mx-auto my-10 text-white">
+        <!-- Cada sección aparecerá con una animación suave de fade in al hacer scroll down -->
+         <!-- Web de contacto -->
+        <section id="start" class="text-center p-16 fade-in w-full h-[80vh] flex flex-col justify-center items-center">
+            <h2 class="lg:text-6xl text-4xl text-[#f4e67e] font-bold mb-4">Contacto!</h2>
+            <h2 class="lg:text-3xl text-xl font-bold mb-4">
+                Diseño, estrategia y contenido para marcas que quieren crecer con intención.
+            </h2>
+        </section>
+
+        <section class="fade-in w-full text-white px-14 py-24">
+            <h3 class="text-4xl font-black mb-12">¿Qué pasa después de escribirnos?</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 opacity-90">
+
+                <div>
+                    <h4 class="text-2xl font-bold mb-3">1. Te respondemos en 24h</h4>
+                    <p>Leemos tu mensaje con calma y te pedimos solo la información necesaria. Sin procesos eternos.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-2xl font-bold mb-3">2. Llamada breve</h4>
+                    <p>10–15 minutos para entender tu proyecto, tus objetivos y comprobar si encajamos bien.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-2xl font-bold mb-3">3. Propuesta clara</h4>
+                    <p>Presupuesto transparente, tiempos realistas y un plan para que tu marca avance desde el día 1.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="fade-in w-full text-white px-14 py-24">
+            <h3 class="text-4xl font-black mb-12">¿Somos el estudio adecuado para ti?</h3>
+
+            <div class="max-w-4xl space-y-6 text-xl opacity-90">
+
+                <p>Funcionamos especialmente bien con marcas que buscan claridad, diseño estratégico y un proceso cercano.</p>
+
+                <ul class="list-disc ml-6 space-y-2">
+                    <li>Clientes que valoran el diseño como una inversión.</li>
+                    <li>Negocios que quieren una marca coherente y profesional.</li>
+                    <li>Personas que saben lo que quieren… o que necesitan que les guiemos.</li>
+                    <li>Proyectos donde se puede trabajar con intención, no con prisas sin sentido.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="fade-in w-full text-white px-14 py-24">
+            <h3 class="text-4xl font-black mb-6">Agencia de branding en Barcelona</h3>
+
+            <p class="text-xl max-w-4xl opacity-90">
+                Yellow Square Studio es una agencia de branding en Barcelona especializada en crear identidades visuales,
+                diseño web, fotografía y contenido estratégico para marcas que quieren destacar. 
+                Si buscas una agencia creativa en Barcelona que combine diseño, estrategia y dirección de arte,
+                estamos aquí para ayudarte a construir algo sólido y memorable.
+            </p>
+        </section>
+
+        <section class="fade-in text-center px-14 py-24">
+            <h3 class="text-5xl font-black bg-gradient-to-tr from-[#EDECC2] to-[#f5dd28] bg-clip-text text-transparent mb-10">
+                Listos cuando tú estés.
+            </h3>
+
+            <p class="text-xl text-zinc-300 mb-10">
+                Cuéntanos tu idea y te ayudamos a convertirla en una marca sólida y profesional.
+            </p>
+
+            <a href="#contactForm" 
+            class="px-10 py-4 border-2 border-[#f4e67e] rounded-full text-xl font-black 
+                    hover:bg-[#f4e67e] hover:text-black transition-all">
+                Iniciar proyecto →
+            </a>
+        </section>
+
+        <section class="fade-in w-full text-white px-14 py-24 fade-in">
+            <h3 class="text-4xl font-black mb-12">Antes de escribirnos</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+                <div>
+                    <h4 class="text-2xl font-bold mb-4">¿Qué tipo de proyectos aceptamos?</h4>
+                    <p class="opacity-80">
+                        Branding, webs, fotografía, contenido creativo y direcciones visuales completas.  
+                        Si tu proyecto tiene intención, nos interesa.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-2xl font-bold mb-4">¿Qué puedes esperar?</h4>
+                    <p class="opacity-80">
+                        Honestidad, claridad y un diseño hecho con cabeza.  
+                        Nada de plantillas, nada genérico.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-2xl font-bold mb-4">¿Cómo trabajamos?</h4>
+                    <p class="opacity-80">
+                        Empezamos con una llamada breve.  
+                        Luego preparamos una propuesta clara, tiempos y presupuesto realista.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="w-full bg-black text-white px-14 py-32 fade-in">
+            <h2 class="lg:text-6xl text-4xl font-black mb-10 leading-tight">
+                Hablemos.
+            </h2>
+            <p class="text-2xl md:text-3xl max-w-3xl opacity-90">
+                Trabajamos con marcas que buscan algo más que un diseño bonito.  
+                Escuchamos cada proyecto con atención, claridad y honestidad para crear soluciones con intención.  
+                Si tienes una idea, vamos a transformarla en algo que realmente funcione.
+            </p>
+        </section>
+        <section class="fade-in">
+            <div id="form-container" class="text-YSS2 w-[90%] p-8 mx-auto font-black space-y-8 rounded-3xl">
+                <h2 class="text-left lg:text-4xl text-3xl font-black text-black">Hablemos de tu marca →</h2>
+                <form id="contactForm" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xl text-black mb-1">Nombre</label>
+                    <input type="text" name="firstName" required class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#f7a9b3]" />
+                  </div>
+                  <div>
+                    <label class="block text-xl text-black mb-1">Empresa</label>
+                    <input type="text" name="businessName" required class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#f7a9b3]" />
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xl text-black mb-1">Teléfono</label>
+                    <input type="tel" name="phone" required class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#f7a9b3]" />
+                  </div>
+                  <div>
+                    <label class="block text-xl text-black mb-1">Email</label>
+                    <input type="email" name="email" required class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#f7a9b3]" />
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-xl text-black mb-1">Mensaje</label>
+                  <textarea name="message" rows="4" required class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#f7a9b3] resize-none"></textarea>
+                </div>
+                <div class="text-center flex justify-end">
+                  <button type="submit" class="mt-2 w-32 h-12 p-4 bg-black text-YSS2 py-3 rounded-xl font-black hover:bg-YSS1 hover:text-black hover:border-2 hover:border-collapse hover:border-black  transition"> Enviar
+                  </button>
+                </div>
+                <div id="formFeedback" class="text-xl mt-2 text-center"></div>
+              </form>
+            </div>
+            
+            <div class="lg:w-[90%] w-full p-8 mx-auto flex lg:flex-row flex-col items-center justify-center font-black lg:space-x-8  bg-gradient-to-tr from-[#EDECC2] to-[#f5dd28] bg-clip-text text-transparent">
+                <div class="lg:w-1/2 w-full lg:p-8 lg:mb-4 mb-8 rounded-2xl font-black lg:text-7xl text-4xl italic lg:text-left text-center">
+                    <h2>También puedes llamarnos o enviar un correo</h2>
+
+                </div>
+                <div id="contact" class="lg:w-1/2 w-full lg:p-8 py-8 rounded-3xl text-black text-2xl font-black lg:text-left text-center ">
+                    <h2 class="font-black lg:text-3xl text-2xl mb-1">Barcelona</h2>
+                    <p class="lg:text-2xl text-lg">+34 672900109</p>
+                    <p class="lg:text-2xl text-lg">+34 623069631</p>
+                    <h2 class="font-black lg:text-3xl text-2xl mt-4">Correo</h2>
+                    <p class="lg:text-2xl text-lg">go.yellowsquare@gmail.com</p>
+                    <h2 class="font-black lg:text-3xl text-2xl mb-2 mt-4">Siguenos</h2>
+                    <div class="lg:pl-12 flex lg:justify-start justify-center">
+                        <a href="https://www.instagram.com/yellow.square.studio?igsh=cGNkeThrM2F4Y3hj&utm_source=qr" target="_blank" aria-label="Instagram" class="">
+                            <svg class="lg:w-10 lg:h-10 w-6 h-6 fill-current text-black hover:text-neutral-600 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.6.6.3 1 .7 1.5 1.5.3.5.5 1.3.6 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.6 2.5-.3.6-.7 1-1.5 1.5-.5.3-1.3.5-2.5.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.6-.6-.3-1-.7-1.5-1.5-.3-.5-.5-1.3-.6-2.5-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-2 .6-2.5.3-.6.7-1 1.5-1.5.5-.3 1.3-.5 2.5-.6C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.6.1 4.3.4 3.2 1.1 2.1 1.7 1.3 2.5.7 3.6.1 4.7 0 6 0 7.4c-.1 1.3-.1 1.7-.1 4.6s0 3.3.1 4.6c.1 1.3.4 2.6 1.1 3.7.6 1.1 1.4 1.9 2.5 2.5 1.1.7 2.4 1 3.7 1.1 1.3.1 1.7.1 4.6.1s3.3 0 4.6-.1c1.3-.1 2.6-.4 3.7-1.1 1.1-.6 1.9-1.4 2.5-2.5.7-1.1 1-2.4 1.1-3.7.1-1.3.1-1.7.1-4.6s0-3.3-.1-4.6c-.1-1.3-.4-2.6-1.1-3.7-.6-1.1-1.4-1.9-2.5-2.5-1.1-.7-2.4-1-3.7-1.1C15.7 0 15.3 0 12 0zm0 5.8c-3.4 0-6.2 2.8-6.2 6.2S8.6 18.2 12 18.2s6.2-2.8 6.2-6.2S15.4 5.8 12 5.8zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4c2.2 0 4 1.8 4 4s-1.8 4-4 4zm6.4-11.8c-.8 0-1.5.6-1.5 1.5 0 .8.6 1.5 1.5 1.5.8 0 1.5-.6 1.5-1.5s-.6-1.5-1.5-1.5z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+    </main>
+
+    <footer class="w-full ">
+        <div id="" class="fade-in lg:my-28 my-16 flex items-center justify-center space-x-4 transition-all duration-500 rounded-full">
+            <nav class="bg-black text-white rounded-full p-2 px-6 flex items-center justify-center hidden xl:flex">
+                <ul class="flex space-x-8 text-lg font-bold">
+                    <li><a href="index.html" class="hover:text-black hover:bg-YSS2 rounded-full p-2">Home</a></li>
+                    <li>|</li>
+                    <li><a href="projects.html" class="hover:text-black hover:bg-YSS2 rounded-full p-2">Proyectos</a></li>
+                    <li>|</li>
+                    <li><a href="services.html" class="hover:text-black hover:bg-YSS2 rounded-full p-2">Servicios</a></li>
+                    <li>|</li>
+                    <li><a href="contact.html" class="hover:text-black hover:bg-YSS2 rounded-full p-2">Contacto</a></li>
+                </ul>
+            </nav>
+            <nav class="bg-black text-YSS2 rounded-3xl p-2 px-6 flex items-center justify-center flex xl:hidden">
+                <ul class="flex flex-col space-y-2 text-lg font-bold">
+                            <li>
+                                <a href="index.html" class="relative p-1 text-2xl group">
+                                Home
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-YSS2 transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="projects.html" class="relative p-1 text-2xl group">
+                                Proyectos
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-YSS2 transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="services.html" class="relative p-1 text-2xl group">
+                                Servicios
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-YSS2 transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact.html" class="relative p-1 text-2xl group">
+                                Contacto
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-YSS2 transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                        </ul>
+            </nav>
+        </div>
+        <div class="p-10 flex flex-col justify-between items-center pt-20 bg-black text-YSS2  rounded-t-4xl">
+            <div class="lg:w-[40%] w-full flex lg:flex-row flex-col justify-center items-center space-x-4">
+                <img src="./public/img/Yellow Square Studio Logo with shadow.png" width="150px" alt="">
+                <p class="text-base mt-4 font-black ">
+                Yellow Square Studio <br> Estudio creativo que convierte ideas en marcas poderosas. Diseño, desarrollo y comunicación visual sin rodeos.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="w-full text-center text-sm p-4 bg-black">
+            <a href="" class="text-YSS2 hover:text-YSS1">© 2025 Yellow Square Studio. Todos los derechos reservados.</a>
+        </div>
+    </footer>
+    
+    <script src="./js/main.js"></script>
+    <script src="./js/proyects.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- SEO CORE -->
+  <title>Yellow Square Studio | Branding, Web Design & Creative Content in Barcelona</title>
+
+  <meta name="description" 
+        content="Yellow Square Studio is a creative agency in Barcelona specialising in branding, web design, photography and digital identity for small businesses, startups and personal brands. Modern design, strong visuals and strategy-focused solutions." />
+
+  <meta name="keywords" 
+        content="branding Barcelona, creative agency Barcelona, diseño web Barcelona, identidad visual, graphic design studio, photography Barcelona, agencia creativa, brand strategy, personal branding, diseño logos Barcelona" />
+
+  <meta name="author" content="Yellow Square Studio Team">
+
+  <meta name="robots" content="index, follow">
+
+  <!-- LOCAL SEO -->
+  <meta name="geo.region" content="ES-CT">
+  <meta name="geo.placename" content="Barcelona, Catalunya, España">
+  <meta name="geo.position" content="41.3874;2.1686">
+  <meta name="ICBM" content="41.3874, 2.1686">
+
+  <!-- OG / SOCIAL SHARING -->
+  <meta property="og:title" content="Yellow Square Studio – Creative Agency in Barcelona">
+  <meta property="og:description" content="Branding, web design, visual identity and creative content for brands with personality. Based in Barcelona.">
+  <meta property="og:image" content="https://yellowsquare.studio/public/img/og-image-cover.jpg">
+  <meta property="og:url" content="https://yellowsquare.studio">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Yellow Square Studio | Branding & Creative Agency Barcelona">
+  <meta name="twitter:description" content="Branding, identity design, photography and digital content. Creative studio based in Barcelona.">
+  <meta name="twitter:image" content="https://yellowsquare.studio/public/img/og-image-cover.jpg">
+
+  <!-- Favicon & Apple Icons -->
+  <link rel="icon" href="https://yellowsquare.studio/public/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://yellowsquare.studio/public/img/apple-touch.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./public/css/output.css" as="style">
+  <link rel="stylesheet" href="./public/css/styles.css" as="style">
+
+<!-- canonical URL -->
+  <link rel="canonical" href="https://yellowsquare.studio/">
+
+  <!-- SCHEMA / JSON-LD (Creative Agency) -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "CreativeAgency",
+  "name": "Yellow Square Studio",
+  "url": "https://yellowsquare.studio",
+  "image": "https://yellowsquare.studio/public/img/og-image-cover.jpg",
+  "logo": "https://yellowsquare.studio/public/img/logo.png",
+  "description": "Branding, visual identity, photography, graphic design and web design for small businesses and creators.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "TU-DIRECCIÓN-AQUÍ-SI-QUIERES",
+    "addressLocality": "Barcelona",
+    "addressRegion": "Catalunya",
+    "addressCountry": "ES"
+  },
+  "telephone": "+34 TU_NUMERO",
+  "email": "hola@yellowsquare.studio",
+  "areaServed": ["Barcelona", "España", "Europa"],
+  "sameAs": [
+    "https://instagram.com/TU-USUARIO",
+    "https://linkedin.com/company/TU-EMPRESA"
+  ],
+    "areaServed": ["Barcelona", "Badalona", "Hospitalet", "Terrassa", "Sabadell", "España", "Europa"],
+    "keywords": [
+      "branding studio Barcelona",
+      "creative agency Barcelona",
+      "web design Barcelona",
+      "photography services",
+      "brand identity",
+      "graphic design"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+    <header class="w-full fade-in">
+        <!-- nav en pantallas grandes -->
+        <div class="hidden lg:flex h-16  items-center justify-between lg:p-14 px-4 py-14 mt-10">
+            <!-- logo en pantallas grandes -->
+            <div class="hidden xl:flex">
+                <a  href="index.html"><h1 class="text-4xl font-black" >Yellow Square Studio</h1></a>
+            </div>
+            <!-- visible en pantallas pequeñas -->
+            <div class="xl:hidden flex">
+                <a  href="index.html"><h1 class="text-4xl font-black" >Yellow <br>Square <br> Studio</h1></a>
+            </div>
+            <!-- nav para escritorio (pantalla grande) -->
+            <!-- CONTENEDOR FIJO PARA QUE NADA SE MUEVA -->
+            <div class="relative w-64 flex items-center justify-end">
+                
+                <!-- BOTÓN ABRIR NAV DESKTOP -->
+                <button id="desktop-menu-toggle"
+                    class="absolute right-0 bg-black text-white rounded-full w-20 h-10 flex items-center justify-center cursor-pointer transition-all duration-500">
+                    <svg class="w-6 h-6 text-white" viewBox="0 0 24 24">
+                        <path d="M21 10H7" stroke="currentColor" stroke-width="2"/>
+                        <path d="M21 6H3" stroke="currentColor" stroke-width="2"/>
+                        <path d="M21 14H3" stroke="currentColor" stroke-width="2"/>
+                        <path d="M21 18H7" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+
+                <!-- NAV ABIERTO -->
+                <div id="nav-opened" 
+                    class="absolute right-0 flex items-center justify-center space-x-4 opacity-0 pointer-events-none transform scale-95 transition-all duration-500 nav-collapsed overflow-hidden rounded-full hidden lg:flex">
+                    
+                    <!-- este boton de cerrar debe en pantallas grandes -->
+                    <div class="bg-black text-white rounded-full mt-1 p-2 w-16 h-8 flex items-center justify-center">
+                        <button id="close-btn" class="hover:text-black hover:bg-yellow-200 rounded-full p-2 w-6 h-6 flex items-center justify-center">
+                            x
+                        </button>
+                    </div>
+
+                    <nav class="bg-black text-white rounded-full p-2 px-6 flex items-center justify-center hidden lg:flex">
+                        <ul class="flex space-x-8 text-lg font-bold">
+                            <li><a href="index.html" class="hover:text-black hover:bg-yellow-200 rounded-full p-2">Home</a></li>
+                            <li>|</li>
+                            <li><a href="projects.html" class="hover:text-black hover:bg-yellow-200 rounded-full p-2">Proyectos</a></li>
+                            <li>|</li>
+                            <li><a href="services.html" class="hover:text-black hover:bg-yellow-200 rounded-full p-2">Servicios</a></li>
+                            <li>|</li>
+                            <li><a href="contact.html" class="hover:text-black hover:bg-yellow-200 rounded-full p-2">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- nav en pantallas pequeñas -->
+        <div class="lg:hidden flex flex-col items-center justify-between lg:p-14 px-4 pt-14 ">
+            <!-- visible en pantallas pequeñas -->
+            <div class="flex flex-row items-center justify-between w-full ">
+                <div class="">
+                    <a  href="index.html"><h1 class="text-4xl font-black" >Yellow <br>Square <br> Studio</h1></a>
+                </div>
+
+                <div class="relative w-64 flex items-center justify-end">
+                    
+                    <!-- BOTÓN ABRIR NAV MÓVIL -->
+                    <button id="mobile-menu-toggle"
+                        class="absolute right-0 bg-black text-white rounded-full w-20 h-10 flex items-center justify-center cursor-pointer transition-all duration-500">
+                        <svg class="w-6 h-6 text-white hover:text-black transition-colors" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 10H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 6H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 14H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 18H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <!-- boton de cerrar en pantalla pequeña -->
+                    <div id="close-btn-sm-wrapper" class="absolute right-0 hidden bg-black text-white rounded-full  p-4 w-20 h-10 flex items-center justify-center">
+                        <button id="close-btn-sm-nav" class="hover:text-black hover:bg-yellow-200 rounded-full p-4 w-6 h-6  flex items-center justify-center">
+                                x
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            <!-- hidden -->
+            <div id="mobile-nav" class="hidden w-full h-[90vh] flex flex-col items-start justify-start">
+                <!-- NAV ABIERTO. esto es el nav de movil -->
+                <div class="w-full h-full">
+                    <nav class=" pt-20 text-black p-2 px-8 flex items-start justify-start">
+                        <ul class="flex flex-col space-y-2 text-lg font-bold">
+                            <li>
+                                <a href="index.html" class="relative p-1 text-4xl group">
+                                Home
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="projects.html" class="relative p-1 text-4xl group">
+                                Proyectos
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="services.html" class="relative p-1 text-4xl group">
+                                Servicios
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact.html" class="relative p-1 text-4xl group">
+                                Contacto
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="w-full p-4 pb-32">
+                    <a href="https://www.instagram.com/yellow.square.studio?igsh=cGNkeThrM2F4Y3hj&utm_source=qr" class="text-2xl underline font-black italic text-left">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-[90%] bg-black h-full rounded-4xl mx-auto my-10 pb-48 text-white">
+        <!-- Cada sección aparecerá con una animación suave de fade in al hacer scroll down -->
+         <!-- Web de sobre nosotros -->
+        <section id="start" class="text-center p-16 fade-in w-full h-[80vh] flex flex-col justify-center items-center">
+            <h2 class="text-6xl text-[#f4e67e] font-bold mb-4">sobre nosotros!</h2>
+            <h2 class="text-3xl font-bold mb-4">
+                Somos un estudio creativo que transforma ideas en marcas potentes.
+            </h2>
+        </section>
+
+        <section class="fade-in mb-28">
+            
+        </section>
+    </main>
+
+    <footer class="w-full ">
+        <div id="" class="fade-in lg:my-28 my-16 flex items-center justify-center space-x-4 transition-all duration-500 rounded-full">
+            <nav class="bg-black text-white rounded-full p-2 px-6 flex items-center justify-center hidden xl:flex">
+                <ul class="flex space-x-8 text-lg font-bold">
+                    <li><a href="index.html" class="hover:text-black hover:bg-YSS2 rounded-full p-2">Home</a></li>
+                    <li>|</li>
+                    <li><a href="projects.html" class="hover:text-black hover:bg-YSS2 rounded-full p-2">Proyectos</a></li>
+                    <li>|</li>
+                    <li><a href="services.html" class="hover:text-black hover:bg-YSS2 rounded-full p-2">Servicios</a></li>
+                    <li>|</li>
+                    <li><a href="contact.html" class="hover:text-black hover:bg-YSS2 rounded-full p-2">Contacto</a></li>
+                </ul>
+            </nav>
+            <nav class="bg-black text-YSS2 rounded-3xl p-2 px-6 flex items-center justify-center flex xl:hidden">
+                <ul class="flex flex-col space-y-2 text-lg font-bold">
+                            <li>
+                                <a href="index.html" class="relative p-1 text-2xl group">
+                                Home
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-YSS2 transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="projects.html" class="relative p-1 text-2xl group">
+                                Proyectos
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-YSS2 transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="services.html" class="relative p-1 text-2xl group">
+                                Servicios
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-YSS2 transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact.html" class="relative p-1 text-2xl group">
+                                Contacto
+                                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-YSS2 transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                        </ul>
+            </nav>
+        </div>
+        <div class="p-10 flex flex-col justify-between items-center pt-20 bg-black text-YSS2  rounded-t-4xl">
+            <div class="lg:w-[40%] w-full flex lg:flex-row flex-col justify-center items-center space-x-4">
+                <img src="./public/img/Yellow Square Studio Logo with shadow.png" width="150px" alt="">
+                <p class="text-base mt-4 font-black ">
+                Yellow Square Studio <br> Estudio creativo que convierte ideas en marcas poderosas. Diseño, desarrollo y comunicación visual sin rodeos.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="w-full text-center text-sm p-4 bg-black">
+            <a href="" class="text-YSS2 hover:text-YSS1">© 2025 Yellow Square Studio. Todos los derechos reservados.</a>
+        </div>
+    </footer>
+    
+    <script src="./js/main.js"></script>
+    <script src="./js/proyects.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@layer utilities {
+  .rounded-4xl {
+    border-radius: 3.5rem;
+  }
+  .rounded-t-4xl {
+    border-top-left-radius: 3.5rem;
+    border-top-right-radius: 3.5rem;
+  }
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .6s ease-out, transform .6s ease-out;
+    will-change: transform, opacity; /* SAFARI FIX */
+  }
+
+  .fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .nav-collapsed {
+    width: 80px; /* o lo que sea tu nav cerrado */
+  }
+  .nav-expanded {
+    width: 730px; /* ancho del nav abierto, ajusta */
+  }
+}
+
+
+
+:root {
+  --YSS1: #FFFE6E;
+  --YSS2: #EDECC2;
+  --morado:#9878bd;
+  --naranjita:#f7a9b3;
+}
+.no-scroll {
+  position: fixed;
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+}
+html, body {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: "Inter", sans-serif;
+    background-color: #FFFE6E;
+}
+
+/* asegúrate de que header esté por encima del overlay y mobile-nav */
+header {
+  position: relative; /* ya lo tienes normalmente */
+  z-index: 10000;     /* importante: header por encima de todo */
+}
+
+/* overlay básico (por si necesitas ajustes estéticos) */
+
+
+/* si quieres que close wrapper esté siempre en header visible */
+#close-btn-sm-wrapper {
+  z-index: 10001; /* sobre el overlay */
+}
+
+body {
+    background: #EDECC2;
+    background: -webkit-linear-gradient(0deg,rgba(237, 236, 194, 1) 0%, rgba(255, 254, 110, 1) 100%);
+    background: -moz-linear-gradient(0deg,rgba(237, 236, 194, 1) 0%, rgba(255, 254, 110, 1) 100%);
+    background: linear-gradient(0deg,rgba(237, 236, 194, 1) 0%, rgba(255, 254, 110, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(
+    startColorstr="#EDECC2",
+    endColorstr="#FFFE6E",
+    GradientType=0
+    );
+}
+.nav-grow {
+  width: 500px; /* o lo que quieras */
+}
+#start, nav{
+   font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "ROND" 0;
+}
+
+/* #mobile-nav {
+    animation: fadeMobile .4s ease-out;
+}
+
+@keyframes fadeMobile {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+} */
+
+/* .rounded-4xl {
+  border-radius: 3.5rem;
+} */
+
+#proyects {
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "ROND" 0;
+}
+
+#popup-container {
+  font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "ROND" 0;
+}
+.menu-icon {
+  color: white;
+  transition: color 0.2s;
+}
+
+.menu-icon:hover {
+  color: black;
+}
+
+.text-image {
+  background-image: url('../img/Yellow-square-colors-h.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+#form-container{
+  background-image: url('../img/Yellowsqbg2-h.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: transparent;
+  font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "ROND" 0;
+}
+
+#contact{
+   background-image: url('../img/Yellowsqbg2-h.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* color: transparent; */
+  font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "ROND" 0;
+}
+
+footer div p{
+  font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "ROND" 0;
+}
+
+#link-redes{
+  background-image: url('../img/Yellowsqbg2-h.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* color: transparent; */
+  font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: 800; */
+    font-style: normal;
+    font-variation-settings: "ROND" 0;
+}
+
+.group-border{
+  background-image: url('../img/Yellowsqbg2-h.jpg');
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* color: transparent; */
+  /* font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "ROND" 0; */
+}
+
+section div article{
+  background-image: url('../img/Yellowsqbg2-h.jpg');
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
