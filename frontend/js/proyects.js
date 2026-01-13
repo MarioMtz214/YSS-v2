@@ -22,7 +22,7 @@ function showPopup(project) {
 
   // Contenedor central con shadow Tailwind
   const container = document.createElement("div");
-  container.className = "lg:max-w-[70%] w-[90%] bg-black pb-10 lg:rounded-3xl rounded-3xl text-end shadow-2xl shadow-zinc-600 relative";
+  container.className = "lg:max-w-[70%] bg-black pb-10 lg:rounded-3xl rounded-3xl text-end shadow-2xl shadow-zinc-600 relative";
 
   // Botón de cerrar ovalado
   const closeWrapper = document.createElement("div");

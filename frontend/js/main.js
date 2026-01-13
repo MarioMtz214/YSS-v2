@@ -152,6 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+
   // ====================================================================
   // FORMULARIO (TAL CUAL LO TENÍAS)
   // ====================================================================
@@ -218,4 +219,96 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const titleEl = document.getElementById("rotatingTitle");
+  const textEl  = document.getElementById("rotatingText");
+
+  if (!titleEl || !textEl) return;
+
+  const items = [
+    {
+      title: "Diseño web",
+      text: "Destaca ante la competencia, cautiva a tus potenciales clientes y consigue los resultados que deseas con una web profesional, seductora, persuasiva, rápida… y que vende."
+    },
+    {
+      title: "Posicionamiento SEO",
+      text: "Aumenta la visibilidad de tu negocio en los motores de búsqueda y atrae tráfico orgánico de calidad con estrategias SEO efectivas y personalizadas."
+    },
+    {
+      title: "Gestión de redes sociales",
+      text: "Amplía y cautiva a tu audiencia con contenidos seductores y creativos, fortalece tu marca y supera a la competencia… con una inversión inteligente y resultados medibles."
+    },
+    {
+      title: "Soporte y mantenimiento web",
+      text: "Mantén tu sitio web siempre actualizado, seguro y funcionando al máximo rendimiento con nuestro servicio de soporte y mantenimiento profesional."
+    },
+    {
+      title: "Branding e identidad visual",
+      text: "Crea una identidad de marca sólida y coherente que refleje la esencia de tu negocio, conecte con tu audiencia y te diferencie de la competencia."
+    }
+  ];
+
+  let idx = 0;
+  let timer = null;
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function setContent(i) {
+    titleEl.textContent = items[i].title;
+    textEl.textContent  = items[i].text;
+  }
+
+  function animateSwap(nextIndex) {
+    if (reducedMotion) {
+      setContent(nextIndex);
+      return;
+    }
+
+    // Fade out
+    titleEl.classList.remove("rotate-fade-in");
+    textEl.classList.remove("rotate-fade-in");
+    titleEl.classList.add("rotate-fade-out");
+    textEl.classList.add("rotate-fade-out");
+
+    // Cambiar contenido a mitad de animación
+    window.setTimeout(() => {
+      setContent(nextIndex);
+
+      // Fade in
+      titleEl.classList.remove("rotate-fade-out");
+      textEl.classList.remove("rotate-fade-out");
+      titleEl.classList.add("rotate-fade-in");
+      textEl.classList.add("rotate-fade-in");
+    }, 220);
+  }
+
+  function tick() {
+    idx = (idx + 1) % items.length;
+    animateSwap(idx);
+  }
+
+  function start() {
+    if (timer) return;
+    timer = window.setInterval(tick, 3000);
+  }
+
+  function stop() {
+    if (!timer) return;
+    window.clearInterval(timer);
+    timer = null;
+  }
+
+  // Inicial
+  titleEl.classList.add("rotate-fade-in");
+  textEl.classList.add("rotate-fade-in");
+  setContent(idx);
+  start();
+
+  // Pausar si la pestaña no está visible
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stop();
+    else start();
+  });
 });

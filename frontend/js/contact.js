@@ -1,0 +1,81 @@
+// ----------------frontend/js/contact.js----------------
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const feedback = document.getElementById("formFeedback");
+
+  const submitBtn = document.getElementById("contact-submit");
+  const btnText = submitBtn?.querySelector(".btn-text");
+  const spinner = submitBtn?.querySelector("svg");
+
+  if (!form || !feedback || !submitBtn || !btnText || !spinner) return;
+
+  const setLoading = (isLoading) => {
+    submitBtn.disabled = isLoading;
+    spinner.classList.toggle("hidden", !isLoading);
+    btnText.textContent = isLoading ? "Enviando..." : "Enviar";
+  };
+
+  const setFeedback = (msg, ok) => {
+    feedback.textContent = msg;
+    feedback.classList.remove("text-red-500", "text-green-500");
+    feedback.classList.add(ok ? "text-green-500" : "text-red-500");
+  };
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // leer valores por name=""
+    const formData = new FormData(form);
+
+    const payload = {
+      firstName: (formData.get("firstName") || "").toString().trim(),
+      businessName: (formData.get("businessName") || "").toString().trim(),
+      phone: (formData.get("phone") || "").toString().trim(),
+      email: (formData.get("email") || "").toString().trim(),
+      message: (formData.get("message") || "").toString().trim(),
+    };
+
+    // validación básica
+    if (!payload.firstName || !payload.businessName || !payload.phone || !payload.email || !payload.message) {
+      setFeedback("Rellena todos los campos.", false);
+      return;
+    }
+    if (!payload.email.includes("@")) {
+      setFeedback("Pon un correo válido.", false);
+      return;
+    }
+
+    setFeedback("", true);
+    setLoading(true);
+
+    try {
+      const res = await fetch("https://yellow-square-backend.onrender.com/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      // intentar JSON y fallback a text
+      let resultMsg = "";
+      try {
+        const data = await res.json();
+        resultMsg = data?.message || "";
+      } catch {
+        resultMsg = await res.text();
+      }
+
+      if (res.ok) {
+        setFeedback(resultMsg || "Mensaje enviado correctamente.", true);
+        form.reset();
+      } else {
+        setFeedback(resultMsg || "Error al enviar el mensaje.", false);
+      }
+    } catch (err) {
+      console.error(err);
+      setFeedback("Error de conexión. Intenta de nuevo.", false);
+    } finally {
+      setLoading(false);
+    }
+  });
+});

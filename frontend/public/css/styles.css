@@ -82,7 +82,7 @@ body {
 .nav-grow {
   width: 500px; /* o lo que quieras */
 }
-#start, nav{
+nav{
    font-family: "Doto", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
@@ -90,6 +90,17 @@ body {
     font-variation-settings: "ROND" 0;
 }
 
+.rotate-fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+
+.rotate-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .45s ease, transform .45s ease;
+}
 /* #mobile-nav {
     animation: fadeMobile .4s ease-out;
 }
