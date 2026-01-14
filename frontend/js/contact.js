@@ -48,11 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setFeedback("", true);
     setLoading(true);
-
+    const isLocal =
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1";
     const API_BASE =
-    window.location.hostname.includes("onrender.com")
-        ? "https://yss-v2.onrender.com"
-        : "http://localhost:10000";
+        window.location.hostname.includes("onrender.com")
+            ? "https://yss-v2.onrender.com"
+            : "http://localhost:10000";
 
     try {
       const res = await fetch(`${API_BASE}/api/contact`, {
