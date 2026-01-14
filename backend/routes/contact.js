@@ -1,6 +1,8 @@
 // ----------------backend/routes/contact.js----------------
 
 const express = require("express");
+const nodemailer = require("nodemailer");
+require("dotenv").config();
 
 const router = express.Router();
 
@@ -34,38 +36,7 @@ const EMAIL_FOOTER = `
   </table>
 `;
 
-async function sendWithResend({ to, subject, html }) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.RESEND_FROM; // ejemplo: "Yellow Square Studio <onboarding@resend.dev>" o tu dominio verificado
-
-  if (!apiKey || !from) {
-    throw new Error("Missing RESEND_API_KEY or RESEND_FROM env vars");
-  }
-
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from,
-      to: Array.isArray(to) ? to : [to],
-      subject,
-      html,
-    }),
-  });
-
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Resend API error: ${res.status} ${text}`);
-  }
-
-  return res.json();
-}
-
 router.post("/", async (req, res) => {
-  // DEBUG: ver qué llega
   console.log("BODY:", req.body);
 
   const { firstName, businessName, email, phone, message } = req.body || {};
@@ -74,12 +45,31 @@ router.post("/", async (req, res) => {
     return res.status(400).json({ message: "All fields are required." });
   }
 
-  const internalTo = process.env.CONTACT_TO || "go.yellowsquare@gmail.com";
-
   try {
-    // 1) Email interno (a ti)
-    await sendWithResend({
-      to: internalTo,
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+
+      // 👇 RECOMENDADO para Gmail en muchos hosts: 587 + secure false
+      secure: Number(process.env.SMTP_PORT) === 465,
+
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+
+      tls: { rejectUnauthorized: false },
+      connectionTimeout: 20000,
+      greetingTimeout: 20000,
+      socketTimeout: 20000,
+    });
+
+    await transporter.verify();
+
+    // Email interno
+    await transporter.sendMail({
+      from: `"Yellow Square Studio" <${process.env.SMTP_USER}>`,
+      to: "go.yellowsquare@gmail.com",
       subject: "Nuevo mensaje desde el formulario de contacto",
       html: `
         <div style="font-family:Arial, sans-serif;color:#000;">
@@ -94,8 +84,9 @@ router.post("/", async (req, res) => {
       `,
     });
 
-    // 2) Confirmación al cliente
-    await sendWithResend({
+    // Confirmación al cliente
+    await transporter.sendMail({
+      from: `"Yellow Square Studio" <${process.env.SMTP_USER}>`,
       to: email,
       subject: "Gracias por contactar con Yellow Square Studio",
       html: `
