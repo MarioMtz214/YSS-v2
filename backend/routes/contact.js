@@ -1,96 +1,109 @@
 // ----------------backend/routes/contact.js----------------
 
 const express = require("express");
-const nodemailer = require("nodemailer");
-require("dotenv").config();
 
 const router = express.Router();
 
 const EMAIL_FOOTER = `
-  <div style="margin-top:30px; background:#EDECC2; border-radius:28px; padding:18px; font-family: 'Doto', Arial, sans-serif; font-weight:700;">
-    <div style="display:flex; align-items:center; gap:14px;">
-      <img src="https://TU-DOMINIO.COM/public/img/Yellow%20Square%20Studio%20Logo%20with%20shadow.png"
-           alt="Yellow Square Studio" width="120" style="display:block;">
-      <div style="color:#000;">
-        <div style="font-size:18px; margin-bottom:6px;">Yellow Square Studio</div>
-        <div style="font-size:14px; line-height:1.4;">
-          Estudio creativo que convierte ideas en marcas.<br/>
-          Diseño, desarrollo y comunicación visual.
-        </div>
-        <div style="margin-top:10px; font-size:14px;">
-          ✉️ <a href="mailto:go.yellowsquare@gmail.com" style="color:#000; text-decoration:none;">go.yellowsquare@gmail.com</a><br/>
-          📞 <a href="tel:+34XXXXXXXXX" style="color:#000; text-decoration:none;">+34 XXX XXX XXX</a><br/>
-          📷 <a href="https://instagram.com/yellow.square.studio" style="color:#000; text-decoration:none;">@yellow.square.studio</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:24px;">
+    <tr>
+      <td style="background:#EDECC2;border-radius:22px;padding:16px;font-family:Arial, sans-serif;font-weight:700;color:#000;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td style="vertical-align:middle;width:140px;padding-right:12px;">
+              <img src="https://yellowsquarestudio.es/public/img/Yellow%20Square%20Studio%20Logo%20with%20shadow.png"
+                   alt="Yellow Square Studio" width="120" style="display:block;border:0;outline:none;text-decoration:none;">
+            </td>
+            <td style="vertical-align:middle;">
+              <div style="font-size:16px;margin:0 0 6px 0;">Yellow Square Studio</div>
+              <div style="font-size:13px;line-height:1.4;">
+                Estudio creativo que convierte ideas en marcas.<br>
+                Diseño, desarrollo y comunicación visual.
+              </div>
+
+              <div style="margin-top:10px;font-size:13px;line-height:1.6;">
+                ✉️ <a href="mailto:go.yellowsquare@gmail.com" style="color:#000;text-decoration:none;">go.yellowsquare@gmail.com</a><br>
+                📷 <a href="https://instagram.com/yellow.square.studio" style="color:#000;text-decoration:none;">@yellow.square.studio</a>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div style="margin-top:10px;font-size:12px;opacity:.75;">© 2026 Yellow Square Studio. Todos los derechos reservados.</div>
+      </td>
+    </tr>
+  </table>
 `;
 
+async function sendWithResend({ to, subject, html }) {
+  const apiKey = process.env.RESEND_API_KEY;
+  const from = process.env.RESEND_FROM; // ejemplo: "Yellow Square Studio <onboarding@resend.dev>" o tu dominio verificado
+
+  if (!apiKey || !from) {
+    throw new Error("Missing RESEND_API_KEY or RESEND_FROM env vars");
+  }
+
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from,
+      to: Array.isArray(to) ? to : [to],
+      subject,
+      html,
+    }),
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Resend API error: ${res.status} ${text}`);
+  }
+
+  return res.json();
+}
+
 router.post("/", async (req, res) => {
-  const { firstName, businessName, email, phone, message } = req.body;
-// ✅ DEBUG: ver qué está llegando desde el frontend
+  // DEBUG: ver qué llega
   console.log("BODY:", req.body);
+
+  const { firstName, businessName, email, phone, message } = req.body || {};
+
   if (!firstName || !businessName || !email || !phone || !message) {
     return res.status(400).json({ message: "All fields are required." });
   }
 
+  const internalTo = process.env.CONTACT_TO || "go.yellowsquare@gmail.com";
+
   try {
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: Number(process.env.SMTP_PORT) === 465, // 465 = SSL directo
-
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-
-      // ✅ logs en Render para ver qué pasa
-      logger: true,
-      debug: true,
-
-      // ✅ para que no se quede colgado
-      connectionTimeout: 15000,
-      greetingTimeout: 15000,
-      socketTimeout: 20000,
-
-      tls: {
-        rejectUnauthorized: false,
-      },
-    });
-
-    await transporter.verify();
-
-    // email interno (a ti)
-    await transporter.sendMail({
-      from: `"Yellow Square Studio" <${process.env.SMTP_USER}>`,
-      to: "go.yellowsquare@gmail.com",
+    // 1) Email interno (a ti)
+    await sendWithResend({
+      to: internalTo,
       subject: "Nuevo mensaje desde el formulario de contacto",
       html: `
-        <div style="font-family: Arial, sans-serif; color:#000;">
-          <h2>Nuevo contacto desde la web</h2>
+        <div style="font-family:Arial, sans-serif;color:#000;">
+          <h2 style="margin:0 0 12px 0;">Nuevo contacto desde la web</h2>
           <p><strong>Nombre:</strong> ${firstName}</p>
           <p><strong>Empresa:</strong> ${businessName}</p>
           <p><strong>Teléfono:</strong> ${phone}</p>
           <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Mensaje:</strong><br/>${message}</p>
+          <p><strong>Mensaje:</strong><br>${message}</p>
           ${EMAIL_FOOTER}
         </div>
       `,
     });
 
-    // confirmación al cliente
-    await transporter.sendMail({
-      from: `"Yellow Square Studio" <${process.env.SMTP_USER}>`,
+    // 2) Confirmación al cliente
+    await sendWithResend({
       to: email,
       subject: "Gracias por contactar con Yellow Square Studio",
       html: `
-        <div style="font-family: Arial, sans-serif; color:#000;">
+        <div style="font-family:Arial, sans-serif;color:#000;">
           <p>Hola ${firstName},</p>
           <p>Hemos recibido tu mensaje y te contactaremos lo antes posible.</p>
-          <p><strong>Tu mensaje:</strong><br/>${message}</p>
-          <p>— Yellow Square Studio</p>
+          <p><strong>Tu mensaje:</strong><br>${message}</p>
+          <p style="margin-top:14px;">— Yellow Square Studio</p>
           ${EMAIL_FOOTER}
         </div>
       `,
@@ -99,11 +112,7 @@ router.post("/", async (req, res) => {
     return res.status(200).json({ message: "Message sent successfully." });
   } catch (error) {
     console.error("Contact route error:", error);
-    return res.status(500).json({
-      message: "Failed to send message.",
-      code: error.code || "UNKNOWN",
-      command: error.command || "UNKNOWN",
-    });
+    return res.status(500).json({ message: "Failed to send message." });
   }
 });
 
