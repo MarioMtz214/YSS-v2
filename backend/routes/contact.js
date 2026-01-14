@@ -48,20 +48,10 @@ router.post("/", async (req, res) => {
   try {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-
-      // 👇 RECOMENDADO para Gmail en muchos hosts: 587 + secure false
-      secure: Number(process.env.SMTP_PORT) === 465,
-
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-
+      port: Number(process.env.SMTP_PORT), // 587
+      secure: false, // <-- importante
+      auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
       tls: { rejectUnauthorized: false },
-      connectionTimeout: 20000,
-      greetingTimeout: 20000,
-      socketTimeout: 20000,
     });
 
     await transporter.verify();
