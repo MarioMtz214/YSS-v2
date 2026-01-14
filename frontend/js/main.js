@@ -156,69 +156,69 @@ document.addEventListener("DOMContentLoaded", () => {
   // ====================================================================
   // FORMULARIO (TAL CUAL LO TENÍAS)
   // ====================================================================
-  const form = document.getElementById("contactForm");
-  const feedback = document.getElementById("formFeedback");
+  // const form = document.getElementById("contactForm");
+  // const feedback = document.getElementById("formFeedback");
 
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      feedback.textContent = "";
-      feedback.classList.remove("text-red-500", "text-green-500");
+  // if (form) {
+  //   form.addEventListener("submit", async (e) => {
+  //     e.preventDefault();
+  //     feedback.textContent = "";
+  //     feedback.classList.remove("text-red-500", "text-green-500");
 
-      const formData = new FormData(form);
-      const payload = {
-        firstName: formData.get("firstName") || "",
-        lastName: formData.get("businessName") || "",
-        email: formData.get("email") || "",
-        phone: formData.get("phone") || "",
-        message: formData.get("message") || "",
-      };
+  //     const formData = new FormData(form);
+  //     const payload = {
+  //       firstName: formData.get("firstName") || "",
+  //       businessName: formData.get("businessName") || "",
+  //       email: formData.get("email") || "",
+  //       phone: formData.get("phone") || "",
+  //       message: formData.get("message") || "",
+  //     };
 
-      if (!payload.email.includes("@")) {
-        feedback.textContent = "Pon un correo válido.";
-        feedback.classList.add("text-red-500");
-        return;
-      }
-      if (!payload.firstName || !payload.lastName || !payload.phone || !payload.message) {
-        feedback.textContent = "Rellena todos los campos.";
-        feedback.classList.add("text-red-500");
-        return;
-      }
+  //     if (!payload.email.includes("@")) {
+  //       feedback.textContent = "Pon un correo válido.";
+  //       feedback.classList.add("text-red-500");
+  //       return;
+  //     }
+  //     if (!payload.firstName || !payload.businessName || !payload.phone || !payload.message) {
+  //       feedback.textContent = "Rellena todos los campos.";
+  //       feedback.classList.add("text-red-500");
+  //       return;
+  //     }
 
-      try {
-        const res = await fetch(
-          "https://yellow-square-backend.onrender.com/api/contact",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-          }
-        );
+  //     try {
+  //       const res = await fetch(
+  //         "https://yellow-square-backend.onrender.com/api/contact",
+  //         {
+  //           method: "POST",
+  //           headers: { "Content-Type": "application/json" },
+  //           body: JSON.stringify(payload),
+  //         }
+  //       );
 
-        let resultText = "";
-        try {
-          const parsed = await res.json();
-          resultText = parsed.message || "";
-        } catch {
-          resultText = await res.text();
-        }
+  //       let resultText = "";
+  //       try {
+  //         const parsed = await res.json();
+  //         resultText = parsed.message || "";
+  //       } catch {
+  //         resultText = await res.text();
+  //       }
 
-        if (res.ok) {
-          feedback.textContent = resultText || "Enviado correctamente.";
-          feedback.classList.add("text-[#FFFBB0]", "text-bold");
-          form.reset();
-          setTimeout(closeModal, 1500);
-        } else {
-          feedback.textContent = resultText || "Error al enviar.";
-          feedback.classList.add("text-red-500", "text-bold");
-        }
-      } catch (err) {
-        console.error(err);
-        feedback.textContent = "Error de conexión.";
-        feedback.classList.add("text-red-500", "text-bold");
-      }
-    });
-  }
+  //       if (res.ok) {
+  //         feedback.textContent = resultText || "Enviado correctamente.";
+  //         feedback.classList.add("text-[#FFFBB0]", "text-bold");
+  //         form.reset();
+  //         setTimeout(closeModal, 1500);
+  //       } else {
+  //         feedback.textContent = resultText || "Error al enviar.";
+  //         feedback.classList.add("text-red-500", "text-bold");
+  //       }
+  //     } catch (err) {
+  //       console.error(err);
+  //       feedback.textContent = "Error de conexión.";
+  //       feedback.classList.add("text-red-500", "text-bold");
+  //     }
+  //   });
+  // }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
