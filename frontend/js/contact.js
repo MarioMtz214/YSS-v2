@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    console.log("HOST:", window.location.hostname);
+    console.log("API_BASE:", API_BASE);
+    
     // leer valores por name=""
     const formData = new FormData(form);
 
@@ -51,10 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const isLocal =
         window.location.hostname === "localhost" ||
         window.location.hostname === "127.0.0.1";
-    const API_BASE =
-        window.location.hostname.includes("onrender.com")
-            ? "https://yss-v2.onrender.com"
-            : "http://localhost:10000";
+
+    const API_BASE = isLocal
+        ? "http://localhost:10000"
+        : "https://yss-v2.onrender.com";
 
     try {
       const res = await fetch(`${API_BASE}/api/contact`, {
