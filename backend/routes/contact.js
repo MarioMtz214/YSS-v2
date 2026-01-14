@@ -1,6 +1,5 @@
 // ----------------backend/routes/contact.js----------------
 
-// backend/routes/contact.js
 const express = require("express");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
@@ -30,7 +29,8 @@ const EMAIL_FOOTER = `
 
 router.post("/", async (req, res) => {
   const { firstName, businessName, email, phone, message } = req.body;
-
+// ✅ DEBUG: ver qué está llegando desde el frontend
+  console.log("BODY:", req.body);
   if (!firstName || !businessName || !email || !phone || !message) {
     return res.status(400).json({ message: "All fields are required." });
   }
@@ -90,7 +90,7 @@ router.post("/", async (req, res) => {
 module.exports = router;
 
 
-
+// este fracmento funcina pero no tiene el footer bonito
 // const express = require("express");
 // const nodemailer = require("nodemailer");
 // require("dotenv").config();
