@@ -10,18 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!form || !feedback || !submitBtn || !btnText || !spinner) return;
 
-  // ✅ 1) API_BASE definido ANTES de usarlo (y SOLO depende de si es local)
-  const isLocal =
-    window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1";
-
-  const API_BASE = isLocal
-    ? "http://localhost:10000"
-    : "https://yss-v2.onrender.com";
-
-  console.log("HOST:", window.location.hostname);
-  console.log("API_BASE:", API_BASE);
-
   const setLoading = (isLoading) => {
     submitBtn.disabled = isLoading;
     spinner.classList.toggle("hidden", !isLoading);
@@ -37,7 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    // leer valores por name=""
     const formData = new FormData(form);
+
     const payload = {
       firstName: (formData.get("firstName") || "").toString().trim(),
       businessName: (formData.get("businessName") || "").toString().trim(),
@@ -46,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       message: (formData.get("message") || "").toString().trim(),
     };
 
+    // validación básica
     if (!payload.firstName || !payload.businessName || !payload.phone || !payload.email || !payload.message) {
       setFeedback("Rellena todos los campos.", false);
       return;
@@ -59,12 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API_BASE}/api/contact`, {
+      const res = await fetch("https://yss-v2.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
+      // intentar JSON y fallback a text
       let resultMsg = "";
       try {
         const data = await res.json();
