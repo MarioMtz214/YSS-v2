@@ -159,6 +159,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // const form = document.getElementById("contactForm");
   // const feedback = document.getElementById("formFeedback");
 
+  // const submitBtn = document.getElementById("contact-submit");
+  // const btnText = submitBtn?.querySelector(".btn-text");
+  // const spinner = submitBtn?.querySelector("svg");
+
   // if (form) {
   //   form.addEventListener("submit", async (e) => {
   //     e.preventDefault();
@@ -187,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //     try {
   //       const res = await fetch(
-  //         "https://yellow-square-backend.onrender.com/api/contact",
+  //         "https://yss-v2.onrender.com/api/contact",
   //         {
   //           method: "POST",
   //           headers: { "Content-Type": "application/json" },

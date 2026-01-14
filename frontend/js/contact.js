@@ -11,16 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!form || !feedback || !submitBtn || !btnText || !spinner) return;
 
   // ✅ 1) API_BASE definido ANTES de usarlo (y SOLO depende de si es local)
-  const isLocal =
-    window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1";
+//   const isLocal =
+//     window.location.hostname === "localhost" ||
+//     window.location.hostname === "127.0.0.1";
 
-  const API_BASE = isLocal
-    ? "http://localhost:10000"
-    : "https://yss-v2.onrender.com";
+//   const API_BASE = isLocal
+//     ? "http://localhost:10000"
+//     : "https://yss-v2.onrender.com";
 
-  console.log("HOST:", window.location.hostname);
-  console.log("API_BASE:", API_BASE);
+//   console.log("HOST:", window.location.hostname);
+//   console.log("API_BASE:", API_BASE);
 
   const setLoading = (isLoading) => {
     submitBtn.disabled = isLoading;
@@ -59,11 +59,14 @@ document.addEventListener("DOMContentLoaded", () => {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API_BASE}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch(
+          "https://yss-v2.onrender.com/api/contact",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          }
+        );
 
       let resultMsg = "";
       try {
