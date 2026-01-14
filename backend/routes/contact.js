@@ -39,9 +39,25 @@ router.post("/", async (req, res) => {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
-      secure: Number(process.env.SMTP_PORT) === 465,
-      auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
-      tls: { rejectUnauthorized: false },
+      secure: Number(process.env.SMTP_PORT) === 465, // 465 = SSL directo
+
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+
+      // ✅ logs en Render para ver qué pasa
+      logger: true,
+      debug: true,
+
+      // ✅ para que no se quede colgado
+      connectionTimeout: 15000,
+      greetingTimeout: 15000,
+      socketTimeout: 20000,
+
+      tls: {
+        rejectUnauthorized: false,
+      },
     });
 
     await transporter.verify();
@@ -83,7 +99,11 @@ router.post("/", async (req, res) => {
     return res.status(200).json({ message: "Message sent successfully." });
   } catch (error) {
     console.error("Contact route error:", error);
-    return res.status(500).json({ message: "Failed to send message." });
+    return res.status(500).json({
+      message: "Failed to send message.",
+      code: error.code || "UNKNOWN",
+      command: error.command || "UNKNOWN",
+    });
   }
 });
 
