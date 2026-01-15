@@ -1,45 +1,12 @@
 // ----------------backend/routes/contact.js----------------
 
-// backend/routes/contact.js
 const express = require("express");
+const { Resend } = require("resend");
+
 const router = express.Router();
-
-async function sendWithResend({ to, subject, html, replyTo }) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.RESEND_FROM;
-
-  if (!apiKey || !from) {
-    throw new Error("Missing RESEND_API_KEY or RESEND_FROM env vars");
-  }
-
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from,
-      to: Array.isArray(to) ? to : [to],
-      subject,
-      html,
-      reply_to: replyTo || undefined,
-    }),
-  });
-
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Resend API error: ${res.status} ${text}`);
-  }
-
-  return res.json();
-}
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 router.post("/", async (req, res) => {
-  // Logs útiles
-  console.log("CONTACT BODY KEYS:", Object.keys(req.body || {}));
-  console.log("CONTACT BODY RAW:", req.body);
-
   const {
     firstName,
     businessName,
@@ -52,7 +19,7 @@ router.post("/", async (req, res) => {
     rgpd,
   } = req.body || {};
 
-  // Required básicos
+  // Validaciones
   if (!firstName || !businessName || !email || !phone || !message) {
     return res.status(400).json({ message: "All fields are required." });
   }
@@ -63,65 +30,44 @@ router.post("/", async (req, res) => {
     return res.status(400).json({ message: "RGPD consent is required." });
   }
 
-  const internalTo = process.env.CONTACT_TO || "contact@yellowsquarestudio.es";
-
-  const safeMessage = String(message || "").replace(/\n/g, "<br/>");
-
   try {
-    // 1) Email interno (a ti)
-    await sendWithResend({
-      to: internalTo,
-      subject: "Nuevo lead — Yellow Square Studio",
-      replyTo: email, // para responder directo al cliente
+    // 1️⃣ Mail interno
+    await resend.emails.send({
+      from: process.env.RESEND_FROM,
+      to: process.env.CONTACT_TO,
+      reply_to: email,
+      subject: "Nuevo contacto desde Yellow Square Studio",
       html: `
-        <div style="font-family:Arial,sans-serif;color:#111">
-          <h2 style="margin:0 0 12px">Nuevo contacto desde la web</h2>
-
-          <p><strong>Nombre:</strong> ${firstName}</p>
-          <p><strong>Empresa / Proyecto:</strong> ${businessName}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Teléfono:</strong> ${phone}</p>
-
-          <hr style="margin:16px 0;border:none;border-top:1px solid #ddd" />
-
-          <p><strong>Servicio:</strong> ${service}</p>
-          <p><strong>Presupuesto:</strong> ${budget || "No lo sé todavía"}</p>
-          <p><strong>Timeline:</strong> ${timeline || "Flexible"}</p>
-          <p><strong>RGPD:</strong> ${rgpd ? "Aceptado" : "No"}</p>
-
-          <hr style="margin:16px 0;border:none;border-top:1px solid #ddd" />
-
-          <p><strong>Mensaje:</strong><br/>${safeMessage}</p>
-        </div>
+        <h2>Nuevo mensaje</h2>
+        <p><strong>Nombre:</strong> ${firstName} (${businessName})</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Teléfono:</strong> ${phone}</p>
+        <p><strong>Servicio:</strong> ${service}</p>
+        <p><strong>Presupuesto:</strong> ${budget || "No indicado"}</p>
+        <p><strong>Timeline:</strong> ${timeline || "Flexible"}</p>
+        <hr/>
+        <p>${message.replace(/\n/g, "<br/>")}</p>
       `,
     });
 
-    // 2) Auto-respuesta al cliente (opcional, pero útil)
-    await sendWithResend({
+    // 2️⃣ Auto-respuesta cliente
+    await resend.emails.send({
+      from: process.env.RESEND_FROM,
       to: email,
       subject: "Hemos recibido tu mensaje ✅",
       html: `
-        <div style="font-family:Arial,sans-serif;color:#111">
-          <p>Hola ${firstName},</p>
-          <p>Gracias por contactar con Yellow Square Studio. Hemos recibido tu mensaje y te responderemos lo antes posible.</p>
-
-          <p style="margin-top:14px"><strong>Resumen:</strong></p>
-          <ul>
-            <li><strong>Servicio:</strong> ${service}</li>
-            <li><strong>Presupuesto:</strong> ${budget || "No lo sé todavía"}</li>
-            <li><strong>Timeline:</strong> ${timeline || "Flexible"}</li>
-          </ul>
-
-          <p style="margin-top:14px"><strong>Tu mensaje:</strong><br/>${safeMessage}</p>
-
-          <p style="margin-top:16px">— Yellow Square Studio</p>
-        </div>
+        <p>Hola ${firstName},</p>
+        <p>Gracias por contactar con <strong>Yellow Square Studio</strong>.</p>
+        <p>Te responderemos lo antes posible.</p>
+        <p><strong>Servicio:</strong> ${service}</p>
+        <p><strong>Mensaje:</strong><br/>${message.replace(/\n/g, "<br/>")}</p>
+        <p>— Yellow Square Studio</p>
       `,
     });
 
     return res.status(200).json({ message: "Message sent successfully." });
-  } catch (error) {
-    console.error("Contact route error:", error);
+  } catch (err) {
+    console.error("RESEND ERROR:", err);
     return res.status(500).json({ message: "Failed to send message." });
   }
 });
