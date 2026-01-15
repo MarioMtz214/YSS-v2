@@ -7,135 +7,108 @@ require("dotenv").config();
 const router = express.Router();
 
 router.post("/", async (req, res) => {
-  const { firstName, businessName, email, phone, message } = req.body;
+  const {
+    firstName,
+    businessName,
+    email,
+    phone,
+    message,
+    service,
+    budget,
+    timeline,
+    rgpd,
+  } = req.body || {};
 
+  // required básicos
   if (!firstName || !businessName || !email || !phone || !message) {
     return res.status(400).json({ message: "All fields are required." });
+  }
+
+  // nuevos required reales
+  if (!service) {
+    return res.status(400).json({ message: "Service is required." });
+  }
+  if (!rgpd) {
+    return res.status(400).json({ message: "RGPD consent is required." });
   }
 
   const fullName = `${firstName} ${businessName}`;
 
   try {
-    // Crear transporter con fallback para puerto (secure según puerto)
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
       secure: Number(process.env.SMTP_PORT) === 465,
       auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+      // Hostinger suele ir bien sin tocar tls, pero lo dejamos por si acaso:
       tls: { rejectUnauthorized: false },
 
-      connectionTimeout: 10000,
-      greetingTimeout: 10000,
-      socketTimeout: 20000,
+      connectionTimeout: 15000,
+      greetingTimeout: 15000,
+      socketTimeout: 30000,
     });
 
-    // Verificar transporte (útil para debug)
     await transporter.verify();
 
-    // 1. Enviar a tu correo interno
+    const internalTo = process.env.CONTACT_TO || process.env.SMTP_USER;
+
+    // 1) Interno
     await transporter.sendMail({
-      from: `"Yellow Square" <${process.env.SMTP_USER}>`,
-      to: "go.yellowsquare@gmail.com", // cambia cuando sea definitivo
+      from: `"Yellow Square Studio" <${process.env.SMTP_USER}>`,
+      to: internalTo,
+      replyTo: email,
       subject: "Nuevo mensaje desde el formulario de contacto",
       html: `
-        <p><strong>Nombre:</strong> ${fullName}</p>
-        <p><strong>Teléfono:</strong> ${phone}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Mensaje:</strong> ${message}</p>
+        <div style="font-family: Arial, sans-serif; color:#000;">
+          <h2>Nuevo contacto desde la web</h2>
+
+          <p><strong>Nombre / Empresa:</strong> ${fullName}</p>
+          <p><strong>Teléfono:</strong> ${phone}</p>
+          <p><strong>Email:</strong> ${email}</p>
+
+          <hr style="margin:16px 0;border:none;border-top:1px solid #ddd;" />
+
+          <p><strong>Servicio:</strong> ${service}</p>
+          <p><strong>Presupuesto:</strong> ${budget || "No indicado"}</p>
+          <p><strong>Timeline:</strong> ${timeline || "Flexible"}</p>
+          <p><strong>RGPD:</strong> ${rgpd ? "Aceptado" : "No"}</p>
+
+          <hr style="margin:16px 0;border:none;border-top:1px solid #ddd;" />
+
+          <p><strong>Mensaje:</strong><br/>${String(message).replace(/\n/g, "<br/>")}</p>
+        </div>
       `,
     });
 
-    // 2. Confirmación al cliente
+    // 2) Auto-respuesta al cliente (simple)
     await transporter.sendMail({
-      from: `"Yellow Square" <${process.env.SMTP_USER}>`,
+      from: `"Yellow Square Studio" <${process.env.SMTP_USER}>`,
       to: email,
-      subject: "Gracias por contactar con Yellow Square",
+      subject: "Hemos recibido tu mensaje ✅",
       html: `
-        <p>Hola ${firstName},</p>
-        <p>Hemos recibido tu mensaje y te contactaremos lo antes posible.</p>
-        <p><strong>Tu mensaje:</strong> ${message}</p>
-        <p>Gracias por tu interés,</p>
-        <p><strong>Yellow Square Studio</strong></p>
+        <div style="font-family: Arial, sans-serif; color:#000;">
+          <p>Hola ${firstName},</p>
+          <p>Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos lo antes posible.</p>
+
+          <p style="margin-top:14px;"><strong>Resumen:</strong></p>
+          <ul>
+            <li><strong>Servicio:</strong> ${service}</li>
+            <li><strong>Presupuesto:</strong> ${budget || "No indicado"}</li>
+            <li><strong>Timeline:</strong> ${timeline || "Flexible"}</li>
+          </ul>
+
+          <p style="margin-top:14px;"><strong>Tu mensaje:</strong><br/>${String(message).replace(/\n/g, "<br/>")}</p>
+
+          <p style="margin-top:16px;">— Yellow Square Studio</p>
+        </div>
       `,
     });
 
-    res.status(200).json({ message: "Message sent successfully." });
+    return res.status(200).json({ message: "Message sent successfully." });
   } catch (error) {
     console.error("Contact route error:", error);
-    res.status(500).json({ message: "Failed to send message." });
+    return res.status(500).json({ message: "Failed to send message." });
   }
 });
 
 module.exports = router;
-
-
-// este fracmento funcina pero no tiene el footer bonito
-// const express = require("express");
-// const nodemailer = require("nodemailer");
-// require("dotenv").config();
-
-// const router = express.Router();
-
-// router.post("/", async (req, res) => {
-//   const { firstName, businessName, email, phone, message } = req.body;
-
-//   if (!firstName || !businessName || !email || !phone || !message) {
-//     return res.status(400).json({ message: "All fields are required." });
-//   }
-
-//   const fullName = `${firstName} ${businessName}`;
-
-//   try {
-//     // Crear transporter con fallback para puerto (secure según puerto)
-//     const transporter = nodemailer.createTransport({
-//       host: process.env.SMTP_HOST,
-//       port: Number(process.env.SMTP_PORT),
-//       secure: Number(process.env.SMTP_PORT) === 465, // true para 465, false para 587
-//       auth: {
-//         user: process.env.SMTP_USER,
-//         pass: process.env.SMTP_PASS,
-//       },
-//       // opcional: evitar rechazos estrictos de TLS en dev
-//       tls: {
-//         rejectUnauthorized: false,
-//       },
-//     });
-
-//     // Verificar transporte (útil para debug)
-//     await transporter.verify();
-
-//     // 1. Enviar a tu correo interno
-//     await transporter.sendMail({
-//       from: `"Yellow Square" <${process.env.SMTP_USER}>`,
-//       to: "go.yellowsquare@gmail.com", // cambia cuando sea definitivo
-//       subject: "Nuevo mensaje desde el formulario de contacto",
-//       html: `
-//         <p><strong>Nombre:</strong> ${fullName}</p>
-//         <p><strong>Teléfono:</strong> ${phone}</p>
-//         <p><strong>Email:</strong> ${email}</p>
-//         <p><strong>Mensaje:</strong> ${message}</p>
-//       `,
-//     });
-
-//     // 2. Confirmación al cliente
-//     await transporter.sendMail({
-//       from: `"Yellow Square" <${process.env.SMTP_USER}>`,
-//       to: email,
-//       subject: "Gracias por contactar con Yellow Square",
-//       html: `
-//         <p>Hola ${firstName},</p>
-//         <p>Hemos recibido tu mensaje y te contactaremos lo antes posible.</p>
-//         <p><strong>Tu mensaje:</strong> ${message}</p>
-//         <p>Gracias por tu interés,</p>
-//         <p><strong>Yellow Square Studio</strong></p>
-//       `,
-//     });
-
-//     res.status(200).json({ message: "Message sent successfully." });
-//   } catch (error) {
-//     console.error("Contact route error:", error);
-//     res.status(500).json({ message: "Failed to send message." });
-//   }
-// });
-
-// module.exports = router;

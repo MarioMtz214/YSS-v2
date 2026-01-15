@@ -1,89 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es_ES">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- SEO CORE -->
-  <title>Yellow Square Studio | Branding, Web Design & Creative Content in Barcelona</title>
+  <!-- Primary SEO -->
+  <title>Yellow Square Studio | Diseño Web, Branding y Marketing Digital en Barcelona</title>
+  <meta name="description" content="Estudio creativo en Barcelona especializado en diseño web rápido y optimizado, branding e identidad visual, SEO y contenido (foto y vídeo) para pequeñas empresas, autónomos y marcas personales. Diseño con estrategia para atraer clientes." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="author" content="Yellow Square Studio" />
 
-  <meta name="description" 
-        content="Yellow Square Studio is a creative agency in Barcelona specialising in branding, web design, photography and digital identity for small businesses, startups and personal brands. Modern design, strong visuals and strategy-focused solutions." />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://yellowsquare.studio/" />
 
-  <meta name="keywords" 
-        content="branding Barcelona, creative agency Barcelona, diseño web Barcelona, identidad visual, graphic design studio, photography Barcelona, agencia creativa, brand strategy, personal branding, diseño logos Barcelona" />
+  <!-- (Opcional pero recomendado) Hreflang si haces versión EN -->
+  <!--
+  <link rel="alternate" href="https://yellowsquare.studio/" hreflang="es-ES" />
+  <link rel="alternate" href="https://yellowsquare.studio/en/" hreflang="en" />
+  <link rel="alternate" href="https://yellowsquare.studio/" hreflang="x-default" />
+  -->
 
-  <meta name="author" content="Yellow Square Studio Team">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:title" content="Yellow Square Studio | Diseño Web y Branding en Barcelona" />
+  <meta property="og:description" content="Branding, diseño web, SEO y contenido visual (foto/vídeo) para negocios reales. Estudio creativo en Barcelona." />
+  <meta property="og:url" content="https://yellowsquare.studio/" />
+  <meta property="og:image" content="https://yellowsquare.studio/public/img/og-image-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-  <meta name="robots" content="index, follow">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Yellow Square Studio | Diseño Web y Branding en Barcelona" />
+  <meta name="twitter:description" content="Estudio creativo en Barcelona: web, branding, SEO y contenido visual para atraer clientes." />
+  <meta name="twitter:image" content="https://yellowsquare.studio/public/img/og-image-cover.jpg" />
 
-  <!-- LOCAL SEO -->
-  <meta name="geo.region" content="ES-CT">
-  <meta name="geo.placename" content="Barcelona, Catalunya, España">
-  <meta name="geo.position" content="41.3874;2.1686">
-  <meta name="ICBM" content="41.3874, 2.1686">
-
-  <!-- OG / SOCIAL SHARING -->
-  <meta property="og:title" content="Yellow Square Studio – Creative Agency in Barcelona">
-  <meta property="og:description" content="Branding, web design, visual identity and creative content for brands with personality. Based in Barcelona.">
-  <meta property="og:image" content="https://yellowsquare.studio/public/img/og-image-cover.jpg">
-  <meta property="og:url" content="https://yellowsquare.studio">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_ES">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Yellow Square Studio | Branding & Creative Agency Barcelona">
-  <meta name="twitter:description" content="Branding, identity design, photography and digital content. Creative studio based in Barcelona.">
-  <meta name="twitter:image" content="https://yellowsquare.studio/public/img/og-image-cover.jpg">
-
-  <!-- Favicon & Apple Icons -->
-  <link rel="icon" href="https://yellowsquare.studio/public/img/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="https://yellowsquare.studio/public/img/apple-touch.png">
-
+  <!-- Favicons -->
+  <link rel="icon" href="https://yellowsquare.studio/public/img/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="https://yellowsquare.studio/public/img/apple-touch.png" />
+  
+  <!-- Performance: preload (opcional) -->
   <!-- Styles -->
-  <link rel="stylesheet" href="./public/css/output.css" as="style">
-  <link rel="stylesheet" href="./public/css/styles.css" as="style">
+    <link rel="preload" href="./public/css/output.css" as="style">
+    <link rel="preload" href="./public/css/styles.css" as="style">
+    <link rel="stylesheet" href="./public/css/output.css">
+    <link rel="stylesheet" href="./public/css/styles.css">
 
-<!-- canonical URL -->
-  <link rel="canonical" href="https://yellowsquare.studio/">
+  <!-- Theme color (opcional) -->
+  <meta name="theme-color" content="#000000" />
 
-  <!-- SCHEMA / JSON-LD (Creative Agency) -->
+  <!-- Schema: Organization + LocalBusiness (sin street si no quieres) -->
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "CreativeAgency",
-  "name": "Yellow Square Studio",
-  "url": "https://yellowsquare.studio",
-  "image": "https://yellowsquare.studio/public/img/og-image-cover.jpg",
-  "logo": "https://yellowsquare.studio/public/img/logo.png",
-  "description": "Branding, visual identity, photography, graphic design and web design for small businesses and creators.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "TU-DIRECCIÓN-AQUÍ-SI-QUIERES",
-    "addressLocality": "Barcelona",
-    "addressRegion": "Catalunya",
-    "addressCountry": "ES"
-  },
-  "telephone": "+34 TU_NUMERO",
-  "email": "hola@yellowsquare.studio",
-  "areaServed": ["Barcelona", "España", "Europa"],
-  "sameAs": [
-    "https://instagram.com/TU-USUARIO",
-    "https://linkedin.com/company/TU-EMPRESA"
-  ],
-    "areaServed": ["Barcelona", "Badalona", "Hospitalet", "Terrassa", "Sabadell", "España", "Europa"],
-    "keywords": [
-      "branding studio Barcelona",
-      "creative agency Barcelona",
-      "web design Barcelona",
-      "photography services",
-      "brand identity",
-      "graphic design"
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://yellowsquare.studio/#org",
+        "name": "Yellow Square Studio",
+        "url": "https://yellowsquare.studio/",
+        "logo": "https://yellowsquare.studio/public/img/logo.png",
+        "image": "https://yellowsquare.studio/public/img/og-image-cover.jpg",
+        "email": "go.yellowsquare@gmail.com",
+        "sameAs": [
+          "https://www.instagram.com/yellow.square.studio"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://yellowsquare.studio/#local",
+        "name": "Yellow Square Studio",
+        "url": "https://yellowsquare.studio/",
+        "telephone": ["+34672900109", "+34623069631"],
+        "email": "go.yellowsquare@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Barcelona",
+          "addressRegion": "Catalunya",
+          "addressCountry": "ES"
+        },
+        "areaServed": [
+          "Barcelona",
+          "L'Hospitalet de Llobregat",
+          "Badalona",
+          "Sant Adrià de Besòs",
+          "Santa Coloma de Gramenet",
+          "Catalunya"
+        ],
+        "knowsAbout": [
+          "Diseño web",
+          "Branding",
+          "Identidad visual",
+          "SEO",
+          "Marketing digital",
+          "Fotografía",
+          "Vídeo",
+          "Redes sociales"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://yellowsquare.studio/#website",
+        "url": "https://yellowsquare.studio/",
+        "name": "Yellow Square Studio",
+        "publisher": { "@id": "https://yellowsquare.studio/#org" }
+      }
     ]
   }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto dura un proyecto de branding o web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del alcance, pero normalmente entre 2 y 5 semanas. Nos adaptamos a tus tiempos cuando es necesario."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Ofrecéis pago por fases?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La mayoría de clientes pagan 50% al inicio y 50% al entregar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Podéis trabajar con mi idea o boceto inicial?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claro. Si tienes referencias o una base, la incorporamos al proceso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué necesitáis para empezar mi web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Texto, fotos (podemos hacerlas nosotros), estructura básica y tu objetivo. Te guiamos en todo."
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
@@ -93,11 +159,11 @@
         <div class="hidden lg:flex h-16  items-center justify-between lg:p-14 px-4 py-14 mt-10">
             <!-- logo en pantallas grandes -->
             <div class="hidden xl:flex">
-                <a  href="index.html"><h1 class="text-4xl font-black" >Yellow Square Studio</h1></a>
+                <a  href="index.html"><h2 class="text-4xl font-black" >Yellow Square Studio</h2></a>
             </div>
             <!-- visible en pantallas pequeñas -->
             <div class="xl:hidden flex">
-                <a  href="index.html"><h1 class="text-4xl font-black" >Yellow <br>Square <br> Studio</h1></a>
+                <a  href="index.html"><h2 class="text-4xl font-black" >Yellow <br>Square <br> Studio</h2></a>
             </div>
             <!-- nav para escritorio (pantalla grande) -->
             <!-- CONTENEDOR FIJO PARA QUE NADA SE MUEVA -->
@@ -146,7 +212,7 @@
             <!-- visible en pantallas pequeñas -->
             <div class="flex flex-row items-center justify-between w-full ">
                 <div class="">
-                    <a  href="index.html"><h1 class="text-4xl font-black" >Yellow <br>Square <br> Studio</h1></a>
+                    <a  href="index.html"><h2 class="text-4xl font-black" >Yellow <br>Square <br> Studio</h2></a>
                 </div>
 
                 <div class="relative w-64 flex items-center justify-end">
@@ -210,184 +276,449 @@
         </div>
     </header>
 
-    <main class="w-[90%] bg-black h-full rounded-4xl mx-auto my-10 text-white">
-        <!-- Cada sección aparecerá con una animación suave de fade in al hacer scroll down -->
-         <!-- Web de contacto -->
-        <section id="start" class="text-center p-16 fade-in w-full h-[80vh] flex flex-col justify-center items-center">
-            <h2 class="lg:text-6xl text-4xl text-[#f4e67e] font-bold mb-4">Contacto!</h2>
-            <h2 class="lg:text-3xl text-xl font-bold mb-4">
-                Diseño, estrategia y contenido para marcas que quieren crecer con intención.
-            </h2>
-        </section>
+    <main class=" w-full">
 
-        <section class="fade-in w-full text-white px-14 py-24">
-            <h3 class="text-4xl font-black mb-12">¿Qué pasa después de escribirnos?</h3>
+        <!-- HERO / CONTACTO -->
+        <section id="contact-hero" class="fade-in px-6 sm:px-10 lg:px-16 pt-14 pb-10 w-[90%] bg-black rounded-4xl mx-auto my-10 text-white overflow-hidden">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
+            <div class="lg:w-8/12">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight bg-gradient-to-tr from-[#EDECC2] to-[#f5dd28] bg-clip-text text-transparent">
+                Contacto en Barcelona
+                </h1>
+                <p class="mt-6 text-lg sm:text-xl lg:text-2xl text-zinc-300 max-w-3xl">
+                Cuéntanos qué necesitas y te respondemos con claridad. Branding, web, fotografía/vídeo y marketing digital para negocios reales.
+                </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 opacity-90">
+                <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                <a href="#contact-form"
+                    class="inline-flex items-center justify-center h-12 px-6 rounded-full font-black bg-gradient-to-tr from-[#EDECC2] to-[#f5dd28] text-black hover:opacity-90 transition">
+                    Enviar mensaje
+                </a>
 
-                <div>
-                    <h4 class="text-2xl font-bold mb-3">1. Te respondemos en 24h</h4>
-                    <p>Leemos tu mensaje con calma y te pedimos solo la información necesaria. Sin procesos eternos.</p>
+                <div class="flex gap-3">
+                    <a href="tel:+34672900109"
+                    class="inline-flex items-center justify-center h-12 px-6 rounded-full font-black bg-white/5 border border-white/15 hover:bg-white/10 transition">
+                    Llamar
+                    </a>
+                    <a href="https://wa.me/34672900109"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center h-12 px-6 rounded-full font-black bg-white/5 border border-white/15 hover:bg-white/10 transition">
+                    WhatsApp
+                    </a>
+                </div>
                 </div>
 
-                <div>
-                    <h4 class="text-2xl font-bold mb-3">2. Llamada breve</h4>
-                    <p>10–15 minutos para entender tu proyecto, tus objetivos y comprobar si encajamos bien.</p>
+                <div class="mt-6 text-sm text-zinc-400">
+                <span class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2">
+                    <span class="w-2 h-2 rounded-full bg-[#f5dd28]"></span>
+                    Normalmente respondemos en 24–48h laborables.
+                </span>
                 </div>
-
-                <div>
-                    <h4 class="text-2xl font-bold mb-3">3. Propuesta clara</h4>
-                    <p>Presupuesto transparente, tiempos realistas y un plan para que tu marca avance desde el día 1.</p>
-                </div>
-
             </div>
-        </section>
 
-        <section class="fade-in w-full text-white px-14 py-24">
-            <h3 class="text-4xl font-black mb-12">¿Somos el estudio adecuado para ti?</h3>
+            <!-- TARJETA: CONTACTO DIRECTO -->
+            <div class="lg:w-4/12">
+                <div class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8">
+                <h2 class="text-2xl font-black mb-4 bg-gradient-to-tr from-[#EDECC2] to-[#f5dd28] bg-clip-text text-transparent">
+                    Contacto directo
+                </h2>
 
-            <div class="max-w-4xl space-y-6 text-xl opacity-90">
-
-                <p>Funcionamos especialmente bien con marcas que buscan claridad, diseño estratégico y un proceso cercano.</p>
-
-                <ul class="list-disc ml-6 space-y-2">
-                    <li>Clientes que valoran el diseño como una inversión.</li>
-                    <li>Negocios que quieren una marca coherente y profesional.</li>
-                    <li>Personas que saben lo que quieren… o que necesitan que les guiemos.</li>
-                    <li>Proyectos donde se puede trabajar con intención, no con prisas sin sentido.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="fade-in w-full text-white px-14 py-24">
-            <h3 class="text-4xl font-black mb-6">Agencia de branding en Barcelona</h3>
-
-            <p class="text-xl max-w-4xl opacity-90">
-                Yellow Square Studio es una agencia de branding en Barcelona especializada en crear identidades visuales,
-                diseño web, fotografía y contenido estratégico para marcas que quieren destacar. 
-                Si buscas una agencia creativa en Barcelona que combine diseño, estrategia y dirección de arte,
-                estamos aquí para ayudarte a construir algo sólido y memorable.
-            </p>
-        </section>
-
-        <section class="fade-in text-center px-14 py-24">
-            <h3 class="text-5xl font-black bg-gradient-to-tr from-[#EDECC2] to-[#f5dd28] bg-clip-text text-transparent mb-10">
-                Listos cuando tú estés.
-            </h3>
-
-            <p class="text-xl text-zinc-300 mb-10">
-                Cuéntanos tu idea y te ayudamos a convertirla en una marca sólida y profesional.
-            </p>
-
-            <a href="#contactForm" 
-            class="px-10 py-4 border-2 border-[#f4e67e] rounded-full text-xl font-black 
-                    hover:bg-[#f4e67e] hover:text-black transition-all">
-                Iniciar proyecto →
-            </a>
-        </section>
-
-        <section class="fade-in w-full text-white px-14 py-24 fade-in">
-            <h3 class="text-4xl font-black mb-12">Antes de escribirnos</h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-
-                <div>
-                    <h4 class="text-2xl font-bold mb-4">¿Qué tipo de proyectos aceptamos?</h4>
-                    <p class="opacity-80">
-                        Branding, webs, fotografía, contenido creativo y direcciones visuales completas.  
-                        Si tu proyecto tiene intención, nos interesa.
+                <div class="space-y-4 text-zinc-200">
+                    <div>
+                    <p class="text-sm text-zinc-400">Teléfono</p>
+                    <a class="text-lg font-black hover:text-[#f5dd28] transition" href="tel:+34672900109">+34 672 900 109</a>
+                    <p>
+                        <a class="text-lg font-black hover:text-[#f5dd28] transition" href="tel:+34623069631">+34 623 069 631</a>
                     </p>
-                </div>
+                    </div>
 
-                <div>
-                    <h4 class="text-2xl font-bold mb-4">¿Qué puedes esperar?</h4>
-                    <p class="opacity-80">
-                        Honestidad, claridad y un diseño hecho con cabeza.  
-                        Nada de plantillas, nada genérico.
-                    </p>
-                </div>
+                    <div>
+                    <p class="text-sm text-zinc-400">Correo</p>
+                    <a class="text-lg font-black hover:text-[#f5dd28] transition" href="mailto:go.yellowsquare@gmail.com">
+                        go.yellowsquare@gmail.com
+                    </a>
+                    </div>
 
-                <div>
-                    <h4 class="text-2xl font-bold mb-4">¿Cómo trabajamos?</h4>
-                    <p class="opacity-80">
-                        Empezamos con una llamada breve.  
-                        Luego preparamos una propuesta clara, tiempos y presupuesto realista.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="w-full bg-black text-white px-14 py-32 fade-in">
-            <h2 class="lg:text-6xl text-4xl font-black mb-10 leading-tight">
-                Hablemos.
-            </h2>
-            <p class="text-2xl md:text-3xl max-w-3xl opacity-90">
-                Trabajamos con marcas que buscan algo más que un diseño bonito.  
-                Escuchamos cada proyecto con atención, claridad y honestidad para crear soluciones con intención.  
-                Si tienes una idea, vamos a transformarla en algo que realmente funcione.
-            </p>
-        </section>
-        <section class="fade-in">
-            <div id="form-container" class="text-YSS2 w-[90%] p-8 mx-auto font-black space-y-8 rounded-3xl">
-                <h2 class="text-left lg:text-4xl text-3xl font-black text-black">Hablemos de tu marca →</h2>
-                <form id="contactForm" class="space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label class="block text-xl text-black mb-1">Nombre</label>
-                    <input type="text" name="firstName" required class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#f7a9b3]" />
-                  </div>
-                  <div>
-                    <label class="block text-xl text-black mb-1">Empresa</label>
-                    <input type="text" name="businessName" required class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#f7a9b3]" />
-                  </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label class="block text-xl text-black mb-1">Teléfono</label>
-                    <input type="tel" name="phone" required class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#f7a9b3]" />
-                  </div>
-                  <div>
-                    <label class="block text-xl text-black mb-1">Email</label>
-                    <input type="email" name="email" required class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#f7a9b3]" />
-                  </div>
-                </div>
-                <div>
-                  <label class="block text-xl text-black mb-1">Mensaje</label>
-                  <textarea name="message" rows="4" required class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#f7a9b3] resize-none"></textarea>
-                </div>
-                <div class="text-center flex justify-end">
-                  <button type="submit" class="mt-2 w-32 h-12 p-4 bg-black text-YSS2 py-3 rounded-xl font-black hover:bg-YSS1 hover:text-black hover:border-2 hover:border-collapse hover:border-black  transition"> Enviar
-                  </button>
-                </div>
-                <div id="formFeedback" class="text-xl mt-2 text-center"></div>
-              </form>
-            </div>
-            
-            <div class="lg:w-[90%] w-full p-8 mx-auto flex lg:flex-row flex-col items-center justify-center font-black lg:space-x-8  bg-gradient-to-tr from-[#EDECC2] to-[#f5dd28] bg-clip-text text-transparent">
-                <div class="lg:w-1/2 w-full lg:p-8 lg:mb-4 mb-8 rounded-2xl font-black lg:text-7xl text-4xl italic lg:text-left text-center">
-                    <h2>También puedes llamarnos o enviar un correo</h2>
-
-                </div>
-                <div id="contact" class="lg:w-1/2 w-full lg:p-8 py-8 rounded-3xl text-black text-2xl font-black lg:text-left text-center ">
-                    <h2 class="font-black lg:text-3xl text-2xl mb-1">Barcelona</h2>
-                    <p class="lg:text-2xl text-lg">+34 672900109</p>
-                    <p class="lg:text-2xl text-lg">+34 623069631</p>
-                    <h2 class="font-black lg:text-3xl text-2xl mt-4">Correo</h2>
-                    <p class="lg:text-2xl text-lg">go.yellowsquare@gmail.com</p>
-                    <h2 class="font-black lg:text-3xl text-2xl mb-2 mt-4">Siguenos</h2>
-                    <div class="lg:pl-12 flex lg:justify-start justify-center">
-                        <a href="https://www.instagram.com/yellow.square.studio?igsh=cGNkeThrM2F4Y3hj&utm_source=qr" target="_blank" aria-label="Instagram" class="">
-                            <svg class="lg:w-10 lg:h-10 w-6 h-6 fill-current text-black hover:text-neutral-600 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.6.6.3 1 .7 1.5 1.5.3.5.5 1.3.6 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.6 2.5-.3.6-.7 1-1.5 1.5-.5.3-1.3.5-2.5.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.6-.6-.3-1-.7-1.5-1.5-.3-.5-.5-1.3-.6-2.5-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-2 .6-2.5.3-.6.7-1 1.5-1.5.5-.3 1.3-.5 2.5-.6C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.6.1 4.3.4 3.2 1.1 2.1 1.7 1.3 2.5.7 3.6.1 4.7 0 6 0 7.4c-.1 1.3-.1 1.7-.1 4.6s0 3.3.1 4.6c.1 1.3.4 2.6 1.1 3.7.6 1.1 1.4 1.9 2.5 2.5 1.1.7 2.4 1 3.7 1.1 1.3.1 1.7.1 4.6.1s3.3 0 4.6-.1c1.3-.1 2.6-.4 3.7-1.1 1.1-.6 1.9-1.4 2.5-2.5.7-1.1 1-2.4 1.1-3.7.1-1.3.1-1.7.1-4.6s0-3.3-.1-4.6c-.1-1.3-.4-2.6-1.1-3.7-.6-1.1-1.4-1.9-2.5-2.5-1.1-.7-2.4-1-3.7-1.1C15.7 0 15.3 0 12 0zm0 5.8c-3.4 0-6.2 2.8-6.2 6.2S8.6 18.2 12 18.2s6.2-2.8 6.2-6.2S15.4 5.8 12 5.8zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4c2.2 0 4 1.8 4 4s-1.8 4-4 4zm6.4-11.8c-.8 0-1.5.6-1.5 1.5 0 .8.6 1.5 1.5 1.5.8 0 1.5-.6 1.5-1.5s-.6-1.5-1.5-1.5z"/></svg>
-                        </a>
+                    <div>
+                    <p class="text-sm text-zinc-400">Ubicación</p>
+                    <p class="text-lg font-black">Barcelona</p>
+                    <p class="text-sm text-zinc-400">Trabajamos por cita · también remoto</p>
                     </div>
                 </div>
+
+                <div class="mt-6 pt-6 border-t border-white/10">
+                    <p class="text-sm text-zinc-400 mb-3">Síguenos</p>
+                    <a href="https://www.instagram.com/yellow.square.studio?igsh=cGNkeThrM2F4Y3hj&utm_source=qr"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center h-12 w-full rounded-full font-black bg-black border border-white/15 hover:bg-white/5 transition">
+                    Instagram
+                    </a>
+                </div>
+                </div>
+            </div>
+
             </div>
         </section>
 
-        
+        <!-- CÓMO TRABAJAMOS (3 pasos) -->
+        <section class="fade-in px-6 sm:px-10 lg:px-16 py-10 w-[90%] mx-auto text-black">
+            <div class="rounded-4xl border border-black p-10 sm:p-10 rounded-3xl  my-10">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+                <div>
+                <h2 class="text-3xl sm:text-4xl font-black">
+                    Así de simple
+                </h2>
+                <p class="mt-4  text-lg sm:text-xl max-w-3xl">
+                    Te guiamos sin rodeos. Primero entendemos, luego proponemos, y después lo ejecutamos con criterio.
+                </p>
+                </div>
 
-        
+                <a href="#contact-form"
+                class="inline-flex items-center justify-center h-12 px-6 rounded-full font-black bg-white/5 border border-black hover:bg-black hover:text-zinc-300 transition">
+                Ir al formulario ↓
+                </a>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-3xl border border-black hover:bg-black hover:text-zinc-300 p-6">
+                <p class="text-sm">Paso 01</p>
+                <h3 class="text-2xl font-black mt-2">Nos escribes</h3>
+                <p class="mt-3">
+                    Cuéntanos qué estás montando, qué vendes y qué necesitas (web, marca, fotos, SEO, redes…).
+                </p>
+                </div>
+
+                <div class="rounded-3xl border border-black hover:bg-black hover:text-zinc-300 p-6">
+                <p class="text-sm">Paso 02</p>
+                <h3 class="text-2xl font-black mt-2">Te respondemos con preguntas clave</h3>
+                <p class="mt-3">
+                    Aterrizamos objetivos, alcance, tiempos y presupuesto para evitar humo y malentendidos.
+                </p>
+                </div>
+
+                <div class="rounded-3xl border border-black hover:bg-black hover:text-zinc-300 p-6">
+                <p class="text-sm">Paso 03</p>
+                <h3 class="text-2xl font-black mt-2">Propuesta + arranque</h3>
+                <p class="mt-3">
+                    Te enviamos una propuesta clara y, si encaja, arrancamos con un plan y entregables definidos.
+                </p>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- QUÉ PUEDES PEDIR -->
+        <section class="fade-in px-6 sm:px-10 lg:px-16 pt-14 pb-10 w-[90%] bg-black rounded-4xl mx-auto my-10 text-white overflow-hidden">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+            <div>
+                <h2 class="text-3xl sm:text-4xl font-black bg-gradient-to-tr from-[#EDECC2] to-[#f5dd28] bg-clip-text text-transparent">
+                ¿Qué necesitas ahora mismo?
+                </h2>
+                <p class="mt-4 text-zinc-300 text-lg sm:text-xl max-w-3xl">
+                Elige una dirección (aunque no la tengas 100% clara). Con esto ya podemos guiarte bien.
+                </p>
+            </div>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                <h3 class="text-2xl font-black">Diseño web</h3>
+                <p class="mt-3 text-zinc-300">
+                Web rápida, persuasiva y optimizada para convertir: estructura, copy, SEO base y tracking.
+                </p>
+            </div>
+
+            <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                <h3 class="text-2xl font-black">Branding</h3>
+                <p class="mt-3 text-zinc-300">
+                Nombre, identidad visual, logo, sistema de marca y guías para que tu negocio se vea serio.
+                </p>
+            </div>
+
+            <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                <h3 class="text-2xl font-black">Fotografía & vídeo</h3>
+                <p class="mt-3 text-zinc-300">
+                Producto, lifestyle, food, retrato o contenido para redes: imágenes que venden, no “bonitas ya”.
+                </p>
+            </div>
+
+            <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                <h3 class="text-2xl font-black">SEO</h3>
+                <p class="mt-3 text-zinc-300">
+                Estructura, contenido, performance, SEO local y estrategia para subir posiciones en Google.
+                </p>
+            </div>
+
+            <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                <h3 class="text-2xl font-black">Redes sociales</h3>
+                <p class="mt-3 text-zinc-300">
+                Calendario, guiones, estilo visual y publicaciones que conectan con tu cliente ideal.
+                </p>
+            </div>
+
+            <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                <h3 class="text-2xl font-black">Estrategia & embudos</h3>
+                <p class="mt-3 text-zinc-300">
+                Convertir visitas en leads: landing, mensajes, lead magnet, analítica, optimización continua.
+                </p>
+            </div>
+            </div>
+        </section>
+
+        <!-- FORMULARIO (MEJORADO) -->
+        <section id="contact-form" class="fade-in px-6 sm:px-10 lg:px-16 pt-14 pb-10 w-[90%] bg-black rounded-4xl mx-auto my-10 text-white overflow-hidden">
+
+            <!-- contacto -->
+            <div class="bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent w-[90%] mx-auto p-8 space-y-4 my-10 fade-in">
+                <h2 class="text-center lg:text-6xl text-5xl font-black">Hablemos</h2>
+
+                <p class="text-center lg:text-2xl text-xl font-extralight">
+                    Cuéntanos tu idea y te respondemos con claridad: qué haríamos, cuánto tarda y el siguiente paso.
+                </p>
+
+                <details class="text-center text-base lg:text-lg text-white/80">
+                    <summary class="cursor-pointer underline underline-offset-4">Leer más</summary>
+                    <p class="mt-3 max-w-4xl mx-auto">
+                    En Yellow Square Studio escuchamos cada proyecto con dedicación y cercanía. Nos implicamos desde el primer minuto.
+                    Cuéntanos qué necesitas, en qué punto está tu negocio y hacia dónde quieres llevarlo. Estamos aquí para ayudarte
+                    a construir una imagen profesional y coherente.
+                    </p>
+                </details>
+            </div>
+
+            <!-- FORM CON ESTILO ORIGINAL + CAMPOS NUEVOS -->
+            <div id="form-container" class="text-YSS2 w-[90%] p-8 mx-auto font-black space-y-8 rounded-3xl fade-in">
+
+                <form id="contactForm" class="space-y-6">
+
+                    <!-- nombre / empresa -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xl text-black mb-1">Nombre</label>
+                            <input type="text" name="firstName" required
+                            class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none border border-black/20 focus:ring-2 focus:ring-[#f7a9b3]"
+                            placeholder="Tu nombre" />
+                        </div>
+                        <div>
+                            <label class="block text-xl text-black mb-1">Empresa / Proyecto</label>
+                            <input type="text" name="businessName" required
+                            class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none border border-black/20 focus:ring-2 focus:ring-[#f7a9b3]"
+                            placeholder="Nombre de tu negocio" />
+                        </div>
+                    </div>
+
+                    <!-- phone / email -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 ">
+                        <div>
+                            <label class="block text-xl text-black mb-1">Teléfono</label>
+                            <input type="tel" name="phone" required
+                            class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none border border-black/20 focus:ring-2 focus:ring-[#f7a9b3]"
+                            placeholder="+34 ..." />
+                        </div>
+                        <div>
+                            <label class="block text-xl text-black mb-1">Email</label>
+                            <input type="email" name="email" required
+                            class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none border border-black/20 focus:ring-2 focus:ring-[#f7a9b3]"
+                            placeholder="tu@email.com" />
+                        </div>
+                    </div>
+
+                    <!-- nuevos campos: servicio / presupuesto / fecha -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 ">
+                        <div>
+                            <label class="block text-xl text-black mb-1">¿Qué necesitas?</label>
+                            <select name="service" required
+                            class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 outline-none border border-black/20 focus:ring-2 focus:ring-[#f7a9b3]">
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="web">Diseño / Desarrollo web</option>
+                            <option value="branding">Branding / Identidad</option>
+                            <option value="photo-video">Fotografía / Vídeo</option>
+                            <option value="seo">SEO</option>
+                            <option value="social">Redes sociales</option>
+                            <option value="strategy">Estrategia / Embudos</option>
+                            <option value="other">Otro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xl text-black mb-1">Presupuesto (aprox.)</label>
+                            <select name="budget"
+                            class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 outline-none border border-black/20 focus:ring-2 focus:ring-[#f7a9b3]">
+                            <option value="" selected>No lo sé todavía</option>
+                            <option value="lt500">Menos de 500€</option>
+                            <option value="500-1000">500€ – 1.000€</option>
+                            <option value="1000-2500">1.000€ – 2.500€</option>
+                            <option value="2500-5000">2.500€ – 5.000€</option>
+                            <option value="gt5000">Más de 5.000€</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xl text-black mb-1">¿Para cuándo?</label>
+                            <select name="timeline"
+                            class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 outline-none border border-black/20 focus:ring-2 focus:ring-[#f7a9b3]">
+                            <option value="" selected>Flexible</option>
+                            <option value="asap">Lo antes posible</option>
+                            <option value="2-4weeks">2–4 semanas</option>
+                            <option value="1-2months">1–2 meses</option>
+                            <option value="3plus">3+ meses</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- mensaje -->
+                    <div>
+                        <label class="block text-xl text-black mb-1">Mensaje</label>
+                        <textarea name="message" rows="5" required
+                            class="w-full px-4 py-2 rounded-xl bg-black text-YSS2 placeholder-gray-500 outline-none border border-black/20 focus:ring-2 focus:ring-[#f7a9b3] resize-none"
+                            placeholder="Cuéntanos qué vendes, tu objetivo, y si tienes web/IG, pásanos el link."></textarea>
+
+                        <p class="mt-2 text-xs lg:text-left text-center text-black">
+                            Tip: si nos pasas tu web/Instagram + objetivo (“más reservas”, “vender más”, “parecer más premium”), avanzamos más rápido.
+                        </p>
+                    </div>
+
+                    <!-- RGPD (estilo original: texto negro, bloque suave) -->
+                    <div class="rounded-2xl bg-white/40 border border-black/10 p-4">
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" name="rgpd" required class="mt-1 w-5 h-5 accent-black" />
+                            <span class="text-sm text-black">
+                            He leído y acepto la política de privacidad y consiento el tratamiento de mis datos para responder a mi solicitud.
+                            <span class="text-black/70"> (Añade aquí el enlace real a tu política.)</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- botón -->
+                    <div class="text-center flex justify-end">
+                        <button
+                            id="contact-submit"
+                            type="submit"
+                            class="mt-2 w-40 h-12 px-4 bg-black text-YSS2 rounded-xl font-black hover:bg-YSS1 hover:text-black hover:border-2 hover:border-black transition inline-flex items-center justify-center gap-2"
+                        >
+                            <span class="btn-text">Enviar</span>
+                            <svg class="hidden w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" d="M22 12a10 10 0 0 1-10 10" stroke="currentColor" stroke-width="4" stroke-linecap="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div id="formFeedback" class="text-xl mt-2 text-center text-black"></div>
+                </form>
+            </div>
+
+            <!-- contacto directo (tu bloque) -->
+            <div class="w-[90%] mx-auto mt-8 flex lg:flex-row flex-col items-center justify-center font-black lg:space-x-8 bg-gradient-to-tr from-[#EDECC2] to-[#f5dd28] bg-clip-text text-transparent fade-in">
+            <div class="lg:w-1/2 w-full lg:p-8 lg:mb-4 mb-8 rounded-2xl font-black lg:text-7xl text-4xl italic lg:text-left text-center">
+                <h2>También puedes llamarnos o enviar un correo</h2>
+            </div>
+
+            <div id="contact" class="lg:w-1/2 w-full lg:p-8 py-8 rounded-3xl text-black text-2xl font-black lg:text-left text-center">
+                <h2 class="font-black lg:text-3xl text-2xl mb-1">Barcelona</h2>
+                <p class="lg:text-2xl text-lg"><a class="hover:underline" href="tel:+34672900109">+34 672900109</a></p>
+                <p class="lg:text-2xl text-lg"><a class="hover:underline" href="tel:+34623069631">+34 623069631</a></p>
+                <h2 class="font-black lg:text-3xl text-2xl mt-4">Correo</h2>
+                <p class="lg:text-2xl text-lg"><a class="hover:underline" href="mailto:go.yellowsquare@gmail.com">go.yellowsquare@gmail.com</a></p>
+                <h2 class="font-black lg:text-3xl text-2xl mb-2 mt-4">Síguenos</h2>
+                <div class="lg:pl-12 flex lg:justify-start justify-center">
+                <a href="https://www.instagram.com/yellow.square.studio?igsh=cGNkeThrM2F4Y3hj&utm_source=qr" target="_blank" aria-label="Instagram">
+                    <svg class="lg:w-10 lg:h-10 w-6 h-6 fill-current text-black hover:text-neutral-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.6.6.3 1 .7 1.5 1.5.3.5.5 1.3.6 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.6 2.5-.3.6-.7 1-1.5 1.5-.5.3-1.3.5-2.5.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.6-.6-.3-1-.7-1.5-1.5-.3-.5-.5-1.3-.6-2.5-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-2 .6-2.5.3-.6.7-1 1.5-1.5.5-.3 1.3-.5 2.5-.6C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.6.1 4.3.4 3.2 1.1 2.1 1.7 1.3 2.5.7 3.6.1 4.7 0 6 0 7.4c-.1 1.3-.1 1.7-.1 4.6s0 3.3.1 4.6c.1 1.3.4 2.6 1.1 3.7.6 1.1 1.4 1.9 2.5 2.5 1.1.7 2.4 1 3.7 1.1 1.3.1 1.7.1 4.6.1s3.3 0 4.6-.1c1.3-.1 2.6-.4 3.7-1.1 1.1-.6 1.9-1.4 2.5-2.5.7-1.1 1-2.4 1.1-3.7.1-1.3.1-1.7.1-4.6s0-3.3-.1-4.6c-.1-1.3-.4-2.6-1.1-3.7-.6-1.1-1.4-1.9-2.5-2.5-1.1-.7-2.4-1-3.7-1.1C15.7 0 15.3 0 12 0zm0 5.8c-3.4 0-6.2 2.8-6.2 6.2S8.6 18.2 12 18.2s6.2-2.8 6.2-6.2S15.4 5.8 12 5.8zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4c2.2 0 4 1.8 4 4s-1.8 4-4 4zm6.4-11.8c-.8 0-1.5.6-1.5 1.5 0 .8.6 1.5 1.5 1.5.8 0 1.5-.6 1.5-1.5s-.6-1.5-1.5-1.5z"/>
+                    </svg>
+                </a>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- LOCAL SEO / ZONA -->
+        <section class="fade-in px-6 sm:px-10 lg:px-16 py-10 w-[90%] bg-black rounded-4xl mx-auto my-10 text-white overflow-hidden">
+            <div class="rounded-4xl border border-white/10 bg-white/5 p-6 sm:p-10">
+            <h2 class="text-3xl sm:text-4xl font-black bg-gradient-to-tr from-[#EDECC2] to-[#f5dd28] bg-clip-text text-transparent">
+                Barcelona (y remoto)
+            </h2>
+            <p class="mt-4 text-zinc-300 text-lg sm:text-xl max-w-4xl">
+                Trabajamos con negocios de Barcelona y alrededores, y también con proyectos remotos.
+                Si tu marca está en <span class="text-white font-bold">Eixample, Gràcia, Poblenou, Sants, Sant Antoni</span> o cualquier barrio,
+                podemos movernos para sesiones de foto/vídeo o reuniones por cita.
+            </p>
+
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-3xl border border-white/10 bg-black/40 p-6">
+                <h3 class="text-xl font-black">Sesiones a domicilio</h3>
+                <p class="mt-2 text-zinc-300">Producto, food, lifestyle y contenido de marca en tu local o estudio.</p>
+                </div>
+                <div class="rounded-3xl border border-white/10 bg-black/40 p-6">
+                <h3 class="text-xl font-black">Reuniones por cita</h3>
+                <p class="mt-2 text-zinc-300">Nos organizamos fácil: llamada breve o reunión si hace falta.</p>
+                </div>
+                <div class="rounded-3xl border border-white/10 bg-black/40 p-6">
+                <h3 class="text-xl font-black">Remoto sin drama</h3>
+                <p class="mt-2 text-zinc-300">Brief, entregables, revisiones y planificación con orden.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- FAQ (para SEO + fricción) -->
+        <section class="fade-in px-6 sm:px-10 lg:px-16 py-10 w-[90%] bg-black rounded-4xl mx-auto my-10 text-white overflow-hidden">
+            <div class="rounded-4xl border border-white/10 bg-white/5 p-6 sm:p-10">
+            <h2 class="text-3xl sm:text-4xl font-black text-center bg-gradient-to-tr from-[#EDECC2] to-[#f5dd28] bg-clip-text text-transparent">
+                Preguntas frecuentes
+            </h2>
+
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="rounded-3xl border border-white/10 bg-black/40 p-6">
+                <h3 class="text-xl font-black text-[#f4e67e]">¿Cuánto tardáis en responder?</h3>
+                <p class="mt-3 text-zinc-300">
+                    Normalmente en 24–48h laborables. Si es urgente, mejor WhatsApp o llamada.
+                </p>
+                </div>
+
+                <div class="rounded-3xl border border-white/10 bg-black/40 p-6">
+                <h3 class="text-xl font-black text-[#f4e67e]">¿Trabajáis con presupuestos pequeños?</h3>
+                <p class="mt-3 text-zinc-300">
+                    Sí, si el alcance es realista. Preferimos algo pequeño bien hecho a prometerte magia con 0€.
+                </p>
+                </div>
+
+                <div class="rounded-3xl border border-white/10 bg-black/40 p-6">
+                <h3 class="text-xl font-black text-[#f4e67e]">¿Se puede pagar por fases?</h3>
+                <p class="mt-3 text-zinc-300">
+                    Sí. Habitual: 50% al inicio y 50% al entregar (o por hitos si el proyecto es grande).
+                </p>
+                </div>
+
+                <div class="rounded-3xl border border-white/10 bg-black/40 p-6">
+                <h3 class="text-xl font-black text-[#f4e67e]">¿Podéis trabajar en español e inglés?</h3>
+                <p class="mt-3 text-zinc-300">
+                    Sí. Podemos adaptar copy, tono y estructura según tu cliente ideal.
+                </p>
+                </div>
+            </div>
+
+            <!-- CTA final -->
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-3xl border border-white/10 bg-black/40 p-6">
+                <div>
+                <h3 class="text-2xl font-black">¿Listo para mover tu marca?</h3>
+                <p class="mt-2 text-zinc-300">Escríbenos y lo aterrizamos con claridad.</p>
+                </div>
+                <div class="flex gap-3">
+                <a href="#contact-form"
+                    class="inline-flex items-center justify-center h-12 px-6 rounded-full font-black bg-gradient-to-tr from-[#EDECC2] to-[#f5dd28] text-black hover:opacity-90 transition">
+                    Enviar mensaje
+                </a>
+                <a href="https://wa.me/34672900109"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center h-12 px-6 rounded-full font-black bg-white/5 border border-white/15 hover:bg-white/10 transition">
+                    WhatsApp
+                </a>
+                </div>
+            </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="w-full ">
@@ -436,7 +767,7 @@
             <div class="lg:w-[40%] w-full flex lg:flex-row flex-col justify-center items-center space-x-4">
                 <img src="./public/img/Yellow Square Studio Logo with shadow.png" width="150px" alt="">
                 <p class="text-base mt-4 font-black ">
-                Yellow Square Studio <br> Estudio creativo que convierte ideas en marcas poderosas. Diseño, desarrollo y comunicación visual sin rodeos.
+                Yellow Square Studio <br> Estudio creativo que convierte ideas en marcas. Diseño, desarrollo y comunicación visual.
                 </p>
             </div>
 
@@ -447,7 +778,8 @@
         </div>
     </footer>
     
-    <script src="./js/main.js"></script>
-    <script src="./js/proyects.js"></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/proyects.js" defer></script>
+    <script src="./js/contact.js" defer></script>
 </body>
 </html>

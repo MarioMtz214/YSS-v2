@@ -1,89 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es_ES">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- SEO CORE -->
-  <title>Yellow Square Studio | Branding, Web Design & Creative Content in Barcelona</title>
+  <!-- Primary SEO -->
+  <title>Yellow Square Studio | Diseño Web, Branding y Marketing Digital en Barcelona</title>
+  <meta name="description" content="Estudio creativo en Barcelona especializado en diseño web rápido y optimizado, branding e identidad visual, SEO y contenido (foto y vídeo) para pequeñas empresas, autónomos y marcas personales. Diseño con estrategia para atraer clientes." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="author" content="Yellow Square Studio" />
 
-  <meta name="description" 
-        content="Yellow Square Studio is a creative agency in Barcelona specialising in branding, web design, photography and digital identity for small businesses, startups and personal brands. Modern design, strong visuals and strategy-focused solutions." />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://yellowsquare.studio/" />
 
-  <meta name="keywords" 
-        content="branding Barcelona, creative agency Barcelona, diseño web Barcelona, identidad visual, graphic design studio, photography Barcelona, agencia creativa, brand strategy, personal branding, diseño logos Barcelona" />
+  <!-- (Opcional pero recomendado) Hreflang si haces versión EN -->
+  <!--
+  <link rel="alternate" href="https://yellowsquare.studio/" hreflang="es-ES" />
+  <link rel="alternate" href="https://yellowsquare.studio/en/" hreflang="en" />
+  <link rel="alternate" href="https://yellowsquare.studio/" hreflang="x-default" />
+  -->
 
-  <meta name="author" content="Yellow Square Studio Team">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:title" content="Yellow Square Studio | Diseño Web y Branding en Barcelona" />
+  <meta property="og:description" content="Branding, diseño web, SEO y contenido visual (foto/vídeo) para negocios reales. Estudio creativo en Barcelona." />
+  <meta property="og:url" content="https://yellowsquare.studio/" />
+  <meta property="og:image" content="https://yellowsquare.studio/public/img/og-image-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-  <meta name="robots" content="index, follow">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Yellow Square Studio | Diseño Web y Branding en Barcelona" />
+  <meta name="twitter:description" content="Estudio creativo en Barcelona: web, branding, SEO y contenido visual para atraer clientes." />
+  <meta name="twitter:image" content="https://yellowsquare.studio/public/img/og-image-cover.jpg" />
 
-  <!-- LOCAL SEO -->
-  <meta name="geo.region" content="ES-CT">
-  <meta name="geo.placename" content="Barcelona, Catalunya, España">
-  <meta name="geo.position" content="41.3874;2.1686">
-  <meta name="ICBM" content="41.3874, 2.1686">
-
-  <!-- OG / SOCIAL SHARING -->
-  <meta property="og:title" content="Yellow Square Studio – Creative Agency in Barcelona">
-  <meta property="og:description" content="Branding, web design, visual identity and creative content for brands with personality. Based in Barcelona.">
-  <meta property="og:image" content="https://yellowsquare.studio/public/img/og-image-cover.jpg">
-  <meta property="og:url" content="https://yellowsquare.studio">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_ES">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Yellow Square Studio | Branding & Creative Agency Barcelona">
-  <meta name="twitter:description" content="Branding, identity design, photography and digital content. Creative studio based in Barcelona.">
-  <meta name="twitter:image" content="https://yellowsquare.studio/public/img/og-image-cover.jpg">
-
-  <!-- Favicon & Apple Icons -->
-  <link rel="icon" href="https://yellowsquare.studio/public/img/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="https://yellowsquare.studio/public/img/apple-touch.png">
-
+  <!-- Favicons -->
+  <link rel="icon" href="https://yellowsquare.studio/public/img/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="https://yellowsquare.studio/public/img/apple-touch.png" />
+  
+  <!-- Performance: preload (opcional) -->
   <!-- Styles -->
-  <link rel="stylesheet" href="./public/css/output.css" as="style">
-  <link rel="stylesheet" href="./public/css/styles.css" as="style">
+    <link rel="preload" href="./public/css/output.css" as="style">
+    <link rel="preload" href="./public/css/styles.css" as="style">
+    <link rel="stylesheet" href="./public/css/output.css">
+    <link rel="stylesheet" href="./public/css/styles.css">
 
-<!-- canonical URL -->
-  <link rel="canonical" href="https://yellowsquare.studio/">
+  <!-- Theme color (opcional) -->
+  <meta name="theme-color" content="#000000" />
 
-  <!-- SCHEMA / JSON-LD (Creative Agency) -->
+  <!-- Schema: Organization + LocalBusiness (sin street si no quieres) -->
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "CreativeAgency",
-  "name": "Yellow Square Studio",
-  "url": "https://yellowsquare.studio",
-  "image": "https://yellowsquare.studio/public/img/og-image-cover.jpg",
-  "logo": "https://yellowsquare.studio/public/img/logo.png",
-  "description": "Branding, visual identity, photography, graphic design and web design for small businesses and creators.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "TU-DIRECCIÓN-AQUÍ-SI-QUIERES",
-    "addressLocality": "Barcelona",
-    "addressRegion": "Catalunya",
-    "addressCountry": "ES"
-  },
-  "telephone": "+34 TU_NUMERO",
-  "email": "hola@yellowsquare.studio",
-  "areaServed": ["Barcelona", "España", "Europa"],
-  "sameAs": [
-    "https://instagram.com/TU-USUARIO",
-    "https://linkedin.com/company/TU-EMPRESA"
-  ],
-    "areaServed": ["Barcelona", "Badalona", "Hospitalet", "Terrassa", "Sabadell", "España", "Europa"],
-    "keywords": [
-      "branding studio Barcelona",
-      "creative agency Barcelona",
-      "web design Barcelona",
-      "photography services",
-      "brand identity",
-      "graphic design"
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://yellowsquare.studio/#org",
+        "name": "Yellow Square Studio",
+        "url": "https://yellowsquare.studio/",
+        "logo": "https://yellowsquare.studio/public/img/logo.png",
+        "image": "https://yellowsquare.studio/public/img/og-image-cover.jpg",
+        "email": "go.yellowsquare@gmail.com",
+        "sameAs": [
+          "https://www.instagram.com/yellow.square.studio"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://yellowsquare.studio/#local",
+        "name": "Yellow Square Studio",
+        "url": "https://yellowsquare.studio/",
+        "telephone": ["+34672900109", "+34623069631"],
+        "email": "go.yellowsquare@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Barcelona",
+          "addressRegion": "Catalunya",
+          "addressCountry": "ES"
+        },
+        "areaServed": [
+          "Barcelona",
+          "L'Hospitalet de Llobregat",
+          "Badalona",
+          "Sant Adrià de Besòs",
+          "Santa Coloma de Gramenet",
+          "Catalunya"
+        ],
+        "knowsAbout": [
+          "Diseño web",
+          "Branding",
+          "Identidad visual",
+          "SEO",
+          "Marketing digital",
+          "Fotografía",
+          "Vídeo",
+          "Redes sociales"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://yellowsquare.studio/#website",
+        "url": "https://yellowsquare.studio/",
+        "name": "Yellow Square Studio",
+        "publisher": { "@id": "https://yellowsquare.studio/#org" }
+      }
     ]
   }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto dura un proyecto de branding o web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del alcance, pero normalmente entre 2 y 5 semanas. Nos adaptamos a tus tiempos cuando es necesario."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Ofrecéis pago por fases?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La mayoría de clientes pagan 50% al inicio y 50% al entregar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Podéis trabajar con mi idea o boceto inicial?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claro. Si tienes referencias o una base, la incorporamos al proceso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué necesitáis para empezar mi web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Texto, fotos (podemos hacerlas nosotros), estructura básica y tu objetivo. Te guiamos en todo."
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
@@ -93,11 +159,11 @@
         <div class="hidden lg:flex h-16  items-center justify-between lg:p-14 px-4 py-14 mt-10">
             <!-- logo en pantallas grandes -->
             <div class="hidden xl:flex">
-                <a  href="index.html"><h1 class="text-4xl font-black" >Yellow Square Studio</h1></a>
+                <a  href="index.html"><h2 class="text-4xl font-black" >Yellow Square Studio</h2></a>
             </div>
             <!-- visible en pantallas pequeñas -->
             <div class="xl:hidden flex">
-                <a  href="index.html"><h1 class="text-4xl font-black" >Yellow <br>Square <br> Studio</h1></a>
+                <a  href="index.html"><h2 class="text-4xl font-black" >Yellow <br>Square <br> Studio</h2></a>
             </div>
             <!-- nav para escritorio (pantalla grande) -->
             <!-- CONTENEDOR FIJO PARA QUE NADA SE MUEVA -->
@@ -146,7 +212,7 @@
             <!-- visible en pantallas pequeñas -->
             <div class="flex flex-row items-center justify-between w-full ">
                 <div class="">
-                    <a  href="index.html"><h1 class="text-4xl font-black" >Yellow <br>Square <br> Studio</h1></a>
+                    <a  href="index.html"><h2 class="text-4xl font-black" >Yellow <br>Square <br> Studio</h2></a>
                 </div>
 
                 <div class="relative w-64 flex items-center justify-end">
@@ -210,155 +276,791 @@
         </div>
     </header>
 
-    <main class="w-[90%] bg-black h-full rounded-4xl mx-auto my-10 text-white">
-        <!-- Cada sección aparecerá con una animación suave de fade in al hacer scroll down -->
-         <!-- Web de servicios -->
-        <section id="start" class="text-center p-16 fade-in w-full h-[80vh] flex flex-col justify-center items-center">
-            <h2 class="lg:text-6xl text-4xl text-[#f4e67e] font-bold mb-4">Servicios!</h2>
-            <h2 class="lg:text-3xl text-xl font-bold mb-4">
-                Somos un estudio creativo que transforma ideas en marcas potentes.
-            </h2>
+    <main class="w-[90%] bg-black rounded-4xl mx-auto my-10 text-white overflow-hidden">
+        <!-- HERO / SEO -->
+        <section id="services-start" class="fade-in w-full px-6 lg:px-16 py-14 lg:py-20 border-b border-zinc-800">
+        <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10">
+            <div class="lg:w-8/12">
+            <p class="text-sm uppercase tracking-widest text-zinc-400 mb-4">
+                Servicios · Barcelona · Web · Branding · Foto/Video · SEO
+            </p>
+
+            <h1 class="text-4xl lg:text-6xl font-black leading-tight bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+                Servicios de diseño web, branding y contenido visual en Barcelona
+            </h1>
+
+            <p class="mt-6 text-lg lg:text-2xl text-zinc-300 leading-relaxed max-w-3xl">
+                Aquí no vendemos “pack de humo”. Diseñamos y producimos lo que tu negocio necesita para verse profesional,
+                comunicar claro y convertir mejor. Todo con un enfoque directo: estrategia, diseño y contenido real.
+            </p>
+
+            <div class="mt-10 flex flex-wrap gap-3">
+                <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">
+                Pedir presupuesto
+                </a>
+                <a href="projects.html" class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">
+                Ver proyectos
+                </a>
+                <a href="#packages" class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-zinc-700 text-white font-black hover:border-[#f5dd28] hover:text-[#f5dd28] transition-all duration-300">
+                Ver paquetes
+                </a>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
+                <div class="p-5 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <p class="text-[#f5dd28] font-black text-xl">Web</p>
+                <p class="text-zinc-300 mt-1">Rápida, clara y con SEO base.</p>
+                </div>
+                <div class="p-5 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <p class="text-[#f5dd28] font-black text-xl">Branding</p>
+                <p class="text-zinc-300 mt-1">Identidad coherente y usable.</p>
+                </div>
+                <div class="p-5 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <p class="text-[#f5dd28] font-black text-xl">Contenido</p>
+                <p class="text-zinc-300 mt-1">Foto y vídeo que venden.</p>
+                </div>
+            </div>
+            </div>
+
+            <!-- Side card -->
+            <div class="lg:w-4/12 w-full">
+            <div class="p-8 rounded-4xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h2 class="text-2xl font-black">¿No sabes qué necesitas?</h2>
+                <p class="text-zinc-300 mt-3">
+                Te lo decimos rápido: según tu sector, tu punto de partida y tu objetivo.
+                Sin vueltas.
+                </p>
+                <ul class="text-zinc-300 mt-6 space-y-3">
+                <li class="flex gap-3"><span class="text-[#f5dd28] font-black">✓</span> Diagnóstico breve (qué falla y por qué)</li>
+                <li class="flex gap-3"><span class="text-[#f5dd28] font-black">✓</span> Recomendación clara (lo mínimo viable)</li>
+                <li class="flex gap-3"><span class="text-[#f5dd28] font-black">✓</span> Plan de acción (pasos y prioridades)</li>
+                </ul>
+                <a href="contact.html" class="mt-8 inline-flex w-full items-center justify-center px-6 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">
+                Hablar con el estudio
+                </a>
+            </div>
+            </div>
+        </div>
         </section>
 
-       <section class="fade-in my-28 w-full flex flex-col items-center">
-            <div class="lg:w-[80%] w-full flex flex-col gap-20">
+        <!-- STICKY ANCHOR MENU -->
+        <section class="fade-in w-full border-b border-zinc-800 bg-black/70 backdrop-blur-sm sticky top-0 z-30">
+        <div class="px-4 lg:px-16 py-4 overflow-x-auto">
+            <nav class="flex items-center gap-3 min-w-max">
+            <a href="#web" class="px-4 py-2 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">Web</a>
+            <a href="#branding" class="px-4 py-2 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">Branding</a>
+            <a href="#content" class="px-4 py-2 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">Foto/Vídeo</a>
+            <a href="#seo" class="px-4 py-2 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">SEO</a>
+            <a href="#social" class="px-4 py-2 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">Redes</a>
+            <a href="#ads" class="px-4 py-2 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">Ads</a>
+            <a href="#packages" class="px-4 py-2 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">Paquetes</a>
+            <a href="#faq" class="px-4 py-2 rounded-full border border-zinc-700 text-white font-black hover:border-[#f5dd28] hover:text-[#f5dd28] transition-all duration-300">FAQ</a>
+            </nav>
+        </div>
+        </section>
 
-                <!-- 1. Branding & Identidad -->
-                <article class="flex flex-col lg:flex-row gap-8 items-center  p-12 rounded-4xl shadow-xl text-black">
-                <div class="lg:w-1/3 text-center lg:text-left">
-                    <h1 class="font-black text-7xl mb-4">1</h1>
-                    <h2 class="font-black text-3xl lg:text-4xl mb-6">Branding & Identidad</h2>
-                    <p class="text-zinc-700 font-light lg:text-lg mb-4">
-                    Creamos marcas sólidas y memorables que comunican quién eres y qué representas. No solo diseñamos logotipos, definimos tu **voz, paleta de colores, tipografía y personalidad visual**, creando una identidad coherente y estratégica.
-                    </p>
-                    <p class="text-zinc-700 font-light lg:text-lg mb-2">
-                    Nuestro proceso incluye:
-                    </p>
-                    <ul class="list-disc list-inside text-zinc-700 font-light">
-                    <li>Workshops para entender tu misión, visión y valores.</li>
-                    <li>Definición de branding estratégico con manual de marca completo.</li>
-                    <li>Diseño de elementos visuales que transmiten tu esencia y diferencian tu negocio.</li>
-                    </ul>
-                </div>
-                <div class="lg:w-2/3">
-                    <img src="./public/img/branding-example.jpg" alt="Branding Yellow Square Studio" class="rounded-2xl shadow-lg w-full object-cover">
-                </div>
-                </article>
+        <!-- HOW WE WORK -->
+        <section class="fade-in w-full px-6 lg:px-16 py-16 border-b border-zinc-800">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-3xl lg:text-5xl font-black bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+            Cómo trabajamos (sin complicarte la vida)
+            </h2>
+            <p class="text-zinc-300 mt-4 text-lg lg:text-2xl">
+            Proceso simple, directo y con revisiones. Lo que importa: que entiendas qué se está haciendo y por qué.
+            </p>
+        </div>
 
-                <!-- 2. Diseño Web -->
-                <article class="flex flex-col lg:flex-row-reverse gap-8 items-center p-12 rounded-4xl shadow-xl text-black">
-                <div class="lg:w-1/3 text-center lg:text-left">
-                    <h1 class="font-black text-7xl mb-4">2</h1>
-                    <h2 class="font-black text-3xl lg:text-4xl mb-6">Diseño Web</h2>
-                    <p class="text-zinc-700 font-light lg:text-lg mb-4">
-                    Desarrollamos **sitios web rápidos, atractivos y funcionales**, diseñados para comunicar tu marca y convertir visitantes en clientes. Cada proyecto se construye pensando en UX/UI y rendimiento.
-                    </p>
-                    <p class="text-zinc-700 font-light lg:text-lg mb-2">
-                    Cómo trabajamos:
-                    </p>
-                    <ul class="list-disc list-inside text-zinc-700 font-light">
-                    <li>Wireframes y prototipos en Figma para visualizar tu web antes de desarrollarla.</li>
-                    <li>Diseño responsive, optimizado para móviles y desktop.</li>
-                    <li>Implementación con tecnologías modernas, rendimiento y SEO desde el inicio.</li>
-                    </ul>
-                </div>
-                <div class="lg:w-2/3">
-                    <img src="./public/img/web-design-example.jpg" alt="Web Design Yellow Square Studio" class="rounded-2xl shadow-lg w-full object-cover">
-                </div>
-                </article>
-
-                <!-- 3. Fotografía -->
-                <article class="flex flex-col lg:flex-row gap-8 items-center p-12 rounded-4xl shadow-xl text-black">
-                <div class="lg:w-1/3 text-center lg:text-left">
-                    <h1 class="font-black text-7xl  mb-4">3</h1>
-                    <h2 class="font-black text-3xl lg:text-4xl mb-6">Fotografía Profesional</h2>
-                    <p class="text-zinc-700 font-light lg:text-lg mb-4">
-                    Capturamos la esencia de tu marca a través de **fotografía de producto, lifestyle y corporativa**. Creamos imágenes que conectan emocionalmente con tu audiencia y refuerzan tu identidad visual.
-                    </p>
-                    <p class="text-zinc-700 font-light lg:text-lg mb-2">
-                    Nuestro enfoque:
-                    </p>
-                    <ul class="list-disc list-inside font-light">
-                    <li>Sesiones de estudio o exteriores adaptadas a la estética de tu marca.</li>
-                    <li>Edición profesional y optimización para web y redes.</li>
-                    <li>Producción de contenidos que potencien tu storytelling visual.</li>
-                    </ul>
-                </div>
-                <div class="lg:w-2/3">
-                    <img src="./public/img/photography-example.jpg" alt="Photography Yellow Square Studio" class="rounded-2xl shadow-lg w-full object-cover">
-                </div>
-                </article>
-
-                <!-- 4. Creación de Contenido -->
-                <article class="flex flex-col lg:flex-row-reverse gap-8 items-center p-12 rounded-4xl shadow-xl text-black">
-                <div class="lg:w-1/3 text-center lg:text-left">
-                    <h1 class="font-black text-7xl  mb-4">4</h1>
-                    <h2 class="font-black text-3xl lg:text-4xl mb-6">Creación de Contenido</h2>
-                    <p class="text-zinc-700 font-light lg:text-lg mb-4">
-                    Generamos contenido **atractivo y coherente** para redes sociales, campañas publicitarias y storytelling. Cada pieza está diseñada para captar atención y reforzar tu marca.
-                    </p>
-                    <p class="text-zinc-700 font-light lg:text-lg mb-2">
-                    Nuestra metodología:
-                    </p>
-                    <ul class="list-disc list-inside font-light">
-                    <li>Planificación de contenido mensual y calendario editorial.</li>
-                    <li>Producción de imágenes, videos y gráficos que comunican tu mensaje.</li>
-                    <li>Optimización para engagement, alcance y conversiones.</li>
-                    </ul>
-                </div>
-                <div class="lg:w-2/3">
-                    <img src="./public/img/content-example.jpg" alt="Content Creation Yellow Square Studio" class="rounded-2xl shadow-lg w-full object-cover">
-                </div>
-                </article>
-
-                <!-- 5. Diseño Gráfico -->
-                <article class="flex flex-col lg:flex-row gap-8 items-center p-12 rounded-4xl shadow-xl text-black">
-                <div class="lg:w-1/3 text-center lg:text-left">
-                    <h1 class="font-black text-7xl  mb-4">5</h1>
-                    <h2 class="font-black text-3xl lg:text-4xl mb-6">Diseño Gráfico</h2>
-                    <p class="text-zinc-700 font-light lg:text-lg mb-4">
-                    Transformamos ideas en piezas visuales que **impactan y comunican**. Carteles, packaging, editoriales y todo tipo de material que tu marca necesita.
-                    </p>
-                    <p class="text-zinc-700 font-light lg:text-lg mb-2">
-                    Cómo trabajamos:
-                    </p>
-                    <ul class="list-disc list-inside text-zinc-700 font-light">
-                    <li>Conceptualización basada en la identidad de tu marca.</li>
-                    <li>Diseños atractivos, consistentes y adaptados a cada soporte.</li>
-                    <li>Revisión y refinamiento hasta alcanzar la perfección visual.</li>
-                    </ul>
-                </div>
-                <div class="lg:w-2/3">
-                    <img src="./public/img/graphic-design-example.jpg" alt="Graphic Design Yellow Square Studio" class="rounded-2xl shadow-lg w-full object-cover">
-                </div>
-                </article>
-
-                <!-- 6. Consultoría -->
-                <article class="flex flex-col lg:flex-row-reverse gap-8 items-center p-12 rounded-4xl shadow-xl text-black">
-                <div class="lg:w-1/3 text-center lg:text-left">
-                    <h1 class="font-black text-7xl  mb-4">6</h1>
-                    <h2 class="font-black text-3xl lg:text-4xl mb-6">Consultoría Estratégica</h2>
-                    <p class="text-zinc-700 font-light lg:text-lg mb-4">
-                    Ofrecemos asesoramiento **honesto y estratégico** para llevar tu marca a otro nivel. Identificamos oportunidades de crecimiento y definimos estrategias efectivas para tu negocio.
-                    </p>
-                    <p class="text-zinc-700 font-light lg:text-lg mb-2">
-                    Nuestro enfoque:
-                    </p>
-                    <ul class="list-disc list-inside text-zinc-700 font-light">
-                    <li>Análisis de marca y posicionamiento frente a la competencia.</li>
-                    <li>Recomendaciones prácticas para marketing, identidad y presencia digital.</li>
-                    <li>Plan de acción personalizado y seguimiento de resultados.</li>
-                    </ul>
-                </div>
-                <div class="lg:w-2/3">
-                    <img src="./public/img/consulting-example.jpg" alt="Consulting Yellow Square Studio" class="rounded-2xl shadow-lg w-full object-cover">
-                </div>
-                </article>
-
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+            <p class="text-[#f5dd28] font-black text-3xl">1</p>
+            <h3 class="text-xl font-black mt-2">Brief + objetivos</h3>
+            <p class="text-zinc-300 mt-2">Qué vendes, a quién, y qué debe lograr la web / marca.</p>
             </div>
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+            <p class="text-[#f5dd28] font-black text-3xl">2</p>
+            <h3 class="text-xl font-black mt-2">Estrategia</h3>
+            <p class="text-zinc-300 mt-2">Estructura, tono, mensajes, referencias y prioridades.</p>
+            </div>
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+            <p class="text-[#f5dd28] font-black text-3xl">3</p>
+            <h3 class="text-xl font-black mt-2">Diseño / producción</h3>
+            <p class="text-zinc-300 mt-2">Diseño visual, desarrollo, foto/vídeo, copys.</p>
+            </div>
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+            <p class="text-[#f5dd28] font-black text-3xl">4</p>
+            <h3 class="text-xl font-black mt-2">Revisión</h3>
+            <p class="text-zinc-300 mt-2">Ajustes con feedback claro y controlado.</p>
+            </div>
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+            <p class="text-[#f5dd28] font-black text-3xl">5</p>
+            <h3 class="text-xl font-black mt-2">Entrega + soporte</h3>
+            <p class="text-zinc-300 mt-2">Publicación, SEO base, analítica y guía de uso.</p>
+            </div>
+        </div>
+        </section>
+
+        <!-- SERVICE: WEB -->
+        <section id="web" class="fade-in w-full px-6 lg:px-16 py-16 border-b border-zinc-800">
+        <div class="flex flex-col lg:flex-row gap-10 items-start">
+            <div class="lg:w-7/12">
+            <p class="text-sm uppercase tracking-widest text-zinc-400">Servicio principal</p>
+            <h2 class="text-3xl lg:text-5xl font-black mt-3 bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+                Diseño Web (rápido, claro y optimizado)
+            </h2>
+            <p class="text-zinc-300 mt-4 text-lg lg:text-2xl leading-relaxed">
+                Creamos webs que no solo se ven bien: están pensadas para guiar al usuario,
+                generar confianza y convertir visitas en contactos, reservas o ventas.
+            </p>
+
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Qué incluye</h3>
+                <ul class="mt-3 space-y-2 text-zinc-300">
+                    <li>• Arquitectura de secciones (estructura que vende)</li>
+                    <li>• Diseño UI + UX (responsive)</li>
+                    <li>• Copy base orientado a conversión (si no tienes texto)</li>
+                    <li>• Performance (peso, imágenes, carga)</li>
+                    <li>• SEO técnico base (titles, h-tags, schema, sitemap)</li>
+                    <li>• Formularios / WhatsApp / CTA</li>
+                    <li>• Analítica (GA4 o alternativa) + eventos básicos</li>
+                </ul>
+                </div>
+
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Entregables</h3>
+                <ul class="mt-3 space-y-2 text-zinc-300">
+                    <li>• Web publicada + checklist de calidad</li>
+                    <li>• Versión móvil perfecta</li>
+                    <li>• Imágenes optimizadas + alt text</li>
+                    <li>• Setup de indexación (Search Console)</li>
+                    <li>• Mini guía para mantener / actualizar</li>
+                </ul>
+
+                <div class="mt-6 p-4 rounded-2xl border border-zinc-800 bg-black/30">
+                    <p class="text-zinc-300">
+                    <span class="text-white font-black">Tiempo típico:</span> 1–3 semanas (según alcance).
+                    </p>
+                </div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex flex-wrap gap-3">
+                <a href="contact.html" class="px-6 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">Quiero mi web</a>
+                <a href="projects.html" class="px-6 py-3 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">Ver webs</a>
+            </div>
+            </div>
+
+            <div class="lg:w-5/12 w-full">
+            <div class="p-8 rounded-4xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-2xl font-black">Ideal para</h3>
+                <p class="text-zinc-300 mt-3">
+                Negocios en Barcelona que necesitan una web profesional, rápida y preparada para posicionar.
+                </p>
+                <div class="mt-6 grid grid-cols-1 gap-3 text-zinc-300">
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">• Restaurantes (menú, reservas, maps)</div>
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">• Servicios locales (captación)</div>
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">• Marca personal (portfolio / autoridad)</div>
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">• E-commerce (estructura + fichas)</div>
+                </div>
+
+                <div class="mt-8 p-6 rounded-3xl border border-zinc-800 bg-black/30">
+                <p class="text-zinc-300">
+                    <span class="text-white font-black">Extra recomendado:</span> páginas de servicio por ciudad/sector (SEO local).
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- SERVICE: BRANDING -->
+        <section id="branding" class="fade-in w-full px-6 lg:px-16 py-16 border-b border-zinc-800">
+        <div class="flex flex-col lg:flex-row gap-10 items-start">
+            <div class="lg:w-7/12">
+            <p class="text-sm uppercase tracking-widest text-zinc-400">Servicio</p>
+            <h2 class="text-3xl lg:text-5xl font-black mt-3 bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+                Branding & Identidad Visual (coherente y usable)
+            </h2>
+            <p class="text-zinc-300 mt-4 text-lg lg:text-2xl leading-relaxed">
+                Logo bonito sin sistema = marca frágil. Creamos una identidad que se vea bien
+                en web, redes, tarjetas, menús, packaging y donde lo necesites.
+            </p>
+
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Qué incluye</h3>
+                <ul class="mt-3 space-y-2 text-zinc-300">
+                    <li>• Dirección creativa + referencias</li>
+                    <li>• Logo + versiones (horizontal, vertical, isotipo)</li>
+                    <li>• Paleta, tipografías, grid y reglas</li>
+                    <li>• Sistema visual (componentes y estilo)</li>
+                    <li>• Tono de marca (voice)</li>
+                    <li>• Mini brandbook (PDF)</li>
+                </ul>
+                </div>
+
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Entregables</h3>
+                <ul class="mt-3 space-y-2 text-zinc-300">
+                    <li>• Archivos listos para impresión y digital</li>
+                    <li>• Kit de logo (SVG/PNG/JPG)</li>
+                    <li>• Paleta y tipografías</li>
+                    <li>• Plantillas base (opcional)</li>
+                </ul>
+
+                <div class="mt-6 p-4 rounded-2xl border border-zinc-800 bg-black/30">
+                    <p class="text-zinc-300">
+                    <span class="text-white font-black">Tiempo típico:</span> 1–3 semanas.
+                    </p>
+                </div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex flex-wrap gap-3">
+                <a href="contact.html" class="px-6 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">Quiero branding</a>
+                <a href="projects.html" class="px-6 py-3 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">Ver marcas</a>
+            </div>
+            </div>
+
+            <div class="lg:w-5/12 w-full">
+            <div class="p-8 rounded-4xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-2xl font-black">Ideal para</h3>
+                <p class="text-zinc-300 mt-3">
+                Negocios que quieren dejar de “parecer amateurs” y construir una imagen sólida.
+                </p>
+
+                <div class="mt-6 space-y-3 text-zinc-300">
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">
+                    <span class="text-white font-black">Rebranding:</span> ya existes, pero tu imagen no representa tu nivel.
+                </div>
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">
+                    <span class="text-white font-black">Nueva marca:</span> arrancas y necesitas coherencia desde el día 1.
+                </div>
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">
+                    <span class="text-white font-black">Marca personal:</span> presencia profesional para vender servicios.
+                </div>
+                </div>
+
+                <div class="mt-8 p-6 rounded-3xl border border-zinc-800 bg-black/30">
+                <p class="text-zinc-300">
+                    <span class="text-white font-black">Tip:</span> branding + foto + web = percepción premium inmediata.
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- SERVICE: PHOTO/VIDEO -->
+        <section id="content" class="fade-in w-full px-6 lg:px-16 py-16 border-b border-zinc-800">
+        <div class="flex flex-col lg:flex-row gap-10 items-start">
+            <div class="lg:w-7/12">
+            <p class="text-sm uppercase tracking-widest text-zinc-400">Servicio</p>
+            <h2 class="text-3xl lg:text-5xl font-black mt-3 bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+                Fotografía & Vídeo (contenido que convierte)
+            </h2>
+            <p class="text-zinc-300 mt-4 text-lg lg:text-2xl leading-relaxed">
+                Si tus fotos parecen “hechas con prisa”, tu marca también. Producimos contenido con intención:
+                producto, local, retratos y vídeo corto para redes o ads.
+            </p>
+
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Qué incluye</h3>
+                <ul class="mt-3 space-y-2 text-zinc-300">
+                    <li>• Preproducción (referencias + estilo)</li>
+                    <li>• Shooting (producto, local o retrato)</li>
+                    <li>• Iluminación y dirección</li>
+                    <li>• Edición / retoque profesional</li>
+                    <li>• Exportación optimizada para web + redes</li>
+                </ul>
+                </div>
+
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Entregables</h3>
+                <ul class="mt-3 space-y-2 text-zinc-300">
+                    <li>• Pack de fotos en alta + versión IG</li>
+                    <li>• Clips verticales listos para reels (opcional)</li>
+                    <li>• Mini guía de uso (dónde usar cada foto)</li>
+                </ul>
+
+                <div class="mt-6 p-4 rounded-2xl border border-zinc-800 bg-black/30">
+                    <p class="text-zinc-300">
+                    <span class="text-white font-black">Tiempo típico:</span> 3–10 días (según volumen).
+                    </p>
+                </div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex flex-wrap gap-3">
+                <a href="contact.html" class="px-6 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">Quiero contenido</a>
+                <a href="projects.html" class="px-6 py-3 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">Ver fotos</a>
+            </div>
+            </div>
+
+            <div class="lg:w-5/12 w-full">
+            <div class="p-8 rounded-4xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-2xl font-black">Tipos de producción</h3>
+                <p class="text-zinc-300 mt-3">Elige lo que más te conviene (o combinamos).</p>
+
+                <div class="mt-6 grid grid-cols-1 gap-3 text-zinc-300">
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">• Producto (e-commerce / catálogo)</div>
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">• Restaurante (platos + local)</div>
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">• Marca personal (retratos + lifestyle)</div>
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">• Vídeo corto (reels / ads)</div>
+                </div>
+
+                <div class="mt-8 p-6 rounded-3xl border border-zinc-800 bg-black/30">
+                <p class="text-zinc-300">
+                    <span class="text-white font-black">Tip:</span> fotos de calidad suben la conversión sin tocar el precio.
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- SERVICE: SEO -->
+        <section id="seo" class="fade-in w-full px-6 lg:px-16 py-16 border-b border-zinc-800">
+        <div class="flex flex-col lg:flex-row gap-10 items-start">
+            <div class="lg:w-7/12">
+            <p class="text-sm uppercase tracking-widest text-zinc-400">Servicio</p>
+            <h2 class="text-3xl lg:text-5xl font-black mt-3 bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+                SEO & Contenido (para que te encuentren)
+            </h2>
+            <p class="text-zinc-300 mt-4 text-lg lg:text-2xl leading-relaxed">
+                No existe “SEO mágico”. Existe estructura + intención + contenido. Te dejamos una base sólida y páginas que posicionan.
+            </p>
+
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Qué incluye</h3>
+                <ul class="mt-3 space-y-2 text-zinc-300">
+                    <li>• Research de keywords (Barcelona + sector)</li>
+                    <li>• Arquitectura SEO (páginas y categorías)</li>
+                    <li>• Titles, descriptions, H1-H3</li>
+                    <li>• Schema (LocalBusiness, FAQ, etc.)</li>
+                    <li>• Interlinking (links internos que empujan)</li>
+                    <li>• Sitemap + robots + indexación</li>
+                </ul>
+                </div>
+
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Entregables</h3>
+                <ul class="mt-3 space-y-2 text-zinc-300">
+                    <li>• Plan de páginas SEO (por intención)</li>
+                    <li>• Optimización on-page</li>
+                    <li>• 1–3 páginas SEO listas (según pack)</li>
+                    <li>• Setup Search Console (si aplica)</li>
+                </ul>
+
+                <div class="mt-6 p-4 rounded-2xl border border-zinc-800 bg-black/30">
+                    <p class="text-zinc-300">
+                    <span class="text-white font-black">Tiempo típico:</span> 1–2 semanas para base + primeras páginas.
+                    </p>
+                </div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex flex-wrap gap-3">
+                <a href="contact.html" class="px-6 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">Quiero SEO</a>
+                <a href="projects.html" class="px-6 py-3 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">Ver resultados</a>
+            </div>
+            </div>
+
+            <div class="lg:w-5/12 w-full">
+            <div class="p-8 rounded-4xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-2xl font-black">SEO local en Barcelona</h3>
+                <p class="text-zinc-300 mt-3">
+                Ideal si vendes servicios en una zona específica. Te posiciona donde duele: búsquedas con intención real.
+                </p>
+                <div class="mt-6 p-6 rounded-3xl border border-zinc-800 bg-black/30 text-zinc-300">
+                <p class="font-black text-white">Ejemplos de intención:</p>
+                <ul class="mt-3 space-y-2">
+                    <li>• “diseño web Barcelona para restaurantes”</li>
+                    <li>• “fotografía de producto Barcelona e-commerce”</li>
+                    <li>• “branding Barcelona marca personal”</li>
+                    <li>• “agencia creativa Barcelona pequeña empresa”</li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- SERVICE: SOCIAL -->
+        <section id="social" class="fade-in w-full px-6 lg:px-16 py-16 border-b border-zinc-800">
+        <div class="flex flex-col lg:flex-row gap-10 items-start">
+            <div class="lg:w-7/12">
+            <p class="text-sm uppercase tracking-widest text-zinc-400">Servicio</p>
+            <h2 class="text-3xl lg:text-5xl font-black mt-3 bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+                Redes Sociales (estrategia + contenido)
+            </h2>
+            <p class="text-zinc-300 mt-4 text-lg lg:text-2xl leading-relaxed">
+                Si vas a publicar, publica con intención. Diseñamos una línea visual coherente y un calendario realista que puedas sostener.
+            </p>
+
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Qué incluye</h3>
+                <ul class="mt-3 space-y-2 text-zinc-300">
+                    <li>• Estrategia de contenido (pilares + tono)</li>
+                    <li>• Calendario mensual (posts, reels, stories)</li>
+                    <li>• Plantillas (Canva / Figma)</li>
+                    <li>• Producción visual (foto/vídeo si aplica)</li>
+                    <li>• Guía de estilo para consistencia</li>
+                </ul>
+                </div>
+
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Entregables</h3>
+                <ul class="mt-3 space-y-2 text-zinc-300">
+                    <li>• Pack de contenidos listos (según plan)</li>
+                    <li>• Plantillas reutilizables</li>
+                    <li>• Recomendación de formatos y ritmos</li>
+                </ul>
+
+                <div class="mt-6 p-4 rounded-2xl border border-zinc-800 bg-black/30">
+                    <p class="text-zinc-300">
+                    <span class="text-white font-black">Tiempo típico:</span> mensual (recomendado).
+                    </p>
+                </div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex flex-wrap gap-3">
+                <a href="contact.html" class="px-6 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">Quiero redes</a>
+                <a href="projects.html" class="px-6 py-3 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">Ver contenido</a>
+            </div>
+            </div>
+
+            <div class="lg:w-5/12 w-full">
+            <div class="p-8 rounded-4xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-2xl font-black">Para quién es</h3>
+                <p class="text-zinc-300 mt-3">
+                Para negocios que ya tienen algo que vender y necesitan consistencia visual + publicaciones con objetivo.
+                </p>
+                <div class="mt-6 space-y-3 text-zinc-300">
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">• Restaurantes (contenido + reservas)</div>
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">• Marca personal (autoridad)</div>
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">• E-commerce (producto + oferta)</div>
+                </div>
+
+                <div class="mt-8 p-6 rounded-3xl border border-zinc-800 bg-black/30">
+                <p class="text-zinc-300">
+                    <span class="text-white font-black">Importante:</span> si no hay buenas fotos, redes se caen. Por eso lo integramos.
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- SERVICE: ADS (optional / honest) -->
+        <section id="ads" class="fade-in w-full px-6 lg:px-16 py-16 border-b border-zinc-800">
+        <div class="flex flex-col lg:flex-row gap-10 items-start">
+            <div class="lg:w-7/12">
+            <p class="text-sm uppercase tracking-widest text-zinc-400">Servicio</p>
+            <h2 class="text-3xl lg:text-5xl font-black mt-3 bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+                Publicidad (Meta Ads / Google Ads)
+            </h2>
+            <p class="text-zinc-300 mt-4 text-lg lg:text-2xl leading-relaxed">
+                La publicidad funciona cuando hay base: oferta clara, landing que convierte y creatividades buenas.
+                Si no, solo quemas dinero. Aquí se hace bien o no se hace.
+            </p>
+
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Qué incluye</h3>
+                <ul class="mt-3 space-y-2 text-zinc-300">
+                    <li>• Configuración y objetivos (leads / ventas)</li>
+                    <li>• Creatividades (reels/imagen/copy) si aplica</li>
+                    <li>• Landing page (recomendado)</li>
+                    <li>• Tracking (pixel/eventos)</li>
+                    <li>• Optimización y reportes</li>
+                </ul>
+                </div>
+
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Requisitos</h3>
+                <ul class="mt-3 space-y-2 text-zinc-300">
+                    <li>• Oferta clara y precios/condiciones</li>
+                    <li>• Web o landing decente</li>
+                    <li>• Creatividades mínimas (o las hacemos)</li>
+                </ul>
+
+                <div class="mt-6 p-4 rounded-2xl border border-zinc-800 bg-black/30">
+                    <p class="text-zinc-300">
+                    <span class="text-white font-black">Tiempo típico:</span> setup 3–7 días + optimización mensual.
+                    </p>
+                </div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex flex-wrap gap-3">
+                <a href="contact.html" class="px-6 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">Quiero Ads</a>
+                <a href="projects.html" class="px-6 py-3 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">Ver ejemplos</a>
+            </div>
+            </div>
+
+            <div class="lg:w-5/12 w-full">
+            <div class="p-8 rounded-4xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-2xl font-black">Cuándo sí / cuándo no</h3>
+                <div class="mt-6 space-y-3 text-zinc-300">
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">
+                    <span class="text-white font-black">Sí:</span> ya vendes y quieres acelerar leads/ventas.
+                </div>
+                <div class="p-4 rounded-2xl border border-zinc-800 bg-black/30">
+                    <span class="text-white font-black">No:</span> no tienes oferta definida ni web lista.
+                </div>
+                </div>
+
+                <div class="mt-8 p-6 rounded-3xl border border-zinc-800 bg-black/30">
+                <p class="text-zinc-300">
+                    <span class="text-white font-black">Consejo:</span> antes de Ads, arregla web + contenido. Luego Ads multiplica.
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- INDUSTRIES / USE CASES -->
+        <section class="fade-in w-full px-6 lg:px-16 py-16 border-b border-zinc-800">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-3xl lg:text-5xl font-black bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+            Servicios por tipo de negocio
+            </h2>
+            <p class="text-zinc-300 mt-4 text-lg lg:text-2xl">
+            No todos necesitan lo mismo. Aquí van combinaciones típicas que funcionan.
+            </p>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <div class="p-7 rounded-4xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+            <h3 class="text-xl font-black text-[#f5dd28]">Restaurantes</h3>
+            <p class="text-zinc-300 mt-2">Foto + reels + web con reservas + SEO local.</p>
+            <a href="projects.html" class="mt-5 inline-block text-sm font-black text-white hover:text-[#f5dd28] transition-colors">Ver proyectos →</a>
+            </div>
+
+            <div class="p-7 rounded-4xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+            <h3 class="text-xl font-black text-[#f5dd28]">E-commerce</h3>
+            <p class="text-zinc-300 mt-2">Producto + fichas + web/tienda + SEO por categorías.</p>
+            <a href="projects.html" class="mt-5 inline-block text-sm font-black text-white hover:text-[#f5dd28] transition-colors">Ver proyectos →</a>
+            </div>
+
+            <div class="p-7 rounded-4xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+            <h3 class="text-xl font-black text-[#f5dd28]">Marca personal</h3>
+            <p class="text-zinc-300 mt-2">Branding + retratos + web portfolio + contenido.</p>
+            <a href="projects.html" class="mt-5 inline-block text-sm font-black text-white hover:text-[#f5dd28] transition-colors">Ver proyectos →</a>
+            </div>
+
+            <div class="p-7 rounded-4xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+            <h3 class="text-xl font-black text-[#f5dd28]">Autónomos & Pymes</h3>
+            <p class="text-zinc-300 mt-2">Identidad clara + web + SEO base + analítica.</p>
+            <a href="projects.html" class="mt-5 inline-block text-sm font-black text-white hover:text-[#f5dd28] transition-colors">Ver proyectos →</a>
+            </div>
+        </div>
+        </section>
+
+        <!-- PACKAGES -->
+        <section id="packages" class="fade-in w-full px-6 lg:px-16 py-16 border-b border-zinc-800">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-3xl lg:text-5xl font-black bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+            Paquetes (lo que más se compra)
+            </h2>
+            <p class="text-zinc-300 mt-4 text-lg lg:text-2xl">
+            Tres niveles. Sin lío. Escoge por tu etapa actual.
+            </p>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Launch -->
+            <div class="p-8 rounded-4xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+            <p class="text-xs uppercase tracking-widest text-zinc-400">Launch</p>
+            <h3 class="text-2xl font-black mt-2 text-[#f5dd28]">Para empezar bien</h3>
+            <p class="text-zinc-300 mt-3">Lo mínimo viable para verte pro y empezar a captar.</p>
+
+            <ul class="mt-6 space-y-2 text-zinc-300">
+                <li>• Web 1–3 secciones</li>
+                <li>• SEO base + indexación</li>
+                <li>• Copy base</li>
+                <li>• 5–10 fotos optimizadas (si ya las tienes)</li>
+            </ul>
+
+            <p class="mt-6 text-zinc-300"><span class="text-white font-black">Tiempo:</span> 1–2 semanas</p>
+
+            <a href="contact.html" class="mt-8 inline-flex w-full items-center justify-center px-6 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">
+                Me interesa
+            </a>
+            </div>
+
+            <!-- Growth -->
+            <div class="p-8 rounded-4xl border border-[#f5dd28] bg-black/60 hover:border-white transition-all duration-300">
+            <p class="text-xs uppercase tracking-widest text-zinc-300">Growth</p>
+            <h3 class="text-2xl font-black mt-2 text-[#f5dd28]">Para crecer</h3>
+            <p class="text-zinc-300 mt-3">Cuando ya vendes y quieres orden + conversión.</p>
+
+            <ul class="mt-6 space-y-2 text-zinc-300">
+                <li>• Web completa (estructura estratégica)</li>
+                <li>• Branding básico / ajustes identidad</li>
+                <li>• SEO por servicios (1–2 páginas)</li>
+                <li>• Contenido foto/vídeo base</li>
+                <li>• Analítica + eventos</li>
+            </ul>
+
+            <p class="mt-6 text-zinc-300"><span class="text-white font-black">Tiempo:</span> 2–4 semanas</p>
+
+            <a href="contact.html" class="mt-8 inline-flex w-full items-center justify-center px-6 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">
+                Lo quiero
+            </a>
+            </div>
+
+            <!-- Pro -->
+            <div class="p-8 rounded-4xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+            <p class="text-xs uppercase tracking-widest text-zinc-400">Pro</p>
+            <h3 class="text-2xl font-black mt-2 text-[#f5dd28]">Marca fuerte</h3>
+            <p class="text-zinc-300 mt-3">Para subir nivel: identidad + contenido + SEO serio.</p>
+
+            <ul class="mt-6 space-y-2 text-zinc-300">
+                <li>• Branding completo + brandbook</li>
+                <li>• Web + páginas de servicio SEO</li>
+                <li>• Sesión foto/vídeo completa</li>
+                <li>• Plantillas de redes</li>
+                <li>• Soporte / mantenimiento (opcional)</li>
+            </ul>
+
+            <p class="mt-6 text-zinc-300"><span class="text-white font-black">Tiempo:</span> 3–6 semanas</p>
+
+            <a href="contact.html" class="mt-8 inline-flex w-full items-center justify-center px-6 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">
+                Hablemos
+            </a>
+            </div>
+        </div>
+
+        <div class="mt-12 p-7 rounded-4xl border border-zinc-800 bg-black/40">
+            <p class="text-zinc-300">
+            <span class="text-white font-black">Nota honesta:</span> si no necesitas un paquete, no te lo vendo.
+            Te digo cuál es el mínimo que te conviene para avanzar.
+            </p>
+        </div>
+        </section>
+
+        <!-- WHAT WE DON'T DO -->
+        <section class="fade-in w-full px-6 lg:px-16 py-16 border-b border-zinc-800">
+        <div class="rounded-4xl border border-zinc-800 bg-black/40 p-10">
+            <h2 class="text-3xl lg:text-5xl font-black bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+            Lo que NO hacemos (porque no sirve)
+            </h2>
+
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 text-zinc-300">
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/30 hover:border-zinc-600 transition-all duration-300">
+                <p class="text-white font-black">❌ Logos rápidos sin sistema</p>
+                <p class="mt-2">Un logo sin reglas no te da consistencia en web y redes.</p>
+            </div>
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/30 hover:border-zinc-600 transition-all duration-300">
+                <p class="text-white font-black">❌ Webs lentas y sin SEO base</p>
+                <p class="mt-2">Si tarda, la gente se va. Y si no indexa, no existes.</p>
+            </div>
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/30 hover:border-zinc-600 transition-all duration-300">
+                <p class="text-white font-black">❌ Prometer “#1 en Google en 7 días”</p>
+                <p class="mt-2">Eso es mentira. SEO es estructura y consistencia.</p>
+            </div>
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/30 hover:border-zinc-600 transition-all duration-300">
+                <p class="text-white font-black">❌ Publicar por publicar</p>
+                <p class="mt-2">Redes sin estrategia es ruido. Y el ruido no vende.</p>
+            </div>
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/30 hover:border-zinc-600 transition-all duration-300">
+                <p class="text-white font-black">❌ “Diseño bonito” sin objetivo</p>
+                <p class="mt-2">La estética sin intención solo decora, no convierte.</p>
+            </div>
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/30 hover:border-zinc-600 transition-all duration-300">
+                <p class="text-white font-black">❌ Cambios infinitos sin control</p>
+                <p class="mt-2">Se trabaja con revisiones y criterio. Si no, nunca se entrega.</p>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="fade-in w-full px-6 lg:px-16 py-16">
+        <div class="rounded-4xl border border-zinc-800 bg-black/40 p-10">
+            <h2 class="text-3xl lg:text-5xl font-black bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+            Preguntas frecuentes
+            </h2>
+
+            <div class="mt-10 space-y-8">
+            <div class="border-b border-zinc-800 pb-6">
+                <h3 class="text-2xl font-black text-[#f5dd28]">¿Trabajáis solo en Barcelona?</h3>
+                <p class="text-zinc-300 mt-2">
+                Estamos en Barcelona, pero podemos trabajar remoto. Si el proyecto requiere sesión de foto/vídeo,
+                coordinamos según ubicación.
+                </p>
+            </div>
+
+            <div class="border-b border-zinc-800 pb-6">
+                <h3 class="text-2xl font-black text-[#f5dd28]">¿Ofrecéis pago por fases?</h3>
+                <p class="text-zinc-300 mt-2">
+                Sí. Normalmente 50% al inicio y 50% a la entrega. En proyectos grandes, por hitos.
+                </p>
+            </div>
+
+            <div class="border-b border-zinc-800 pb-6">
+                <h3 class="text-2xl font-black text-[#f5dd28]">¿Qué necesitáis para empezar?</h3>
+                <p class="text-zinc-300 mt-2">
+                Objetivo + qué vendes + referencias. Si no tienes textos o fotos, también lo solucionamos.
+                </p>
+            </div>
+
+            <div class="border-b border-zinc-800 pb-6">
+                <h3 class="text-2xl font-black text-[#f5dd28]">¿Incluye mantenimiento?</h3>
+                <p class="text-zinc-300 mt-2">
+                Podemos incluirlo como extra mensual: cambios, backups y mejoras continuas.
+                </p>
+            </div>
+
+            <div class="pb-2">
+                <h3 class="text-2xl font-black text-[#f5dd28]">¿Hacéis proyectos solo de un servicio?</h3>
+                <p class="text-zinc-300 mt-2">
+                Sí. Puedes contratar solo web, solo branding o solo foto/vídeo. Aun así, te diremos si falta algo crítico.
+                </p>
+            </div>
+            </div>
+
+            <div class="mt-10 p-7 rounded-4xl border border-zinc-800 bg-black/30 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div>
+                <h3 class="text-2xl font-black">¿Listo para mejorar tu imagen?</h3>
+                <p class="text-zinc-300 mt-2">Cuéntanos tu negocio y te diremos el camino más directo.</p>
+            </div>
+            <a href="contact.html" class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">
+                Hablar con el estudio
+            </a>
+            </div>
+        </div>
+        </section>
+
+        <!-- SEO TEXT BLOCK (indexable) -->
+        <section class="fade-in w-full px-6 lg:px-16 pb-16">
+        <div class="rounded-4xl border border-zinc-800 bg-black/40 p-10">
+            <h2 class="text-2xl lg:text-4xl font-black">Servicios creativos en Barcelona con enfoque a negocio</h2>
+            <p class="text-zinc-300 mt-4 leading-relaxed text-lg">
+            En <span class="text-white font-black">Yellow Square Studio</span> ofrecemos
+            <span class="text-white font-bold">diseño web en Barcelona</span>, <span class="text-white font-bold">branding e identidad visual</span>,
+            <span class="text-white font-bold">fotografía de producto</span>, <span class="text-white font-bold">vídeo para redes</span> y
+            <span class="text-white font-bold">SEO</span> para pequeñas empresas, autónomos, restaurantes y e-commerce.
+            Trabajamos con procesos claros, entregables concretos y diseño que sirve para vender, no solo para decorar.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+            <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">diseño web Barcelona</span>
+            <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">branding Barcelona</span>
+            <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">fotografía de producto Barcelona</span>
+            <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">SEO Barcelona</span>
+            <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">estudio creativo Barcelona</span>
+            </div>
+        </div>
         </section>
     </main>
-    
 
     <footer class="w-full ">
         <div id="" class="fade-in lg:my-28 my-16 flex items-center justify-center space-x-4 transition-all duration-500 rounded-full">
@@ -406,7 +1108,7 @@
             <div class="lg:w-[40%] w-full flex lg:flex-row flex-col justify-center items-center space-x-4">
                 <img src="./public/img/Yellow Square Studio Logo with shadow.png" width="150px" alt="">
                 <p class="text-base mt-4 font-black ">
-                Yellow Square Studio <br> Estudio creativo que convierte ideas en marcas poderosas. Diseño, desarrollo y comunicación visual sin rodeos.
+                Yellow Square Studio <br> Estudio creativo que convierte ideas en marcas. Diseño, desarrollo y comunicación visual.
                 </p>
             </div>
 
@@ -417,9 +1119,8 @@
         </div>
     </footer>
     
-    <script src="./js/main.js"></script>
-    <script src="./js/proyects.js"></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/proyects.js" defer></script>
+    <script src="./js/contact.js" defer></script>
 </body>
 </html>
-    
-

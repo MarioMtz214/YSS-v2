@@ -159,16 +159,37 @@ nav{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  /* OJO: esto hace invisibles textos si no fuerzas color en hijos */
   color: transparent;
+
   font-family: "Doto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-    font-variation-settings: "ROND" 0;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings: "ROND" 0;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* overlay para que el texto negro se lea siempre (opcional pero recomendado) */
+#form-container::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(245, 221, 40, 0.06); /* toque cálido */
+  backdrop-filter: blur(1px);
+  pointer-events:none;
+}
+
+#form-container > *{
+  position: relative;
+  z-index: 1;
 }
 
 #contact{
-   background-image: url('../img/Yellowsqbg2-h.jpg');
+  background-image: url('../img/Yellowsqbg2-h.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

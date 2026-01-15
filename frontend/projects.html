@@ -210,216 +210,521 @@
         </div>
     </header>
 
-    <main class="w-[90%] bg-black rounded-4xl mx-auto my-10 text-white overflow-hidden">
+   <main class="w-[90%] bg-black rounded-4xl mx-auto my-10 text-white overflow-hidden">
 
-        <!-- HERO -->
-        <section id="start" 
-            class="relative h-[70vh] flex flex-col justify-center items-center text-center fade-blur">
-            
-            <h1 class="text-[#f4e67e] font-black lg:text-6xl text-3xl mb-4 reveal-text">
-                Nuestros Proyectos
-            </h1>
+        <!-- HERO / SEO -->
+        <section id="projects-start" class="fade-in w-full px-6 lg:px-16 py-14 lg:py-20 border-b border-zinc-800">
+            <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10">
+            <div class="lg:w-8/12">
+                <p class="text-sm uppercase tracking-widest text-zinc-400 mb-4">
+                Portfolio · Barcelona · Branding · Web · Foto/Video · SEO
+                </p>
 
-            <h2 class="lg:text-3xl text-xl font-bold mb-4">
-                Branding, fotografía, diseño web y contenido visual para marcas que quieren destacar.
-            </h2>
-        </section>
+                <h1 class="text-4xl lg:text-6xl font-black leading-tight bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+                Proyectos de diseño web, branding y contenido visual en Barcelona
+                </h1>
 
-        <!-- SUBTÍTULO NARRATIVO -->
-        <section class="fade-blur mt-20 px-10">
-            <h2 class="text-center text-3xl lg:text-5xl font-black bg-gradient-to-tr from-[#EDECC2] to-[#f5dd28] bg-clip-text text-transparent">
-                Creamos identidades visuales que cuentan historias.
-            </h2>
-        </section>
+                <p class="mt-6 text-lg lg:text-2xl text-zinc-300 leading-relaxed max-w-3xl">
+                Aquí no verás “diseños bonitos” sin contexto. Verás proyectos reales creados para
+                <span class="text-white font-bold">convertir</span>: más confianza, más clientes y una presencia digital coherente.
+                Trabajamos con pequeñas empresas, restaurantes, e-commerce y marcas personales.
+                </p>
 
-        <!-- FILTROS (opcional activarlo con JS si quieres) -->
-        <section class="fade-blur mt-12 flex justify-center space-x-6 text-lg lg:text-xl font-light text-zinc-400">
-            <button class="filter-btn active text-[#f5dd28]">Todos</button>
-            <button class="filter-btn hover:text-[#f4e67e] transition">Branding</button>
-            <button class="filter-btn hover:text-[#f4e67e] transition">Fotografía</button>
-            <button class="filter-btn hover:text-[#f4e67e] transition">Web</button>
-            <button class="filter-btn hover:text-[#f4e67e] transition">Contenido</button>
-        </section>
-
-        <!-- GALERÍA -->
-        <!-- proyectos -->
-        <section id="proyectos" class="fade-in mt-24">
-            <!-- row 1 -->
-            <div class=" w-full flex lg:flex-row flex-col">
-                <!-- project 1 -->
-                <!-- al dar click sobre la tarjeta (el proyecto) se abrira un pop up con la imagen en grande y la descripcion del proyecto y un carrusel con mas imagenes del proyecto. -->
-                <!-- Project card -->
-                <div class="relative lg:w-1/2 w-full h-auto flex flex-col items-end justify-end project-card cursor-pointer hover:text-YSS1 filter lg:grayscale lg:hover:filter-none transition-all duration-300 group"
-                    data-images="./public/img/red-bull.jpg, ./public/img/red-bull-photo-session.jpg">
-
-                    <img src="./public/img/red-bull.jpg" 
-                        alt="Redbull product photography by Yellow Square Studio" 
-                        class="w-full h-96 object-cover hover:grayscale hover:blur-[2px] lg:hover:filter-none" />
-
-                    <div class="absolute p-4 w-full bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h2 class="text-xl font-bold mb-2 overflow-hidden text-end line-clamp-1">Redbull</h2>
-                        <p class="text-gray-300 overflow-hidden text-end line-clamp-5">
-                            Photography project showcasing the iconic Redbull can.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- project 2 -->
-                <div class="relative lg:w-1/2 w-full h-auto flex flex-col items-end justify-end project-card cursor-pointer hover:text-YSS1 filter lg:grayscale lg:hover:filter-none transition-all duration-300 group"
-                    data-images="./public/img/bitter-rosso.jpg, ./public/img/red-bull-photo-session.jpg">
-
-                    <img src="./public/img/bitter-rosso.jpg" 
-                        alt="bitter rosso" 
-                        class="w-full h-96 object-cover hover:grayscale hover:blur-[2px] lg:hover:filter-none " />
-
-                    <div class="absolute p-4 w-full bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h2 class="text-xl font-bold mb-2 overflow-hidden text-end line-clamp-1">Bitter Rosso</h2>
-                        <p class="text-gray-300 overflow-hidden text-end line-clamp-5">
-                            Photography project showcasing the iconic Bitter Rosso drink.
-                        </p>
-                    </div>
+                <div class="mt-10 flex flex-wrap gap-3">
+                <a href="#grid" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">
+                    Ver proyectos
+                </a>
+                <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">
+                    Cuéntanos tu proyecto
+                </a>
+                <a href="#faq" class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-zinc-700 text-white font-black hover:border-[#f5dd28] hover:text-[#f5dd28] transition-all duration-300">
+                    Preguntas frecuentes
+                </a>
                 </div>
             </div>
 
-            <!-- row 2 -->
-            <div class=" w-full flex lg:flex-row flex-col">
-                <!-- project 3 -->
-                <div class="relative lg:w-1/2 w-full h-auto flex flex-col items-end justify-end project-card cursor-pointer hover:text-YSS1 filter lg:grayscale lg:hover:filter-none transition-all duration-300 group"
-                    data-images="./public/img/Display gold MC for plum-mex showroom.jpg">
-
-                    <img src="./public/img/Display gold MC for plum-mex showroom.jpg" 
-                        alt="Display gold MC for plum-mex showroom" 
-                        class="w-full h-96 object-cover hover:grayscale hover:blur-[2px] lg:hover:filter-none" />
-
-                    <div class="absolute p-4 w-full bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h2 class="text-xl font-bold mb-2 overflow-hidden text-end line-clamp-1">Display gold MC for plum-mex showroom</h2>
-                        <p class="text-gray-300 overflow-hidden text-end line-clamp-5">
-                            Photography project showcasing the iconic Display gold MC for plum-mex showroom.
-                        </p>
-                    </div>
+            <!-- "Stats" / Proof -->
+            <div class="lg:w-4/12 w-full">
+                <div class="grid grid-cols-2 gap-4">
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                    <p class="text-3xl lg:text-4xl font-black text-[#f5dd28]">Web</p>
+                    <p class="text-zinc-300 mt-2">Diseño + performance + SEO base.</p>
                 </div>
-
-                <!-- project 4 -->
-                <div class="relative lg:w-1/2 w-full h-auto flex flex-col items-end justify-end project-card cursor-pointer hover:text-YSS1 filter lg:grayscale lg:hover:filter-none transition-all duration-300 group"
-                    data-images="./public/img/Schweppes.jpg">
-
-                    <img src="./public/img/Schweppes.jpg" 
-                        alt="Schweppes" 
-                        class="w-full h-96 object-cover hover:grayscale hover:blur-[2px] lg:hover:filter-none" />
-
-                    <div class="absolute p-4 w-full bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h2 class="text-xl font-bold mb-2 overflow-hidden text-end line-clamp-1">Schweppes</h2>
-                        <p class="text-gray-300 overflow-hidden text-end line-clamp-5">
-                            Photography project showcasing the iconic Schweppes drink.
-                        </p>
-                    </div>
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                    <p class="text-3xl lg:text-4xl font-black text-[#f5dd28]">Brand</p>
+                    <p class="text-zinc-300 mt-2">Identidad visual coherente y usable.</p>
+                </div>
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                    <p class="text-3xl lg:text-4xl font-black text-[#f5dd28]">Foto</p>
+                    <p class="text-zinc-300 mt-2">Producto, local, retrato y contenido.</p>
+                </div>
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                    <p class="text-3xl lg:text-4xl font-black text-[#f5dd28]">SEO</p>
+                    <p class="text-zinc-300 mt-2">Estructura + contenido con intención.</p>
+                </div>
                 </div>
             </div>
-
-            <!-- row 3 -->
-            <div class=" w-full flex lg:flex-row flex-col">
-                <!-- project 5 -->
-                <div class="relative lg:w-1/2 w-full h-auto flex flex-col items-end justify-end project-card cursor-pointer hover:text-YSS1 filter lg:grayscale lg:hover:filter-none transition-all duration-300 group"
-                    data-images="./public/img/bleu de chanel.jpg">
-
-                    <img src="./public/img/bleu de chanel.jpg" 
-                        alt="Bleu de Chanel" 
-                        class="w-full h-96 object-cover hover:grayscale hover:blur-[2px] lg:hover:filter-none" />
-
-                    <div class="absolute p-4 w-full bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h2 class="text-xl font-bold mb-2 overflow-hidden text-end line-clamp-1">Bleu de Chanel</h2>
-                        <p class="text-gray-300 overflow-hidden text-end line-clamp-5">
-                            Photography project showcasing the iconic Bleu de Chanel fragrance.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- project 6 -->
-                <div class="relative lg:w-1/2 w-full h-auto flex flex-col items-end justify-end project-card cursor-pointer hover:text-YSS1 filter lg:grayscale lg:hover:filter-none transition-all duration-300 group"
-                data-images="./public/img/web-plummex.jpg">
-
-                    <a href="https://plum-mex.co.uk/index.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="relative w-full h-full">
-
-                        <img src="./public/img/web-plummex.jpg"
-                            alt="Web Plumex"
-                            class="w-full h-96 object-coverhover:grayscale hover:blur-[2px] lg:hover:filter-none" />
-
-                        <!-- TEXTO ENCIMA DE LA IMAGEN -->
-                        <div class="absolute bottom-0 p-4 w-full bg-black/40
-                                    opacity-0 group-hover:opacity-100 transition-all duration-300">
-                            <h2 class="text-xl font-bold mb-2 overflow-hidden text-end line-clamp-1">
-                                Plum-mex showroom web
-                            </h2>
-                            <p class="text-gray-300 overflow-hidden text-end line-clamp-5">
-                                Plum-mex showroom web project.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-           
-        </section>
-
-        <!-- FEATURED PROJECT -->
-        <section class="fade-blur mt-28 px-10 lg:px-0">
-            <div class="relative w-full h-[60vh] rounded-4xl overflow-hidden">
-                <img src="./public/img/red-bull.jpg"
-                    class="absolute inset-0 w-full h-full object-cover opacity-70 blur-[1px]">
-                
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-
-                <div class="absolute bottom-10 left-10">
-                    <h2 class="text-4xl lg:text-6xl font-black">Proyecto Destacado</h2>
-                    <p class="text-lg text-zinc-300 mt-2 max-w-lg">
-                        Un proyecto que marcó un antes y un después en nuestro estilo visual.
-                    </p>
-
-                    <button class="mt-6 px-6 py-3 border border-white/30 rounded-full hover:bg-white hover:text-black transition">
-                        Ver caso completo
-                    </button>
-                </div>
             </div>
         </section>
 
-        <!-- ENFOQUE VISUAL -->
-        <section class="fade-blur mt-28 px-10 lg:px-0 text-center">
-            <h2 class="text-4xl lg:text-6xl font-black bg-gradient-to-tr from-[#EDECC2] to-[#f5dd28] bg-clip-text text-transparent">
-                Nuestro enfoque visual
-            </h2>
+        <!-- FILTROS -->
+        <section class="fade-in px-6 lg:px-16 py-10 border-b border-zinc-800">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div>
+                <h2 class="text-2xl lg:text-3xl font-black">Filtra por tipo de proyecto</h2>
+                <p class="text-zinc-300 mt-2">
+                Esto no es un “collage bonito”: filtra y encuentra ejemplos parecidos a tu negocio.
+                </p>
+            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-14">
+            <!-- filtros (JS-friendly) -->
+            <div class="flex flex-wrap gap-2">
+                <button class="filter-btn px-4 py-2 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300" data-filter="all">Todos</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-zinc-700 text-white font-black hover:border-[#f5dd28] hover:text-[#f5dd28] transition-all duration-300" data-filter="web">Diseño web</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-zinc-700 text-white font-black hover:border-[#f5dd28] hover:text-[#f5dd28] transition-all duration-300" data-filter="branding">Branding</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-zinc-700 text-white font-black hover:border-[#f5dd28] hover:text-[#f5dd28] transition-all duration-300" data-filter="photo">Fotografía de producto</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-zinc-700 text-white font-black hover:border-[#f5dd28] hover:text-[#f5dd28] transition-all duration-300" data-filter="restaurant">Restaurantes</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-zinc-700 text-white font-black hover:border-[#f5dd28] hover:text-[#f5dd28] transition-all duration-300" data-filter="ecommerce">E-commerce</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-zinc-700 text-white font-black hover:border-[#f5dd28] hover:text-[#f5dd28] transition-all duration-300" data-filter="personalbrand">Marca personal</button>
+            </div>
+            </div>
 
-                <div>
-                    <h3 class="text-2xl font-black mb-2">Dirección de arte</h3>
-                    <p class="text-zinc-300">Conceptos sólidos y estética limpia que definen cada proyecto.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-2xl font-black mb-2">Cuidado extremo</h3>
-                    <p class="text-zinc-300">Cada imagen, cada color y cada tipografía tiene un propósito.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-2xl font-black mb-2">Narrativa visual</h3>
-                    <p class="text-zinc-300">No solo mostramos imágenes: creamos historias que conectan.</p>
-                </div>
-
+            <!-- mini nota -->
+            <div class="mt-6 p-5 rounded-3xl border border-zinc-800 bg-black/40 text-zinc-300">
+            <p>
+                <span class="text-white font-black">Tip SEO:</span>
+                a futuro, cada filtro puede convertirse en una página indexable:
+                <span class="text-white font-bold">/projects/web</span>, <span class="text-white font-bold">/projects/branding</span>, etc.
+                Eso te trae tráfico long-tail (clientes muy concretos) sin pagar ads.
+            </p>
             </div>
         </section>
 
-        <!-- CTA FINAL -->
-        <section class="fade-blur mt-28 mb-20 text-center px-10">
-            <h2 class="text-4xl lg:text-6xl font-black bg-gradient-to-tr from-[#f3f3e2] to-[#f5dd28] bg-clip-text text-transparent">
-                ¿Listo para crear algo increíble?
-            </h2>
+        <!-- GRID PROYECTOS -->
+        <section id="grid" class="fade-in px-6 lg:px-16 py-14">
+            <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 mb-10">
+            <div>
+                <h2 class="text-3xl lg:text-5xl font-black bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+                Proyectos destacados
+                </h2>
+                <p class="text-zinc-300 mt-3 max-w-2xl">
+                Cada proyecto incluye contexto y decisiones. No es “arte”, es diseño aplicado a negocio.
+                </p>
+            </div>
 
-            <a href="contact.html" class="inline-block mt-8 px-10 py-4 border-2 border-[#f4e67e] rounded-full text-xl font-black hover:bg-[#f4e67e] hover:text-black transition-all">
-                Hablemos
+            <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">
+                Quiero algo así
             </a>
+            </div>
+
+            <!-- GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+            <!-- CARD 1 -->
+            <article class="project-item group rounded-4xl overflow-hidden border border-zinc-800 bg-black/30 hover:border-zinc-600 transition-all duration-300"
+                    data-category="photo ecommerce">
+                <a href="./projects/redbull-product-photography.html" class="block">
+                <div class="relative">
+                    <img src="./public/img/red-bull.jpg"
+                        alt="Fotografía de producto Red Bull — Yellow Square Studio Barcelona"
+                        loading="lazy"
+                        class="w-full h-64 object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 w-full p-5">
+                    <p class="text-xs uppercase tracking-widest text-zinc-300">Fotografía de producto · Bebidas</p>
+                    <h3 class="text-2xl font-black mt-1">Red Bull — Product Photography</h3>
+                    <p class="text-zinc-300 mt-2 line-clamp-2">
+                        Fotos de producto con estética premium, enfoque comercial y edición profesional para catálogo y redes.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="text-xs font-black px-3 py-1 rounded-full bg-white text-black">Foto</span>
+                        <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">Edición</span>
+                        <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">Contenido</span>
+                    </div>
+                    <p class="mt-5 text-sm font-black text-[#f5dd28]">Ver proyecto →</p>
+                    </div>
+                </div>
+                </a>
+            </article>
+
+            <!-- CARD 2 -->
+            <article class="project-item group rounded-4xl overflow-hidden border border-zinc-800 bg-black/30 hover:border-zinc-600 transition-all duration-300"
+                    data-category="photo">
+                <a href="./projects/bitter-rosso-product-photography.html" class="block">
+                <div class="relative">
+                    <img src="./public/img/bitter-rosso.jpg"
+                        alt="Fotografía de producto Bitter Rosso — Barcelona"
+                        loading="lazy"
+                        class="w-full h-64 object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 w-full p-5">
+                    <p class="text-xs uppercase tracking-widest text-zinc-300">Fotografía de producto</p>
+                    <h3 class="text-2xl font-black mt-1">Bitter Rosso — Product Set</h3>
+                    <p class="text-zinc-300 mt-2 line-clamp-2">
+                        Iluminación y composición pensadas para vender: nitidez, textura, color y “look” consistente.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="text-xs font-black px-3 py-1 rounded-full bg-white text-black">Foto</span>
+                        <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">Dirección</span>
+                    </div>
+                    <p class="mt-5 text-sm font-black text-[#f5dd28]">Ver proyecto →</p>
+                    </div>
+                </div>
+                </a>
+            </article>
+
+            <!-- CARD 3 -->
+            <article class="project-item group rounded-4xl overflow-hidden border border-zinc-800 bg-black/30 hover:border-zinc-600 transition-all duration-300"
+                    data-category="photo ecommerce">
+                <a href="./projects/plum-mex-display-gold.html" class="block">
+                <div class="relative">
+                    <img src="./public/img/Display gold MC for plum-mex showroom.jpg"
+                        alt="Fotografía de producto para showroom — Plum-Mex — Barcelona / UK"
+                        loading="lazy"
+                        class="w-full h-64 object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 w-full p-5">
+                    <p class="text-xs uppercase tracking-widest text-zinc-300">Fotografía comercial · Showroom</p>
+                    <h3 class="text-2xl font-black mt-1">Plum-Mex — Product Display</h3>
+                    <p class="text-zinc-300 mt-2 line-clamp-2">
+                        Fotografía para catálogo y redes: detalles, materiales, acabados y percepción premium.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="text-xs font-black px-3 py-1 rounded-full bg-white text-black">Foto</span>
+                        <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">Producto</span>
+                    </div>
+                    <p class="mt-5 text-sm font-black text-[#f5dd28]">Ver proyecto →</p>
+                    </div>
+                </div>
+                </a>
+            </article>
+
+            <!-- CARD 4 -->
+            <article class="project-item group rounded-4xl overflow-hidden border border-zinc-800 bg-black/30 hover:border-zinc-600 transition-all duration-300"
+                    data-category="photo">
+                <a href="./projects/schweppes-product-photography.html" class="block">
+                <div class="relative">
+                    <img src="./public/img/Schweppes.jpg"
+                        alt="Fotografía de producto Schweppes — Barcelona"
+                        loading="lazy"
+                        class="w-full h-64 object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 w-full p-5">
+                    <p class="text-xs uppercase tracking-widest text-zinc-300">Fotografía de producto · Bebidas</p>
+                    <h3 class="text-2xl font-black mt-1">Schweppes — Commercial Look</h3>
+                    <p class="text-zinc-300 mt-2 line-clamp-2">
+                        Fotografías con intención publicitaria: reflejos controlados, textura y contraste limpio.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="text-xs font-black px-3 py-1 rounded-full bg-white text-black">Foto</span>
+                        <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">Retoque</span>
+                    </div>
+                    <p class="mt-5 text-sm font-black text-[#f5dd28]">Ver proyecto →</p>
+                    </div>
+                </div>
+                </a>
+            </article>
+
+            <!-- CARD 5 -->
+            <article class="project-item group rounded-4xl overflow-hidden border border-zinc-800 bg-black/30 hover:border-zinc-600 transition-all duration-300"
+                    data-category="photo personalbrand">
+                <a href="./projects/bleu-de-chanel-product-photography.html" class="block">
+                <div class="relative">
+                    <img src="./public/img/bleu de chanel.jpg"
+                        alt="Fotografía de producto perfume Bleu de Chanel — Barcelona"
+                        loading="lazy"
+                        class="w-full h-64 object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 w-full p-5">
+                    <p class="text-xs uppercase tracking-widest text-zinc-300">Fotografía de producto · Lifestyle</p>
+                    <h3 class="text-2xl font-black mt-1">Bleu de Chanel — Detail Shots</h3>
+                    <p class="text-zinc-300 mt-2 line-clamp-2">
+                        Planos detalle pensados para percepción premium: luz, volumen, textura y elegancia visual.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="text-xs font-black px-3 py-1 rounded-full bg-white text-black">Foto</span>
+                        <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">Estética</span>
+                    </div>
+                    <p class="mt-5 text-sm font-black text-[#f5dd28]">Ver proyecto →</p>
+                    </div>
+                </div>
+                </a>
+            </article>
+
+            <!-- CARD 6 -->
+            <article class="project-item group rounded-4xl overflow-hidden border border-zinc-800 bg-black/30 hover:border-zinc-600 transition-all duration-300"
+                    data-category="web branding ecommerce">
+                <a href="https://plum-mex.co.uk/index.html" target="_blank" rel="noopener noreferrer" class="block">
+                <div class="relative">
+                    <img src="./public/img/web-plummex.jpg"
+                        alt="Diseño web para showroom de cocinas y baños — Plum-Mex"
+                        loading="lazy"
+                        class="w-full h-64 object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 w-full p-5">
+                    <p class="text-xs uppercase tracking-widest text-zinc-300">Diseño web · Branding · SEO base</p>
+                    <h3 class="text-2xl font-black mt-1">Plum-Mex — Showroom Website</h3>
+                    <p class="text-zinc-300 mt-2 line-clamp-2">
+                        Web con enfoque local, estructura clara y contenido pensado para convertir visitas en citas.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="text-xs font-black px-3 py-1 rounded-full bg-white text-black">Web</span>
+                        <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">SEO</span>
+                        <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">Contenido</span>
+                    </div>
+                    <p class="mt-5 text-sm font-black text-[#f5dd28]">Abrir web →</p>
+                    </div>
+                </div>
+                </a>
+            </article>
+
+            </div>
+
+            <!-- CTA after grid -->
+            <div class="mt-12 p-7 rounded-4xl border border-zinc-800 bg-black/40 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div>
+                <h3 class="text-2xl lg:text-3xl font-black">¿Quieres un proyecto parecido?</h3>
+                <p class="text-zinc-300 mt-2 max-w-2xl">
+                Si tienes un negocio en Barcelona y necesitas una web que venda, una identidad clara o contenido visual profesional,
+                cuéntanos tu idea y te decimos el camino más directo.
+                </p>
+            </div>
+            <a href="contact.html"
+                class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">
+                Hablar con el estudio
+            </a>
+            </div>
         </section>
+
+        <!-- "CÓMO TRABAJAMOS" / QUÉ INCLUYE -->
+        <section class="fade-in px-6 lg:px-16 pb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div class="rounded-4xl border border-zinc-800 bg-black/40 p-8">
+                <h2 class="text-3xl lg:text-4xl font-black bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+                Qué verás en cada proyecto (y por qué importa)
+                </h2>
+                <p class="text-zinc-300 mt-4 text-lg leading-relaxed">
+                La diferencia entre “portfolio bonito” y “portfolio que vende” es el contexto.
+                Por eso, cada caso se presenta con información que un cliente real necesita para confiar:
+                </p>
+
+                <ul class="mt-6 space-y-4 text-zinc-300">
+                <li class="flex gap-3">
+                    <span class="text-[#f5dd28] font-black">01.</span>
+                    <span><span class="text-white font-black">Contexto:</span> sector, objetivo y punto de partida.</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-[#f5dd28] font-black">02.</span>
+                    <span><span class="text-white font-black">Problema real:</span> qué estaba fallando (marca, web, contenido, conversión).</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-[#f5dd28] font-black">03.</span>
+                    <span><span class="text-white font-black">Solución:</span> qué diseñamos, cómo lo ejecutamos y por qué.</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-[#f5dd28] font-black">04.</span>
+                    <span><span class="text-white font-black">Servicios aplicados:</span> web, branding, foto/vídeo, SEO, ads, etc.</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-[#f5dd28] font-black">05.</span>
+                    <span><span class="text-white font-black">Resultado:</span> claridad, coherencia, percepción premium y próximos pasos.</span>
+                </li>
+                </ul>
+
+                <div class="mt-8 flex flex-wrap gap-3">
+                <a href="services.html" class="px-6 py-3 rounded-full border border-zinc-700 text-white font-black hover:bg-white hover:text-black transition-all duration-300">
+                    Ver servicios
+                </a>
+                <a href="contact.html" class="px-6 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">
+                    Pedir presupuesto
+                </a>
+                </div>
+            </div>
+
+            <div class="rounded-4xl border border-zinc-800 bg-black/40 p-8">
+                <h2 class="text-3xl lg:text-4xl font-black">Servicios que solemos combinar</h2>
+                <p class="text-zinc-300 mt-3 text-lg">
+                La mayoría de negocios no necesitan “todo”. Necesitan la combinación correcta.
+                </p>
+
+                <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="services.html#web" class="group p-5 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition-all duration-300">
+                    <h3 class="text-xl font-black text-[#f5dd28]">Diseño web</h3>
+                    <p class="text-zinc-300 mt-2">Estructura, velocidad, UX y copy para convertir.</p>
+                    <p class="mt-3 text-sm font-black text-white group-hover:text-[#f5dd28] transition-colors">Ver más →</p>
+                </a>
+
+                <a href="services.html#branding" class="group p-5 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition-all duration-300">
+                    <h3 class="text-xl font-black text-[#f5dd28]">Branding</h3>
+                    <p class="text-zinc-300 mt-2">Identidad visual, tono y sistema consistente.</p>
+                    <p class="mt-3 text-sm font-black text-white group-hover:text-[#f5dd28] transition-colors">Ver más →</p>
+                </a>
+
+                <a href="services.html#photo" class="group p-5 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition-all duration-300">
+                    <h3 class="text-xl font-black text-[#f5dd28]">Fotografía / vídeo</h3>
+                    <p class="text-zinc-300 mt-2">Contenido para producto, local y redes.</p>
+                    <p class="mt-3 text-sm font-black text-white group-hover:text-[#f5dd28] transition-colors">Ver más →</p>
+                </a>
+
+                <a href="services.html#seo" class="group p-5 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition-all duration-300">
+                    <h3 class="text-xl font-black text-[#f5dd28]">SEO & contenido</h3>
+                    <p class="text-zinc-300 mt-2">Arquitectura, intención y páginas que posicionan.</p>
+                    <p class="mt-3 text-sm font-black text-white group-hover:text-[#f5dd28] transition-colors">Ver más →</p>
+                </a>
+                </div>
+
+                <div class="mt-8 p-6 rounded-3xl border border-zinc-800 bg-black/30">
+                <p class="text-zinc-300">
+                    <span class="text-white font-black">Nota:</span> si tu web vive de popups y no hay URLs individuales, estás perdiendo SEO.
+                    Por eso te dejamos esto listo para crecer con páginas de proyecto reales.
+                </p>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- INDUSTRIAS -->
+        <section class="fade-in px-6 lg:px-16 py-16 border-t border-zinc-800">
+            <div class="text-center">
+            <h2 class="text-3xl lg:text-5xl font-black bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+                Trabajamos especialmente con
+            </h2>
+            <p class="text-zinc-300 mt-4 text-lg lg:text-2xl">
+                Cada sector tiene sus retos. Nosotros sabemos cómo comunicar valor en negocios reales.
+            </p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Restaurantes</h3>
+                <p class="text-zinc-300 mt-2">Foto, branding y contenido que aumenta reservas y presencia online.</p>
+            </div>
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">E-commerce</h3>
+                <p class="text-zinc-300 mt-2">Imágenes de producto + fichas + web para convertir visitas en ventas.</p>
+            </div>
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Marca personal</h3>
+                <p class="text-zinc-300 mt-2">Identidad moderna y contenido visual que eleva tu presencia digital.</p>
+            </div>
+            <div class="p-6 rounded-3xl border border-zinc-800 bg-black/40 hover:border-zinc-600 transition-all duration-300">
+                <h3 class="text-xl font-black text-[#f5dd28]">Autónomos & pymes</h3>
+                <p class="text-zinc-300 mt-2">Soluciones claras, sin complicaciones, adaptadas a presupuesto real.</p>
+            </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIOS -->
+        <section class="fade-in px-6 lg:px-16 pb-16">
+            <div class="rounded-4xl border border-zinc-800 bg-black/40 p-10">
+            <h2 class="text-3xl lg:text-5xl font-black bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+                Lo que dicen clientes reales
+            </h2>
+            <p class="text-zinc-300 mt-4 text-lg max-w-2xl">
+                Pocas frases, directas. Sin “somos los mejores”. Resultados percibidos y trabajo serio.
+            </p>
+
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/30 hover:border-zinc-600 transition-all duration-300">
+                <p class="text-zinc-300 text-lg italic">
+                    “Profesionales, rápidos y con un gusto increíble. Nuestra imagen cambió por completo.”
+                </p>
+                <p class="mt-4 font-black text-[#f5dd28]">Plum-Mex Showroom</p>
+                <p class="text-zinc-400 text-sm">Web + contenido + percepción premium</p>
+                </div>
+
+                <div class="p-6 rounded-3xl border border-zinc-800 bg-black/30 hover:border-zinc-600 transition-all duration-300">
+                <p class="text-zinc-300 text-lg italic">
+                    “Me ayudaron a crear mi marca desde cero. Hoy mis clientes me perciben como una empresa seria.”
+                </p>
+                <p class="mt-4 font-black text-[#f5dd28]">María G. — Emprendedora</p>
+                <p class="text-zinc-400 text-sm">Branding + contenido + orden visual</p>
+                </div>
+            </div>
+
+            <div class="mt-10 flex justify-end">
+                <a href="contact.html" class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">
+                Quiero mejorar mi imagen
+                </a>
+            </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="fade-in px-6 lg:px-16 pb-16">
+            <div class="rounded-4xl border border-zinc-800 bg-black/40 p-10">
+            <h2 class="text-3xl lg:text-5xl font-black bg-gradient-to-tr from-[#faf9ec] to-[#f5dd28] bg-clip-text text-transparent">
+                Preguntas frecuentes
+            </h2>
+
+            <div class="mt-10 space-y-8">
+                <div class="border-b border-zinc-800 pb-6">
+                <h3 class="text-2xl font-black text-[#f5dd28]">¿Cuánto dura un proyecto de branding o web?</h3>
+                <p class="text-zinc-300 mt-2">
+                    Depende del alcance, pero normalmente entre <span class="text-white font-bold">2 y 5 semanas</span>.
+                    Si hay prisa real, ajustamos el plan sin romper la calidad.
+                </p>
+                </div>
+
+                <div class="border-b border-zinc-800 pb-6">
+                <h3 class="text-2xl font-black text-[#f5dd28]">¿Ofrecéis pago por fases?</h3>
+                <p class="text-zinc-300 mt-2">
+                    Sí. Lo típico es <span class="text-white font-bold">50% al inicio y 50% a la entrega</span>.
+                    En proyectos más grandes podemos dividir por hitos.
+                </p>
+                </div>
+
+                <div class="border-b border-zinc-800 pb-6">
+                <h3 class="text-2xl font-black text-[#f5dd28]">¿Podéis trabajar con mi idea o boceto inicial?</h3>
+                <p class="text-zinc-300 mt-2">
+                    Claro. Si ya tienes referencias, las usamos como punto de partida y te guiamos para que
+                    tu marca no se vea “como otra más”.
+                </p>
+                </div>
+
+                <div class="pb-2">
+                <h3 class="text-2xl font-black text-[#f5dd28]">¿Qué necesitáis para empezar?</h3>
+                <p class="text-zinc-300 mt-2">
+                    1) objetivo claro, 2) servicios/productos, 3) lo que ya tienes (logo, fotos, web) y 4) ejemplos de estilo.
+                    Si no tienes nada, también vale: empezamos desde cero.
+                </p>
+                </div>
+            </div>
+
+            <div class="mt-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                <p class="text-zinc-300">
+                ¿Tienes una pregunta concreta? Escríbenos y te contestamos claro, sin rodeos.
+                </p>
+                <a href="contact.html" class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white text-black font-black hover:bg-[#f5dd28] transition-all duration-300">
+                Hablar con el estudio
+                </a>
+            </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE SEO FINAL (texto indexable, natural) -->
+        <section class="fade-in px-6 lg:px-16 pb-16">
+            <div class="rounded-4xl border border-zinc-800 bg-black/40 p-10">
+            <h2 class="text-2xl lg:text-4xl font-black">Estudio creativo en Barcelona (sin humo)</h2>
+            <p class="text-zinc-300 mt-4 leading-relaxed text-lg">
+                En <span class="text-white font-black">Yellow Square Studio</span> desarrollamos proyectos de
+                <span class="text-white font-bold">diseño web en Barcelona</span>, <span class="text-white font-bold">branding e identidad visual</span>,
+                <span class="text-white font-bold">fotografía de producto</span> y <span class="text-white font-bold">contenido para redes</span>
+                orientados a resultados. Trabajamos con negocios reales que necesitan una imagen coherente, una web rápida y clara,
+                y material visual profesional para vender mejor. Si estás en Barcelona (o alrededores) y quieres mejorar tu presencia digital,
+                aquí tienes ejemplos y un proceso directo para hacerlo bien.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+                <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">diseño web Barcelona</span>
+                <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">branding Barcelona</span>
+                <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">fotografía de producto Barcelona</span>
+                <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">contenido redes Barcelona</span>
+                <span class="text-xs font-black px-3 py-1 rounded-full border border-zinc-600 text-white">estudio creativo Barcelona</span>
+            </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="w-full ">
