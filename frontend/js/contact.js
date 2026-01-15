@@ -39,38 +39,40 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("PAYLOAD SENT ✅", payload);
     const formData = new FormData(form);
 
-    const payload = {
-        firstName: (formData.get("firstName") || "").toString().trim(),
-        businessName: (formData.get("businessName") || "").toString().trim(),
-        phone: (formData.get("phone") || "").toString().trim(),
-        email: (formData.get("email") || "").toString().trim(),
-        message: (formData.get("message") || "").toString().trim(),
+    // convierte TODO el form a objeto
+    const payload = Object.fromEntries(formData.entries());
 
-        // ✅ nuevos
-        service: (formData.get("service") || "").toString().trim(),
-        budget: (formData.get("budget") || "").toString().trim(),
-        timeline: (formData.get("timeline") || "").toString().trim(),
+    // normaliza strings
+    payload.firstName = (payload.firstName || "").toString().trim();
+    payload.businessName = (payload.businessName || "").toString().trim();
+    payload.phone = (payload.phone || "").toString().trim();
+    payload.email = (payload.email || "").toString().trim();
+    payload.message = (payload.message || "").toString().trim();
+    payload.service = (payload.service || "").toString().trim();
+    payload.budget = (payload.budget || "").toString().trim();
+    payload.timeline = (payload.timeline || "").toString().trim();
 
-        // checkbox: si está marcado, FormData lo trae (normalmente "on")
-        rgpd: formData.get("rgpd") ? true : false,
-    };
+    // checkbox: si está marcado, FormData trae "on"; si no, null
+    payload.rgpd = formData.get("rgpd") ? true : false;
+
+    console.log("PAYLOAD SENT ✅", payload);
 
     // Validaciones
     if (!payload.firstName || !payload.businessName || !payload.phone || !payload.email || !payload.message) {
-      setFeedback("Rellena todos los campos obligatorios.", false);
-      return;
-    }
-    if (!payload.service) {
-      setFeedback("Selecciona qué necesitas.", false);
-      return;
-    }
-    if (!payload.rgpd) {
-      setFeedback("Debes aceptar la política de privacidad (RGPD).", false);
-      return;
+    setFeedback("Rellena todos los campos.", false);
+    return;
     }
     if (!payload.email.includes("@")) {
-      setFeedback("Pon un correo válido.", false);
-      return;
+    setFeedback("Pon un correo válido.", false);
+    return;
+    }
+    if (!payload.service) {
+    setFeedback("Selecciona qué necesitas.", false);
+    return;
+    }
+    if (!payload.rgpd) {
+    setFeedback("Debes aceptar la política (RGPD).", false);
+    return;
     }
 
     setLoading(true);
