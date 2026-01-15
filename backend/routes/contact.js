@@ -50,17 +50,29 @@ router.post("/", async (req, res) => {
   const fullName = `${firstName} ${businessName}`;
 
   try {
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: Number(process.env.SMTP_PORT) === 465,
-      auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
-      // Hostinger suele ir bien sin tocar tls, pero lo dejamos por si acaso:
-      tls: { rejectUnauthorized: false },
+    console.log("SMTP CONFIG:", {
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    user: process.env.SMTP_USER,
+    passLen: (process.env.SMTP_PASS || "").length,
+  });
+    const smtpHost = process.env.SMTP_HOST;
+    const smtpPort = Number(process.env.SMTP_PORT);
 
-      connectionTimeout: 15000,
-      greetingTimeout: 15000,
-      socketTimeout: 30000,
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465, // 465 SSL
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+      tls: {
+        servername: smtpHost, // ayuda con algunos hosts
+      },
+      connectionTimeout: 30000,
+      greetingTimeout: 30000,
+      socketTimeout: 60000,
     });
 
     await transporter.verify();
