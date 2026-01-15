@@ -36,15 +36,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData(form);
 
     const payload = {
-      firstName: (formData.get("firstName") || "").toString().trim(),
-      businessName: (formData.get("businessName") || "").toString().trim(),
-      phone: (formData.get("phone") || "").toString().trim(),
-      email: (formData.get("email") || "").toString().trim(),
-      service: (formData.get("service") || "").toString().trim(),
-      budget: (formData.get("budget") || "").toString().trim(),
-      timeline: (formData.get("timeline") || "").toString().trim(),
-      rgpd: formData.get("rgpd") === "on", // checkbox
-      message: (formData.get("message") || "").toString().trim(),
+        firstName: (formData.get("firstName") || "").toString().trim(),
+        businessName: (formData.get("businessName") || "").toString().trim(),
+        phone: (formData.get("phone") || "").toString().trim(),
+        email: (formData.get("email") || "").toString().trim(),
+        message: (formData.get("message") || "").toString().trim(),
+
+        // ✅ nuevos
+        service: (formData.get("service") || "").toString().trim(),
+        budget: (formData.get("budget") || "").toString().trim(),
+        timeline: (formData.get("timeline") || "").toString().trim(),
+
+        // checkbox: si está marcado, FormData lo trae (normalmente "on")
+        rgpd: formData.get("rgpd") ? true : false,
     };
 
     // Validaciones

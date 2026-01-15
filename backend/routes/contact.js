@@ -7,6 +7,19 @@ require("dotenv").config();
 const router = express.Router();
 
 router.post("/", async (req, res) => {
+  console.log("CONTACT BODY KEYS:", Object.keys(req.body || {}));
+  console.log("CONTACT BODY:", {
+    firstName: req.body?.firstName,
+    businessName: req.body?.businessName,
+    email: req.body?.email,
+    phone: req.body?.phone,
+    service: req.body?.service,
+    budget: req.body?.budget,
+    timeline: req.body?.timeline,
+    rgpd: req.body?.rgpd,
+    messageLen: (req.body?.message || "").length,
+  });
+
   const {
     firstName,
     businessName,
