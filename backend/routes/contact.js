@@ -32,6 +32,8 @@ router.post("/", async (req, res) => {
     rgpd,
   } = req.body || {};
 
+  console.log("CONTACT BODY KEYS:", Object.keys(req.body || {}));
+  console.log("CONTACT BODY RAW:", req.body);
   // required básicos
   if (!firstName || !businessName || !email || !phone || !message) {
     return res.status(400).json({ message: "All fields are required." });
@@ -39,7 +41,7 @@ router.post("/", async (req, res) => {
 
   // nuevos required reales
   if (!service) {
-    return res.status(400).json({ message: "Service is required." });
+    return res.status(400).json({ message: "Service is required.", receivedKeys: Object.keys(req.body || {}) });
   }
   if (!rgpd) {
     return res.status(400).json({ message: "RGPD consent is required." });

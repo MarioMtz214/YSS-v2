@@ -1,12 +1,13 @@
 // ----------------frontend/js/contact.js----------------
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("CONTACT.JS VERSION 👉 2026-01-15-01");
+
   const form = document.getElementById("contactForm");
   const feedback = document.getElementById("formFeedback");
   const submitBtn = document.getElementById("contact-submit");
   const btnText = submitBtn?.querySelector(".btn-text");
   const spinner = submitBtn?.querySelector("svg");
-  console.log("CONTACT.JS LOADED ✅ v=2026-01-15-1");
 
   if (!form || !feedback || !submitBtn || !btnText || !spinner) return;
 
@@ -18,9 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ? "http://localhost:10000"
     : "https://yss-v2.onrender.com";
 
-    console.log("HOST:", window.location.hostname);
-    console.log("API_BASE:", API_BASE);
-
   const setLoading = (isLoading) => {
     submitBtn.disabled = isLoading;
     spinner.classList.toggle("hidden", !isLoading);
@@ -29,20 +27,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const setFeedback = (msg, ok) => {
     feedback.textContent = msg;
-    // Mantén tu estilo (texto negro) pero si quieres color:
     feedback.classList.remove("text-red-500", "text-green-500");
     feedback.classList.add(ok ? "text-green-500" : "text-red-500");
   };
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    console.log("PAYLOAD SENT ✅", payload);
-    const formData = new FormData(form);
 
-    // convierte TODO el form a objeto
+    const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
 
-    // normaliza strings
+    // normaliza
     payload.firstName = (payload.firstName || "").toString().trim();
     payload.businessName = (payload.businessName || "").toString().trim();
     payload.phone = (payload.phone || "").toString().trim();
@@ -51,28 +46,25 @@ document.addEventListener("DOMContentLoaded", () => {
     payload.service = (payload.service || "").toString().trim();
     payload.budget = (payload.budget || "").toString().trim();
     payload.timeline = (payload.timeline || "").toString().trim();
-
-    // checkbox: si está marcado, FormData trae "on"; si no, null
     payload.rgpd = formData.get("rgpd") ? true : false;
 
     console.log("PAYLOAD SENT ✅", payload);
 
-    // Validaciones
     if (!payload.firstName || !payload.businessName || !payload.phone || !payload.email || !payload.message) {
-    setFeedback("Rellena todos los campos.", false);
-    return;
+      setFeedback("Rellena todos los campos.", false);
+      return;
     }
     if (!payload.email.includes("@")) {
-    setFeedback("Pon un correo válido.", false);
-    return;
+      setFeedback("Pon un correo válido.", false);
+      return;
     }
     if (!payload.service) {
-    setFeedback("Selecciona qué necesitas.", false);
-    return;
+      setFeedback("Selecciona qué necesitas.", false);
+      return;
     }
     if (!payload.rgpd) {
-    setFeedback("Debes aceptar la política (RGPD).", false);
-    return;
+      setFeedback("Debes aceptar la política (RGPD).", false);
+      return;
     }
 
     setLoading(true);
@@ -84,9 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         body: JSON.stringify(payload),
       });
 
-      const data = await res
-        .json()
-        .catch(async () => ({ message: await res.text() }));
+      const data = await res.json().catch(async () => ({ message: await res.text() }));
 
       if (res.ok) {
         setFeedback(data.message || "Mensaje enviado correctamente.", true);
