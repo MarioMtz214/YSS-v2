@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitBtn = document.getElementById("contact-submit");
   const btnText = submitBtn?.querySelector(".btn-text");
   const spinner = submitBtn?.querySelector("svg");
+  console.log("CONTACT.JS LOADED ✅ v=2026-01-15-1");
 
   if (!form || !feedback || !submitBtn || !btnText || !spinner) return;
 
@@ -16,6 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const API_BASE = isLocal
     ? "http://localhost:10000"
     : "https://yss-v2.onrender.com";
+
+    console.log("HOST:", window.location.hostname);
+    console.log("API_BASE:", API_BASE);
 
   const setLoading = (isLoading) => {
     submitBtn.disabled = isLoading;
@@ -32,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
+    console.log("PAYLOAD SENT ✅", payload);
     const formData = new FormData(form);
 
     const payload = {
