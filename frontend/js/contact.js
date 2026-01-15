@@ -1,7 +1,7 @@
 // ----------------frontend/js/contact.js----------------
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("CONTACT.JS LOADED ✅ v=2026-01-15-1");
+  console.log("CONTACT.JS LOADED ✅ v=2026-01-15-2");
 
   const form = document.getElementById("contactForm");
   const feedback = document.getElementById("formFeedback");
@@ -9,18 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnText = submitBtn?.querySelector(".btn-text");
   const spinner = submitBtn?.querySelector("svg");
 
-  if (!form || !feedback || !submitBtn || !btnText || !spinner) {
-    console.log("CONTACT.JS: missing elements", { form, feedback, submitBtn, btnText, spinner });
-    return;
-  }
+  if (!form || !feedback || !submitBtn || !btnText || !spinner) return;
 
   const isLocal =
     window.location.hostname === "localhost" ||
     window.location.hostname === "127.0.0.1";
 
   const API_BASE = isLocal ? "http://localhost:10000" : "https://yss-v2.onrender.com";
-  console.log("HOST:", window.location.hostname);
-  console.log("API_BASE:", API_BASE);
 
   const setLoading = (isLoading) => {
     submitBtn.disabled = isLoading;
@@ -36,52 +31,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    console.log("SUBMIT ✅");
+
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    // Normaliza
+    payload.firstName = (payload.firstName || "").toString().trim();
+    payload.businessName = (payload.businessName || "").toString().trim();
+    payload.phone = (payload.phone || "").toString().trim();
+    payload.email = (payload.email || "").toString().trim();
+    payload.message = (payload.message || "").toString().trim();
+    payload.service = (payload.service || "").toString().trim();
+    payload.budget = (payload.budget || "").toString().trim();
+    payload.timeline = (payload.timeline || "").toString().trim();
+    payload.rgpd = !!formData.get("rgpd"); // checkbox -> boolean
+
+    // Validación
+    if (!payload.firstName || !payload.businessName || !payload.phone || !payload.email || !payload.message) {
+      setFeedback("Rellena todos los campos.", false);
+      return;
+    }
+    if (!payload.email.includes("@")) {
+      setFeedback("Pon un correo válido.", false);
+      return;
+    }
+    if (!payload.service) {
+      setFeedback("Selecciona qué necesitas.", false);
+      return;
+    }
+    if (!payload.rgpd) {
+      setFeedback("Debes aceptar la política (RGPD).", false);
+      return;
+    }
+
+    setLoading(true);
 
     try {
-      const formData = new FormData(form);
-      const payload = Object.fromEntries(formData.entries());
-
-      // normaliza y añade checkbox
-      payload.firstName = (payload.firstName || "").toString().trim();
-      payload.businessName = (payload.businessName || "").toString().trim();
-      payload.phone = (payload.phone || "").toString().trim();
-      payload.email = (payload.email || "").toString().trim();
-      payload.message = (payload.message || "").toString().trim();
-      payload.service = (payload.service || "").toString().trim();
-      payload.budget = (payload.budget || "").toString().trim();
-      payload.timeline = (payload.timeline || "").toString().trim();
-      payload.rgpd = formData.get("rgpd") ? true : false;
-
-      console.log("PAYLOAD SENT ✅", payload);
-
-      if (!payload.firstName || !payload.businessName || !payload.phone || !payload.email || !payload.message) {
-        setFeedback("Rellena todos los campos.", false);
-        return;
-      }
-      if (!payload.email.includes("@")) {
-        setFeedback("Pon un correo válido.", false);
-        return;
-      }
-      if (!payload.service) {
-        setFeedback("Selecciona qué necesitas.", false);
-        return;
-      }
-      if (!payload.rgpd) {
-        setFeedback("Debes aceptar la política (RGPD).", false);
-        return;
-      }
-
-      setLoading(true);
-
       const res = await fetch(`${API_BASE}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      const data = await res.json().catch(async () => ({ message: await res.text() }));
-      console.log("RESPONSE STATUS:", res.status, data);
+      const text = await res.text(); // primero text SIEMPRE
+      let data;
+      try { data = JSON.parse(text); } catch { data = { message: text }; }
 
       if (res.ok) {
         setFeedback(data.message || "Mensaje enviado correctamente.", true);
@@ -90,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setFeedback(data.message || "Error al enviar el mensaje.", false);
       }
     } catch (err) {
-      console.error("CONTACT.JS ERROR:", err);
+      console.error(err);
       setFeedback("Error de conexión. Intenta de nuevo.", false);
     } finally {
       setLoading(false);

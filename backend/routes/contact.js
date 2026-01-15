@@ -1,69 +1,45 @@
 // ----------------backend/routes/contact.js----------------
 
+// backend/routes/contact.js
 const express = require("express");
 const router = express.Router();
-
-const EMAIL_FOOTER = `
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:24px;">
-    <tr>
-      <td style="background:#EDECC2;border-radius:22px;padding:16px;font-family:Arial, sans-serif;font-weight:700;color:#000;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-          <tr>
-            <td style="vertical-align:middle;width:140px;padding-right:12px;">
-              <img src="https://yellowsquarestudio.es/public/img/Yellow%20Square%20Studio%20Logo%20with%20shadow.png"
-                   alt="Yellow Square Studio" width="120" style="display:block;border:0;outline:none;text-decoration:none;">
-            </td>
-            <td style="vertical-align:middle;">
-              <div style="font-size:16px;margin:0 0 6px 0;">Yellow Square Studio</div>
-              <div style="font-size:13px;line-height:1.4;">
-                Estudio creativo que convierte ideas en marcas.<br>
-                Diseño, desarrollo y comunicación visual.
-              </div>
-
-              <div style="margin-top:10px;font-size:13px;line-height:1.6;">
-                ✉️ <a href="mailto:contact@yellowsquarestudio.es" style="color:#000;text-decoration:none;">contact@yellowsquarestudio.es</a><br>
-                📷 <a href="https://instagram.com/yellow.square.studio" style="color:#000;text-decoration:none;">@yellow.square.studio</a>
-              </div>
-            </td>
-          </tr>
-        </table>
-        <div style="margin-top:10px;font-size:12px;opacity:.75;">© 2026 Yellow Square Studio.</div>
-      </td>
-    </tr>
-  </table>
-`;
 
 async function sendWithResend({ to, subject, html, replyTo }) {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM;
-  if (!apiKey || !from) throw new Error("Missing RESEND_API_KEY or RESEND_FROM");
 
-  const payload = {
-    from,
-    to: Array.isArray(to) ? to : [to],
-    subject,
-    html,
-  };
+  if (!apiKey || !from) {
+    throw new Error("Missing RESEND_API_KEY or RESEND_FROM env vars");
+  }
 
-  if (replyTo) payload.reply_to = replyTo; // Resend usa reply_to
-
-  const r = await fetch("https://api.resend.com/emails", {
+  const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(payload),
+    body: JSON.stringify({
+      from,
+      to: Array.isArray(to) ? to : [to],
+      subject,
+      html,
+      reply_to: replyTo || undefined,
+    }),
   });
 
-  if (!r.ok) {
-    const text = await r.text();
-    throw new Error(`Resend API error: ${r.status} ${text}`);
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Resend API error: ${res.status} ${text}`);
   }
-  return r.json();
+
+  return res.json();
 }
 
 router.post("/", async (req, res) => {
+  // Logs útiles
+  console.log("CONTACT BODY KEYS:", Object.keys(req.body || {}));
+  console.log("CONTACT BODY RAW:", req.body);
+
   const {
     firstName,
     businessName,
@@ -76,88 +52,218 @@ router.post("/", async (req, res) => {
     rgpd,
   } = req.body || {};
 
-  // Logs útiles (sin enseñar datos sensibles)
-  console.log("CONTACT BODY KEYS:", Object.keys(req.body || {}));
-  console.log("CONTACT BODY:", {
-    firstName,
-    businessName,
-    email,
-    phone,
-    service,
-    budget,
-    timeline,
-    rgpd,
-    messageLen: message?.length || 0,
-  });
-
+  // Required básicos
   if (!firstName || !businessName || !email || !phone || !message) {
     return res.status(400).json({ message: "All fields are required." });
   }
-  if (!service) return res.status(400).json({ message: "Service is required." });
-  if (!rgpd) return res.status(400).json({ message: "RGPD consent is required." });
+  if (!service) {
+    return res.status(400).json({ message: "Service is required." });
+  }
+  if (!rgpd) {
+    return res.status(400).json({ message: "RGPD consent is required." });
+  }
 
   const internalTo = process.env.CONTACT_TO || "contact@yellowsquarestudio.es";
 
+  const safeMessage = String(message || "").replace(/\n/g, "<br/>");
+
   try {
-    // 1) Email interno
+    // 1) Email interno (a ti)
     await sendWithResend({
       to: internalTo,
-      subject: "Nuevo mensaje desde el formulario de contacto",
-      replyTo: email,
+      subject: "Nuevo lead — Yellow Square Studio",
+      replyTo: email, // para responder directo al cliente
       html: `
-        <div style="font-family: Arial, sans-serif; color:#000;">
-          <h2 style="margin:0 0 12px 0;">Nuevo contacto desde la web</h2>
+        <div style="font-family:Arial,sans-serif;color:#111">
+          <h2 style="margin:0 0 12px">Nuevo contacto desde la web</h2>
 
           <p><strong>Nombre:</strong> ${firstName}</p>
           <p><strong>Empresa / Proyecto:</strong> ${businessName}</p>
-          <p><strong>Teléfono:</strong> ${phone}</p>
           <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Teléfono:</strong> ${phone}</p>
 
-          <hr style="margin:16px 0;border:none;border-top:1px solid #ddd;" />
+          <hr style="margin:16px 0;border:none;border-top:1px solid #ddd" />
 
           <p><strong>Servicio:</strong> ${service}</p>
           <p><strong>Presupuesto:</strong> ${budget || "No lo sé todavía"}</p>
           <p><strong>Timeline:</strong> ${timeline || "Flexible"}</p>
           <p><strong>RGPD:</strong> ${rgpd ? "Aceptado" : "No"}</p>
 
-          <hr style="margin:16px 0;border:none;border-top:1px solid #ddd;" />
+          <hr style="margin:16px 0;border:none;border-top:1px solid #ddd" />
 
-          <p><strong>Mensaje:</strong><br/>${String(message).replace(/\n/g, "<br/>")}</p>
-
-          ${EMAIL_FOOTER}
+          <p><strong>Mensaje:</strong><br/>${safeMessage}</p>
         </div>
       `,
     });
 
-    // 2) Auto-respuesta (opcional, pero útil)
+    // 2) Auto-respuesta al cliente (opcional, pero útil)
     await sendWithResend({
       to: email,
       subject: "Hemos recibido tu mensaje ✅",
       html: `
-        <div style="font-family: Arial, sans-serif; color:#000;">
+        <div style="font-family:Arial,sans-serif;color:#111">
           <p>Hola ${firstName},</p>
-          <p>Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos lo antes posible.</p>
+          <p>Gracias por contactar con Yellow Square Studio. Hemos recibido tu mensaje y te responderemos lo antes posible.</p>
 
-          <p style="margin-top:14px;"><strong>Resumen:</strong></p>
+          <p style="margin-top:14px"><strong>Resumen:</strong></p>
           <ul>
             <li><strong>Servicio:</strong> ${service}</li>
             <li><strong>Presupuesto:</strong> ${budget || "No lo sé todavía"}</li>
             <li><strong>Timeline:</strong> ${timeline || "Flexible"}</li>
           </ul>
 
-          <p style="margin-top:14px;"><strong>Tu mensaje:</strong><br/>${String(message).replace(/\n/g, "<br/>")}</p>
+          <p style="margin-top:14px"><strong>Tu mensaje:</strong><br/>${safeMessage}</p>
 
-          <p style="margin-top:16px;">— Yellow Square Studio</p>
-          ${EMAIL_FOOTER}
+          <p style="margin-top:16px">— Yellow Square Studio</p>
         </div>
       `,
     });
 
     return res.status(200).json({ message: "Message sent successfully." });
-  } catch (err) {
-    console.error("Contact route error:", err);
+  } catch (error) {
+    console.error("Contact route error:", error);
     return res.status(500).json({ message: "Failed to send message." });
   }
 });
 
 module.exports = router;
+
+// const express = require("express");
+// const nodemailer = require("nodemailer");
+// require("dotenv").config();
+
+// const router = express.Router();
+
+// router.post("/", async (req, res) => {
+//   console.log("CONTACT BODY KEYS:", Object.keys(req.body || {}));
+//   console.log("CONTACT BODY:", {
+//     firstName: req.body?.firstName,
+//     businessName: req.body?.businessName,
+//     email: req.body?.email,
+//     phone: req.body?.phone,
+//     service: req.body?.service,
+//     budget: req.body?.budget,
+//     timeline: req.body?.timeline,
+//     rgpd: req.body?.rgpd,
+//     messageLen: (req.body?.message || "").length,
+//   });
+
+//   const {
+//     firstName,
+//     businessName,
+//     email,
+//     phone,
+//     message,
+//     service,
+//     budget,
+//     timeline,
+//     rgpd,
+//   } = req.body || {};
+
+//   console.log("CONTACT BODY KEYS:", Object.keys(req.body || {}));
+//   console.log("CONTACT BODY RAW:", req.body);
+//   // required básicos
+//   if (!firstName || !businessName || !email || !phone || !message) {
+//     return res.status(400).json({ message: "All fields are required." });
+//   }
+
+//   // nuevos required reales
+//   if (!service) {
+//     return res.status(400).json({ message: "Service is required.", receivedKeys: Object.keys(req.body || {}) });
+//   }
+//   if (!rgpd) {
+//     return res.status(400).json({ message: "RGPD consent is required." });
+//   }
+
+//   const fullName = `${firstName} ${businessName}`;
+
+//   try {
+//     console.log("SMTP CONFIG:", {
+//     host: process.env.SMTP_HOST,
+//     port: process.env.SMTP_PORT,
+//     user: process.env.SMTP_USER,
+//     passLen: (process.env.SMTP_PASS || "").length,
+//   });
+//     const smtpHost = process.env.SMTP_HOST;
+//     const smtpPort = Number(process.env.SMTP_PORT);
+
+//     const transporter = nodemailer.createTransport({
+//       host: smtpHost,
+//       port: smtpPort,
+//       secure: smtpPort === 465, // 465 SSL
+//       auth: {
+//         user: process.env.SMTP_USER,
+//         pass: process.env.SMTP_PASS,
+//       },
+//       tls: {
+//         servername: smtpHost, // ayuda con algunos hosts
+//       },
+//       connectionTimeout: 30000,
+//       greetingTimeout: 30000,
+//       socketTimeout: 60000,
+//     });
+
+//     await transporter.verify();
+
+//     const internalTo = process.env.CONTACT_TO || process.env.SMTP_USER;
+
+//     // 1) Interno
+//     await transporter.sendMail({
+//       from: `"Yellow Square Studio" <${process.env.SMTP_USER}>`,
+//       to: internalTo,
+//       replyTo: email,
+//       subject: "Nuevo mensaje desde el formulario de contacto",
+//       html: `
+//         <div style="font-family: Arial, sans-serif; color:#000;">
+//           <h2>Nuevo contacto desde la web</h2>
+
+//           <p><strong>Nombre / Empresa:</strong> ${fullName}</p>
+//           <p><strong>Teléfono:</strong> ${phone}</p>
+//           <p><strong>Email:</strong> ${email}</p>
+
+//           <hr style="margin:16px 0;border:none;border-top:1px solid #ddd;" />
+
+//           <p><strong>Servicio:</strong> ${service}</p>
+//           <p><strong>Presupuesto:</strong> ${budget || "No indicado"}</p>
+//           <p><strong>Timeline:</strong> ${timeline || "Flexible"}</p>
+//           <p><strong>RGPD:</strong> ${rgpd ? "Aceptado" : "No"}</p>
+
+//           <hr style="margin:16px 0;border:none;border-top:1px solid #ddd;" />
+
+//           <p><strong>Mensaje:</strong><br/>${String(message).replace(/\n/g, "<br/>")}</p>
+//         </div>
+//       `,
+//     });
+
+//     // 2) Auto-respuesta al cliente (simple)
+//     await transporter.sendMail({
+//       from: `"Yellow Square Studio" <${process.env.SMTP_USER}>`,
+//       to: email,
+//       subject: "Hemos recibido tu mensaje ✅",
+//       html: `
+//         <div style="font-family: Arial, sans-serif; color:#000;">
+//           <p>Hola ${firstName},</p>
+//           <p>Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos lo antes posible.</p>
+
+//           <p style="margin-top:14px;"><strong>Resumen:</strong></p>
+//           <ul>
+//             <li><strong>Servicio:</strong> ${service}</li>
+//             <li><strong>Presupuesto:</strong> ${budget || "No indicado"}</li>
+//             <li><strong>Timeline:</strong> ${timeline || "Flexible"}</li>
+//           </ul>
+
+//           <p style="margin-top:14px;"><strong>Tu mensaje:</strong><br/>${String(message).replace(/\n/g, "<br/>")}</p>
+
+//           <p style="margin-top:16px;">— Yellow Square Studio</p>
+//         </div>
+//       `,
+//     });
+
+//     return res.status(200).json({ message: "Message sent successfully." });
+//   } catch (error) {
+//     console.error("Contact route error:", error);
+//     return res.status(500).json({ message: "Failed to send message." });
+//   }
+// });
+
+// module.exports = router;
